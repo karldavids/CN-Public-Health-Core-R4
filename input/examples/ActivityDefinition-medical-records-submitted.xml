@@ -60,8 +60,6 @@
 			<display value="Treatment"/>
 		</coding>
 	</topic>
-	<!-- 0..1 资源类型 -->
-	<kind value="Bundle"/>
 	<!-- 0..1 canonical(StructureDefinition) 资源的profile文件地址 -->
 	<profile>
 		<reference value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
