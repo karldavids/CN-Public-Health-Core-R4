@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!-- 此资源所引用的内容都将作为指南的一部分生成。持续更新中 -->
+<ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
+	<id value="public-health.hl7fhir.cn.core.r4"/>
+	<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
+    <valueString value="resources-spreadsheet.xml"/>
+  </extension>-->
+	<url value="https://www.hl7fhir.cn/ig/CN-Public-Health-Core-R4"/>
+	<!-- 此实施指南的版本。除非指定了 "propagate-version" 扩展元素，否则所有引用资源都将继承此版本号 -->
+	<version value="0.2.0"/>
+	<name value="Public Health CN Core Implementation Guide"/>
+	<title value="公卫实施指南"/>
+	<status value="draft"/>
+	<experimental value="true"/>
+	<publisher value="HL7FHIR.CN" />
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="https://www.hl7fhir.cn"/>
+		</telecom>
+		<telecom>
+			<system value="email"/>
+			<value value="contact@hl7fhir.cn"/>
+		</telecom>
+	</contact>
+	<description value="基于FHIR R4基础规范的公共卫生实施指南。集成了GB国标、WS行标，且根据中国卫生行业特点和公共卫生的业务场景对资源进行了资源修剪、扩展注册。"/>
+	<jurisdiction>
+		<coding>
+			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
+			<code value="156"/>
+		</coding>
+		<text value="中国"/>
+	</jurisdiction>
+	<packageId value="public-health.hl7fhir.cn.core.r4" />
+	<!-- 参见 https://spdx.org/licenses/AGPL-3.0-or-later.html -->
+	<license value="AGPL-3.0-or-later" />
+	<!-- 实施指南里的内容是基于FHIR R4版本的 -->
+	<fhirVersion value="4.0.1"/>
+	<!-- 0..* Another Implementation guide this depends on -->
+	<dependsOn>	
+		<!-- 1..1 canonical(ImplementationGuide) Identity of the IG that this depends on -->
+		<uri>
+			<reference value="http://press.hl7fhir.cn/ImplementationGuide/CN-Core-R4"/>		
+		</uri>
+		<packageId value="hl7fhir.cn.core.r4"/>
+		<!-- 0..1 NPM Package name for IG this depends on -->
+		<version value="0.2.0"/>
+		<!-- 0..1 Version of the IG -->
+	</dependsOn>
+	
+	<definition>
+		<!--0..* 生成IG需求信息。其中grouping节点可由IGPublisher自动定义，也可手动定义个性化需求。 -->
+		<resource>
+			<reference>
+				<!-- 本地资源定义（HospitalReferral） -->
+				<reference value="StructureDefinition/hospital-referral"/>
+			</reference>
+			<description value="该资源描述住院转诊的的申请。包括上转、下转都使用该资源。"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（HospitalReferralResponse） -->
+				<reference value="StructureDefinition/hospital-referral-response"/>
+			</reference>
+			<description value="转诊申请应答"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（participation-status） -->
+				<reference value="StructureDefinition/participation-status"/>
+			</reference>
+			<description value="预约参与状态，描述预约参与人的应约状态，包括同意、拒绝、未知、未响应等"/>
+		</resource>
+
+		<!--<resource>
+<reference>
+<reference value="MyLogicalModel/AS"/>
+</reference>
+</resource> -->
+
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Appointment/HospitalReferral-example"/>
+			</reference>
+			<name value="转诊申请预约示例"/>
+			<description value="演示如何定义和引用转诊申请预约的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="AppointmentResponse/HospitalReferralResponse-example"/>
+			</reference>
+			<name value="转诊应答示例"/>
+			<description value="演示如何定义和引用转诊应答的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
+		</resource>
+		
+		
+		<resource>
+			<reference>
+				<!-- ActivityDefinition资源示例 -->
+				<reference value="ActivityDefinition/ActivityDefinition-patient-arrive-response"/>
+			</reference>
+			<name value="患者到诊ActivityDefinition示例"/>
+			<description value="演示如何定义和引用患者到诊ActivityDefinition的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- ActivityDefinition资源示例 -->
+				<reference value="ActivityDefinition/ActivityDefinition-medical-records-submitted"/>
+			</reference>
+			<name value="提交转诊完整病历ActivityDefinition示例"/>
+			<description value="演示如何定义和引用提交转诊完整病历ActivityDefinition的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- ActivityDefinition资源示例 -->
+				<reference value="ActivityDefinition/ActivityDefinition-application-for-referral-appointment-response"/>
+			</reference>
+			<name value="转诊预约申请应答ActivityDefinition示例"/>
+			<description value="演示如何定义和引用转诊预约申请应答ActivityDefinition的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- ActivityDefinition资源示例 -->
+				<reference value="ActivityDefinition/ActivityDefinition-application-for-referral-appointment"/>
+			</reference>
+			<name value="转诊预约申请ActivityDefinition示例"/>
+			<description value="演示如何定义和引用转诊预约申请ActivityDefinition的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
+		</resource>
+
+
+
+
+
+		<resource>
+			<reference>
+				<!-- Task资源示例 -->
+				<reference value="Task/Task-patient-arrive-response"/>
+			</reference>
+			<name value="患者到诊Task示例"/>
+			<description value="演示如何定义和引用患者到诊Task的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- Task资源示例 -->
+				<reference value="Task/Task-medical-records-submitted"/>
+			</reference>
+			<name value="提交转诊完整病历Task示例"/>
+			<description value="演示如何定义和引用提交转诊完整病历Task的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- Task资源示例 -->
+				<reference value="Task/Task-application-for-referral-appointment-response"/>
+			</reference>
+			<name value="转诊预约申请应答Task示例"/>
+			<description value="演示如何定义和引用转诊预约申请应答Task的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- Task资源示例 -->
+				<reference value="Task/Task-application-for-referral-appointment"/>
+			</reference>
+			<name value="转诊预约申请Task示例"/>
+			<description value="演示如何定义和引用转诊预约申请Task的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- PlanDefinition资源示例 -->
+				<reference value="PlanDefinition/PlanDefinition-hospital-referral"/>
+			</reference>
+			<name value="住院双转的流程定义示例"/>
+			<description value="演示如何定义和引用住院双转的流程定义的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
+		</resource>
+
+
+
+
+		<resource>
+			<reference>
+				<!-- 应答预约状态编码值域集 -->
+				<reference value="ValueSet/participationstatus-vs"/>
+			</reference>
+			<name value="应答预约状态编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 活动事件编码值域集 -->
+				<reference value="ValueSet/activity-code-vs"/>
+			</reference>
+			<name value="活动事件编码"/>
+		</resource>
+
+
+
+
+
+
+
+		<!--    <resource>
+      <reference>
+        <reference value="Library/example"/>
+      </reference>
+      <name value="Simple library example"/>
+      <description value="A simple example showing how library is pre-loaded"/>
+    </resource> -->
+		<page>
+			<!-- 若不指定目录页面，模板将强制为 toc.html -->
+			<nameUrl value="toc.html"/>
+			<title value="目录"/>
+			<generation value="html"/>
+			<page>
+				<nameUrl value="index.html"/>
+				<title value="首页"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="background.html"/>
+				<title value="Background"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="spec.html"/>
+				<title value="核心规范"/>
+				<generation value="markdown"/>
+			</page>
+			<page>
+				<nameUrl value="downloads.html"/>
+				<title value="下载"/>
+				<generation value="html"/>
+			</page>
+			<page>
+				<nameUrl value="changes.html"/>
+				<title value="指南历史版本"/>
+				<generation value="html"/>
+			</page>
+
+			<page>
+				<nameUrl value="hospital-referral.html"/>
+				<title value="双向转诊-住院"/>
+				<generation value="markdown"/>
+			</page>
+
+		</page>
+		
+	
+		<!-- copyright year 是IGPublisher的强制参数 -->
+		<parameter>
+			<code value="copyrightyear"/>
+			<value value="2020+"/>
+		</parameter>
+		<!-- releaselabel should be the ballot status for HL7-published IGs. -->
+		<parameter>
+			<code value="releaselabel"/>
+			<value value="CI Build"/>
+		</parameter>
+		<parameter>
+			<code value="find-other-resources"/>
+			<value value="true"/>
+		</parameter>
+		<parameter>
+			<code value="path-resource"/>
+			<value value="input\history"/>
+		</parameter>
+		<parameter>
+			<code value="path-binary"/>
+			<value value="input\cql"/>
+		</parameter>
+		<parameter>
+			<code value="path-liquid"/>
+			<value value="templates\liquid"/>
+		</parameter>
+		<!-- Uncomment one or more of these if you want to limit which syntaxes are supported or want to disable the display of mappings
+    <parameter>
+      <code value="excludexml"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludejson"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludettl"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludemap"/>
+      <value value="true"/>
+    </parameter>-->
+	</definition>
+</ImplementationGuide>

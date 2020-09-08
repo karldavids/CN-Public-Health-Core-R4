@@ -1,0 +1,371 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PlanDefinition xmlns="http://hl7.org/fhir">
+	<id value="PlanDefinition-hospital-referral"/>
+	<!-- 0..1 Canonical identifier for this plan definition, represented as a URI (globally unique) -->
+	<url value="http://PlanDefinition.hl7fhir.cn/hospital-referral"/>
+	<!-- 0..* 计划定义编号 -->
+	<!-- 0..* 活动标识符 -->
+	<identifier>
+		<!-- 0..1 活动标识符NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/planDefinition-identifier"/>
+		<!-- 0..1 活动标识符 -->
+		<value value="hospital-referral"/>
+	</identifier>
+	<!-- 0..1 版本号 -->
+	<version value="1.0.0"/>
+	<!-- ?? 0..1 计划名称（计算机友好）-->
+	<name value="hospital-referral"/>
+	<!-- 0..1 计划名称（人友好） -->
+	<title value="双向转诊-住院转诊"/>
+	<!-- 0..1  计划定义类型  CodeableConcept order-set | clinical-protocol | eca-rule | workflow-definition -->
+	<type>
+		<coding>
+			<!-- 0..1 计划定义类型 CodeSystem url  -->
+			<system value="http://terminology.hl7.org/CodeSystem/plan-definition-type"/>
+			<!-- 0..1 计划定义类型代码-->
+			<code value="workflow-definition"/>
+			<!-- 0..1 计划定义类型名称 -->
+			<display value="Workflow Definition"/>
+		</coding>
+	</type>
+	<!-- 1..1 状态  draft | active | retired | unknown -->
+	<status value="active"/>
+
+	<!-- 0..1 最后更新时间 -->
+	<date value="[dateTime]"/>
+	<!-- 0..1 发布者 -->
+	<publisher value="HL7FHIR.CN" />
+	<contact>
+		<telecom>
+			<system value="url"/>
+			<value value="https://www.hl7fhir.cn"/>
+		</telecom>
+		<telecom>
+			<system value="email"/>
+			<value value="contact@hl7fhir.cn"/>
+		</telecom>
+	</contact>
+	<!-- 0..1 计划定义的自然语言描述 -->
+	<description value="[markdown]"/>
+	
+	<jurisdiction>
+		<coding>
+			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
+			<code value="156"/>
+		</coding>
+		<text value="中国"/>
+	</jurisdiction>
+	<!-- 0..1 为什么定义此计划定义 -->
+	<purpose value="[markdown]"/>
+	<!-- 0..1 描述计划定义的临床用法 -->
+	<usage value="[string]"/>
+	<!-- 0..1 使用和/或发布限制（版权） -->
+	<copyright value="[markdown]"/>
+	<!-- 0..1 计划定义何时被发布者批准 -->
+	<approvalDate value="2019-10-01"/>
+	<!-- 0..1 上次审核计划定义的时间 -->
+	<lastReviewDate value="2019-10-01"/>
+	<!-- 0..1 计划定义有效期 -->
+	<effectivePeriod>
+		<!-- 0..1 开始时间 -->
+		<start value="2019-11-12T13:00:00Z"/>
+		<!-- 0..1 结束时间 -->
+		<end value="2022-02-20T13:00:00Z"/>
+	</effectivePeriod>
+
+	<!-- 0..* 步骤 -->
+	<!--转诊预约申请-->
+	<action>
+		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
+		<prefix value="1"/>
+		<!-- 0..1 步骤名称 -->
+		<title value="提交转诊预约申请"/>
+		<!-- 0..1 简要描述行动 -->
+		<description value="[string]"/>
+		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
+		<textEquivalent value="[string]"/>
+		<!-- 0..1 routine | urgent | asap | stat -->
+		<priority value="routine"/>
+		<!-- 0..* 提供动作或动作组含义的代码（事件）。 -->
+		<code>
+			<coding>
+				<!-- 0..1 事件类型 CodeSystem url  -->
+				<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
+				<!-- 0..1 事件类型代码-->
+				<code value="C01001"/>
+				<!-- 0..1 事件类型名称 -->
+				<display value="转诊预约申请"/>
+			</coding>
+		</code>
+
+
+		<!-- 0..* 动作的相关关系 -->
+		<relatedAction>
+				<!-- 1..1 相关步骤的ID -->
+			<actionId value="application-for-referral-appointment-response"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="before-start"/>
+		</relatedAction>
+		<relatedAction>
+			<!-- 1..1 相关步骤的ID -->
+			<actionId value="patient-arrive-response"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="before-start"/>
+		</relatedAction>
+		<relatedAction>
+			<!-- 1..1 相关步骤的ID -->
+			<actionId value="medical-records-submitted"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="before-start"/>
+		</relatedAction>
+		
+
+	
+		<!-- 0..* 参与者信息 -->
+		<participant>
+			<!-- 1..1 参与者类型  patient | practitioner | related-person | device -->
+			<type value="practitioner"/>
+			<!-- 0..1 参与者角色 -->
+			<role>
+				<coding>
+					<!-- 0..1 参与者角色 CodeSystem url  -->
+					<system value="http://CodeSystem.hl7fhir.cn/encounter-participant-type"/>
+					<!-- 0..1 参与者角色代码-->
+					<code value="01"/>
+					<!-- 0..1 参与者角色 -->
+					<display value="责任医生"/>
+				</coding>
+			</role>
+		</participant>
+
+		<participant>
+			<!-- 1..1 patient | practitioner | related-person | device -->
+			<type value="patient"/>
+		</participant>
+
+		<!-- 0..1 步骤类型  CodeableConcept create | update | remove | fire-event -->
+		<type>
+			<coding>
+				<!-- 0..1 步骤类型 CodeSystem url  -->
+				<system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+				<!-- 0..1 步骤类型代码-->
+				<code value="create"/>
+				<!-- 0..1 步骤类型名称 -->
+				<display value="Create"/>
+			</coding>
+		</type>
+
+		<!-- 0..1 步骤的必须性 must | could | must-unless-documented -->
+		<requiredBehavior value="must"/>		
+		<!-- 0..1定义是否通常应预先选择动作。 yes | no -->
+		<precheckBehavior value="no"/>			
+		<!-- 0..1 单次或者多次运行 single | multiple -->
+		<cardinalityBehavior value="single"/>
+		<!-- 0..1 该步骤的活动定义  -->
+		<definitionCanonical>
+			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment"/>
+		</definitionCanonical>
+	</action>
+
+	<!-- 转诊预约应答 -->
+	<action>
+		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
+		<prefix value="2"/>
+		<!-- 0..1 步骤名称 -->
+		<title value="转诊预约应答"/>
+		<!-- 0..1 简要描述行动 -->
+		<description value="[string]"/>
+		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
+		<textEquivalent value="[string]"/>
+		<!-- 0..1 routine | urgent | asap | stat -->
+		<priority value="routine"/>
+		<!-- 0..* 提供动作或动作组含义的代码（事件）。 -->
+		<code>
+			<coding>
+				<!-- 0..1 事件类型 CodeSystem url  -->
+				<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
+				<!-- 0..1 事件类型代码-->
+				<code value="C01002"/>
+				<!-- 0..1 事件类型名称 -->
+				<display value="转诊预约应答"/>
+			</coding>
+		</code>
+
+
+		<!-- 0..* 动作的相关关系 -->
+		<relatedAction>
+			<!-- 1..1 相关步骤的ID -->
+			<actionId value="application-for-referral-appointment"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="after-start"/>
+		</relatedAction>
+
+
+		<!-- 0..* 参与者信息 -->
+		<participant>
+			<!-- 1..1 参与者类型  patient | practitioner | related-person | device -->
+			<type value="practitioner"/>
+			<!-- 0..1 参与者角色 -->
+			<role>
+				<coding>
+					<!-- 0..1 参与者角色 CodeSystem url  -->
+					<system value="http://CodeSystem.hl7fhir.cn/encounter-participant-type"/>
+					<!-- 0..1 参与者角色代码-->
+					<code value="01"/>
+					<!-- 0..1 参与者角色 -->
+					<display value="责任医生"/>
+				</coding>
+			</role>
+		</participant>
+		<!-- 0..1 步骤类型  CodeableConcept create | update | remove | fire-event -->
+		<type>
+			<coding>
+				<!-- 0..1 步骤类型 CodeSystem url  -->
+				<system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+				<!-- 0..1 步骤类型代码-->
+				<code value="create"/>
+				<!-- 0..1 步骤类型名称 -->
+				<display value="Create"/>
+			</coding>
+		</type>
+
+		<!-- 0..1 步骤的必须性 must | could | must-unless-documented -->
+		<requiredBehavior value="must"/>
+		<!-- 0..1定义是否通常应预先选择动作。 yes | no -->
+		<precheckBehavior value="no"/>
+		<!-- 0..1 单次或者多次运行 single | multiple -->
+		<cardinalityBehavior value="single"/>
+		<!-- 0..1 该步骤的活动定义  -->
+		<definitionCanonical>
+			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment-response"/>
+		</definitionCanonical>
+	</action>
+
+	<!-- 患者到诊 -->
+	<action>
+		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
+		<prefix value="3"/>
+		<!-- 0..1 步骤名称 -->
+		<title value="患者到诊"/>
+		<!-- 0..1 简要描述行动 -->
+		<description value="[string]"/>
+		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
+		<textEquivalent value="[string]"/>
+		<!-- 0..1 routine | urgent | asap | stat -->
+		<priority value="routine"/>
+		<!-- 0..* 提供动作或动作组含义的代码（事件）。 -->
+		<code>
+			<coding>
+				<!-- 0..1 事件类型 CodeSystem url  -->
+				<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
+				<!-- 0..1 事件类型代码-->
+				<code value="C01003"/>
+				<!-- 0..1 事件类型名称 -->
+				<display value="患者到诊"/>
+			</coding>
+		</code>
+
+
+		<!-- 0..* 动作的相关关系 -->
+		<relatedAction>
+			<!-- 1..1 相关步骤的ID -->
+			<actionId value="application-for-referral-appointment-response"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="after-start"/>
+		</relatedAction>
+
+
+		<!-- 0..* 参与者信息 -->
+		<participant>
+			<!-- 1..1 patient | practitioner | related-person | device -->
+			<type value="patient"/>
+		</participant>
+
+		<!-- 0..1 步骤类型  CodeableConcept create | update | remove | fire-event -->
+		<type>
+			<coding>
+				<!-- 0..1 步骤类型 CodeSystem url  -->
+				<system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+				<!-- 0..1 步骤类型代码-->
+				<code value="create"/>
+				<!-- 0..1 步骤类型名称 -->
+				<display value="Create"/>
+			</coding>
+		</type>
+
+		<!-- 0..1 步骤的必须性 must | could | must-unless-documented -->
+		<requiredBehavior value="must"/>
+		<!-- 0..1定义是否通常应预先选择动作。 yes | no -->
+		<precheckBehavior value="no"/>
+		<!-- 0..1 单次或者多次运行 single | multiple -->
+		<cardinalityBehavior value="single"/>
+		<!-- 0..1 该步骤的活动定义  -->
+		<definitionCanonical>
+			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-patient-arrive-response"/>
+		</definitionCanonical>
+	</action>
+
+	<!-- 上传病历 -->
+	<action>
+		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
+		<prefix value="4"/>
+		<!-- 0..1 步骤名称 -->
+		<title value="提交转诊完整病历"/>
+		<!-- 0..1 简要描述行动 -->
+		<description value="[string]"/>
+		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
+		<textEquivalent value="[string]"/>
+		<!-- 0..1 routine | urgent | asap | stat -->
+		<priority value="routine"/>
+		<!-- 0..* 提供动作或动作组含义的代码（事件）。 -->
+		<code>
+			<coding>
+				<!-- 0..1 事件类型 CodeSystem url  -->
+				<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
+				<!-- 0..1 事件类型代码-->
+				<code value="C01004"/>
+				<!-- 0..1 事件类型名称 -->
+				<display value="提交转诊完整病历"/>
+			</coding>
+		</code>
+
+
+		<!-- 0..* 动作的相关关系 -->
+		<relatedAction>
+			<!-- 1..1 相关步骤的ID -->
+			<actionId value="patient-arrive-response"/>
+			<!-- 1..1 关系   before-start | before | before-end | concurrent-with-start | concurrent | concurrent-with-end | after-start | after | after-end -->
+			<relationship value="after-start"/>
+		</relatedAction>
+
+
+		<!-- 0..* 参与者信息 -->
+		<participant>
+			<!-- 1..1 patient | practitioner | related-person | device -->
+			<type value="patient"/>
+		</participant>
+
+		<!-- 0..1 步骤类型  CodeableConcept create | update | remove | fire-event -->
+		<type>
+			<coding>
+				<!-- 0..1 步骤类型 CodeSystem url  -->
+				<system value="http://terminology.hl7.org/CodeSystem/action-type"/>
+				<!-- 0..1 步骤类型代码-->
+				<code value="create"/>
+				<!-- 0..1 步骤类型名称 -->
+				<display value="Create"/>
+			</coding>
+		</type>
+
+		<!-- 0..1 步骤的必须性 must | could | must-unless-documented -->
+		<requiredBehavior value="must"/>
+		<!-- 0..1定义是否通常应预先选择动作。 yes | no -->
+		<precheckBehavior value="no"/>
+		<!-- 0..1 单次或者多次运行 single | multiple -->
+		<cardinalityBehavior value="single"/>
+		<!-- 0..1 该步骤的活动定义  -->
+		<definitionCanonical>
+			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-medical-records-submitted"/>
+		</definitionCanonical>
+	</action>
+</PlanDefinition>

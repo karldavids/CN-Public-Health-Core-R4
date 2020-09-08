@@ -1,0 +1,13 @@
+{
+ "package-id" : "hl7fhir.cn.core.r4",
+ "title" : "FHIR R4 中国核心实施指南", 
+ "canonical" : "https://www.hl7fhir.cn/ig/CN-Core-R4", 
+ "introduction" : "中国核心实施指南在FHIR R4（第四版本）的基础上，定义了符合中国卫生信息标准要求的基础规范。本指南的阅读对象是在中国从事卫生健康信息化技术工作的人员，包括各级卫生健康委员会信息口、各级医院信息科、各信息系统厂商等的相关人员。本实施指南是通过对FHIR资源相互引用的方式发布的一套标准体系，它保证了标准体系内部的一致性和完整性",
+ "list" : [{
+  "version" : "0.2.0",
+  "desc" : "Continuous Integration Build (latest in version control)",
+  "path" : "https://build.fhir.org/ig/HL7China/CN-CORE-R4",
+  "status" : "ci-build",
+  "current" : true
+ }]
+}
