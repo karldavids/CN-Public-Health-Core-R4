@@ -43,16 +43,12 @@
 		</coding>
 		<text value="中国"/>
 	</jurisdiction>
-	<!-- 0..1 为什么定义此活动定义 -->
-	<purpose value="[markdown]"/>
 	<!-- 0..1 描述活动定义的临床用法 -->
-	<usage value="[string]"/>
-	<!-- 0..1 使用和/或发布限制（版权） -->
-	<copyright value="[markdown]"/>
+	<usage value="对病人和(或)医生的转诊预约请求的答复，如确认或拒绝。在提交转诊申请后，由接收方给出是否同意的转诊应答。"/>
 	<!-- 0..1 活动定义何时被发布者批准 -->
-	<approvalDate value="[date]"/>
+	<approvalDate value="2019-01-01"/>
 	<!-- 0..1 上次审核活动定义的时间 -->
-	<lastReviewDate value="[date]"/>
+	<lastReviewDate value="2019-01-01"/>
 	<!-- 0..* 话题类别 -->
 	<topic>
 		<coding>
