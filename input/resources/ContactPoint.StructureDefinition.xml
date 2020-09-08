@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="ContactPoint" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-12-11T06:26:55.852+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/ContactPoint" />
+  <name value="ContactPoint" />
+  <title value="联系方式" />
+  <status value="draft" />
+  <date value="2019-12-11T06:26:55.3669966Z" />
+  <publisher value="hl7fhir.cn" />
+  <description value="联系方式，包括电话、传真、邮件等" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="ContactPoint" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ContactPoint" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ContactPoint">
+      <path value="ContactPoint" />
+      <short value="联系方式" />
+      <definition value="联系方式，包括电话、传真、邮件等" />
+    </element>
+    <element id="ContactPoint.system">
+      <path value="ContactPoint.system" />
+      <short value="所属体系（种类）" />
+      <definition value="联系方式所属体系（种类），如：电话、传真、邮件、微信、QQ等" />
+      <meaningWhenMissing value="若不指定联系方式的种类，默认为电话" />
+      <binding>
+        <strength value="required" />
+        <description value="联系方式种类" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/contact-point-system" />
+      </binding>
+    </element>
+    <element id="ContactPoint.value">
+      <path value="ContactPoint.value" />
+      <short value="具体方式" />
+      <definition value="具体的联系方式，如手机号、传真号、邮件地址等" />
+    </element>
+    <element id="ContactPoint.use">
+      <path value="ContactPoint.use" />
+      <short value="用途" />
+      <definition value="用途，如私人用、家用、公司、曾用等" />
+      <comment value="不填此项时应默认为私用" />
+      <requirements value="通过对用途的区分可在使用时选择适当的联系方式" />
+      <isModifierReason value="改变此元素的值将引起整个号码意义的变化，如“公司”和“私人”的意义是完全不同的" />
+      <binding>
+        <strength value="required" />
+        <description value="号码用途" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/contact-point-use" />
+      </binding>
+    </element>
+    <element id="ContactPoint.rank">
+      <path value="ContactPoint.rank" />
+      <short value="使用频率" />
+      <definition value="使用频率的权重（0到1之间，1的权重最高）" />
+      <comment value="注意：联系方式录入的先后顺序和权重无关" />
+    </element>
+    <element id="ContactPoint.period">
+      <path value="ContactPoint.period" />
+      <type>
+        <code value="Period" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Period" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

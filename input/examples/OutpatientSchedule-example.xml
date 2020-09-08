@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Schedule xmlns="http://hl7.org/fhir">
+	<id value="OutpatientSchedule-example"/>
+	<meta>
+	      <profile value="http://StructureDefinition.hl7fhir.cn/outpatient-schedule"/>
+	</meta>
+
+	<!-- 0..* 排班编号 -->
+	<identifier>
+		<!--0..1 排班编号 NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/outpatient-schedule-identifier"/>
+		<!-- 0..1 排班编号 -->
+		<value value="[string]"/>
+	</identifier>
+
+	<!-- 0..1 是否在用 -->
+	<active value="true"/>
+
+	<!-- 0..1 服务类别 -->
+	<serviceCategory>
+		<coding>
+			<!-- 0..1 服务类别 CodeSystem url  -->
+			<system value="http://CodeSystem.hl7fhir.cn/service-category"/>
+			<!-- 0..1 服务类别代码-->
+			<code value="01"/>
+			<!-- 0..1 服务类别名称 -->
+			<display value="医疗服务"/>
+		</coding>
+	</serviceCategory>
+
+	<!-- 0..1 服务项目分类 -->
+	<serviceType>
+		<coding>
+			<!-- 0..1 服务项目分类 CodeSystem url  -->
+			<system value="http://CodeSystem.hl7fhir.cn/service-type"/>
+			<!-- 0..1 服务项目分类代码-->
+			<code value="01"/>
+			<!-- 0..1 服务项目分类 -->
+			<display value="门诊预约挂号"/>
+		</coding>
+	</serviceType>
+	<!-- 0..1 班次时段 -->
+	<planningHorizon>
+		<!-- ?? 0..1 开始时间 -->
+		<start value="2019-02-20T13:00:00Z"/>
+		<!-- ?? 0..1 结束时间 -->
+		<end value="2019-02-20T13:00:00Z"/>
+	</planningHorizon>
+
+	<!-- 1..1  医生-->
+	<actor>
+		<!-- 0..1 Reference(Practitioner) 关联医护人员信息 -->
+		<reference value="Practitioner/232323"/>
+	</actor>
+
+	<!-- 1..1  诊室-->
+	<actor>
+		<!-- 0..1 Reference(Location) 关联诊室信息 -->
+		<reference value="Location/22332"/>
+	</actor>
+
+
+	<!-- 0..1 排班备注-->
+	<comment value="骨科门诊排班"/>
+</Schedule>

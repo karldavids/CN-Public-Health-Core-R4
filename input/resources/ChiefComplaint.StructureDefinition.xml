@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="chief-complaint" />
+  <url value="http://StructureDefinition.hl7fhir.cn/chief-complaint" />
+  <name value="ChiefComplaint" />
+  <title value="患者主诉" />
+  <status value="draft" />
+  <description value="患者主诉信息，病人（来访者）自述自己的症状或（和）体征、性质，以及持续时间等内容。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="sct-concept" />
+    <uri value="http://snomed.info/conceptdomain" />
+    <name value="SNOMED CT Concept Domain Binding" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="sct-attr" />
+    <uri value="http://snomed.org/attributebinding" />
+    <name value="SNOMED CT Attribute Binding" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Condition" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Condition" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Condition">
+      <path value="Condition" />
+      <short value="主诉信息" />
+      <definition value="是病人（来访者）自述自己的症状或（和）体征、性质，以及持续时间等内容。" />
+    </element>
+    <element id="Condition.identifier">
+      <path value="Condition.identifier" />
+      <max value="0" />
+    </element>
+    <element id="Condition.clinicalStatus">
+      <path value="Condition.clinicalStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.verificationStatus">
+      <path value="Condition.verificationStatus" />
+      <max value="0" />
+    </element>
+    <element id="Condition.category">
+      <path value="Condition.category" />
+      <definition value="A category assigned to the condition.&#xD;&#xA;类别，描述该资源的类别，可以是临床诊断也可以是 列表问题（描述患者出现的若干症状）&#xD;&#xA;该出固定为主诉。" />
+      <max value="0" />
+    </element>
+    <element id="Condition.severity">
+      <path value="Condition.severity" />
+      <short value="严重程度" />
+      <definition value="临床医生对患者描述的病情严重程度的主观评估。" />
+      <comment value="在可能的情况下，最好使用术语对严重性进行编码。" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ConditionSeverity" />
+        </extension>
+        <strength value="preferred" />
+        <description value="由临床医生对病情严重程度的主观评估。" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/condition-severity-vs" />
+      </binding>
+    </element>
+    <element id="Condition.code">
+      <path value="Condition.code" />
+      <max value="0" />
+    </element>
+    <element id="Condition.bodySite">
+      <path value="Condition.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="Condition.subject">
+      <path value="Condition.subject" />
+      <short value="患者" />
+      <definition value="指示与状态记录相关联的患者或组。" />
+    </element>
+    <element id="Condition.encounter">
+      <path value="Condition.encounter" />
+      <short value="相关就诊活动" />
+      <definition value="创建此主诉的过程中或与此记录的创建紧密相关的医疗事件。" />
+      <comment value="此主诉是在这个医疗就诊活动期间产生的，或与这个医疗就诊活动密切相关，但一些活动可能在就诊活动之前或之后开始，但是任然认为和该医疗活动相关。" />
+    </element>
+    <element id="Condition.onset[x]">
+      <path value="Condition.onset[x]" />
+      <short value="发病情况" />
+      <definition value="患者叙述发病情况" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Condition.abatement[x]">
+      <path value="Condition.abatement[x]" />
+      <short value="病情发展情况" />
+      <definition value="患者叙述病情发展情况" />
+      <type>
+        <code value="string" />
+      </type>
+    </element>
+    <element id="Condition.recordedDate">
+      <path value="Condition.recordedDate" />
+      <short value="主诉记录日期" />
+      <definition value="描述该资源被详细记录的日期" />
+    </element>
+    <element id="Condition.recorder">
+      <path value="Condition.recorder" />
+      <short value="主诉记录者" />
+      <definition value="描述记录该资源的人员信息，在这里一般指医生和医生角色。" />
+    </element>
+    <element id="Condition.asserter">
+      <path value="Condition.asserter" />
+      <max value="0" />
+    </element>
+    <element id="Condition.stage">
+      <path value="Condition.stage" />
+      <max value="0" />
+    </element>
+    <element id="Condition.evidence">
+      <path value="Condition.evidence" />
+      <max value="0" />
+    </element>
+    <element id="Condition.note">
+      <path value="Condition.note" />
+      <short value="备注" />
+      <definition value="关于病情的附加信息。这是一个描述病情、诊断和预后的一般注释/注释条目。" />
+    </element>
+  </differential>
+</StructureDefinition>

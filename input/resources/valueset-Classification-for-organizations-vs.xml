@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="Classification-for-organizations-vs"/>
+    <meta>
+        <lastUpdated value="2020-07-01T11:24:45.562+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/Classification-for-organizations-vs"/>
+    <version value="V1"/>
+    <name value="Classification-for-organizations"/>
+    <title value="组织机构类型"/>
+    <status value="draft"/>
+    <publisher value="hl7fhir.cn"/>
+    <description value="本标准规定了组织机构分类原则和划分组织机构类型的编码方法及代码。适用于国家各部门，各系统划分组织机构类型使用。"/>
+    <expansion>
+        <timestamp value="2020-07-06T16:34:07.116+08:00"/>
+        <total value="31"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="1"/>
+            <display value="企业"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="11"/>
+            <display value="公司"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="13"/>
+            <display value="非公司制企业法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="15"/>
+            <display value="企业分支机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="17"/>
+            <display value="个人独资企业，合伙企业"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="19"/>
+            <display value="其他企业"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="3"/>
+            <display value="机关"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="31"/>
+            <display value="中国共产党"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="32"/>
+            <display value="国家权力机关法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="33"/>
+            <display value="国家行政机关法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="34"/>
+            <display value="国家司法机关法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="35"/>
+            <display value="政协组织"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="36"/>
+            <display value="民主党派"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="37"/>
+            <display value="人民解放军，武警部队"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="39"/>
+            <display value="其他机关"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="5"/>
+            <display value="事业单位"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="51"/>
+            <display value="事业单位法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="53"/>
+            <display value="事业单位分支，派出机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="59"/>
+            <display value="其他事业单位"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="7"/>
+            <display value="社会团体"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="71"/>
+            <display value="社会团体法人"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="73"/>
+            <display value="社会团体分支，代表机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="79"/>
+            <display value="其他社会团体"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="9"/>
+            <display value="其他组织机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="91"/>
+            <display value="民办非企业单位"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="93"/>
+            <display value="基金会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="94"/>
+            <display value="宗教活动场所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="95"/>
+            <display value="农村村民委员会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="96"/>
+            <display value="城市居民委员会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="97"/>
+            <display value="自定义区"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+            <code value="99"/>
+            <display value="其他未列明的组织"/>
+        </contains>
+    </expansion>
+</ValueSet>

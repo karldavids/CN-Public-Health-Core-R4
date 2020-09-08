@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="economic-type-classification-vs"/>
+    <meta>
+        <lastUpdated value="2020-03-12T20:07:06.599+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/economic-type-classification-vs"/>
+    <version value="V1"/>
+    <name value="economic type classification"/>
+    <title value="经济类型分类"/>
+    <status value="draft"/>
+    <publisher value="中华人民共和国国家质量监督检验检疫总局"/>
+    <description value="国家GB级值域代码"/>
+    <jurisdiction>
+        <coding>
+            <system value="http://ValueSet.hl7fhir.cn/countries-and-regions"/>
+            <code value="156"/>
+        </coding>
+        <text value="中国"/>
+    </jurisdiction>
+    <expansion>
+        <timestamp value="2020-07-14T17:01:30.497+08:00"/>
+        <total value="22"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="10"/>
+            <display value="内资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="11"/>
+            <display value="国有全资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="12"/>
+            <display value="集体全资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="13"/>
+            <display value="股份合作"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="14"/>
+            <display value="联营"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="15"/>
+            <display value="有限责任公司"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="16"/>
+            <display value="股份有限公司"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="17"/>
+            <display value="私有"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="19"/>
+            <display value="其他内资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="20"/>
+            <display value="港澳台投资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="21"/>
+            <display value="内地和港澳台合资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="22"/>
+            <display value="内地和港澳台合作"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="23"/>
+            <display value="港澳台独资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="24"/>
+            <display value="港澳台投资股份有限公司"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="29"/>
+            <display value="其他港澳台投资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="30"/>
+            <display value="国外投资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="31"/>
+            <display value="中外合资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="32"/>
+            <display value="中外合作"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="33"/>
+            <display value="外资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="34"/>
+            <display value="国外投资股份有限公司"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="39"/>
+            <display value="其他国外投资"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/economic-type-classification"/>
+            <code value="90"/>
+            <display value="其他"/>
+        </contains>
+    </expansion>
+</ValueSet>

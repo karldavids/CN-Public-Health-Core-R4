@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="outpatient-registration-source" />
+  <url value="http://StructureDefinition.hl7fhir.cn/outpatient-registration-source" />
+  <name value="OutpatientRegistrationSource" />
+  <title value="门诊号源信息" />
+  <status value="draft" />
+  <description value="该资源描述门诊号源信息，包括号源、挂号都是用该资源。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="ical" />
+    <uri value="http://ietf.org/rfc/2445" />
+    <name value="iCalendar" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Appointment" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Appointment" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Appointment.identifier">
+      <path value="Appointment.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.identifier:thirdPartyidentifier">
+      <path value="Appointment.identifier" />
+      <sliceName value="thirdPartyidentifier" />
+      <max value="1" />
+    </element>
+    <element id="Appointment.identifier:sourceIdentifier">
+      <path value="Appointment.identifier" />
+      <sliceName value="sourceIdentifier" />
+      <max value="1" />
+    </element>
+    <element id="Appointment.identifier:otherIdentifier">
+      <path value="Appointment.identifier" />
+      <sliceName value="otherIdentifier" />
+    </element>
+    <element id="Appointment.cancelationReason">
+      <path value="Appointment.cancelationReason" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="cancelation-reason" />
+        </extension>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/appointment-cancellation-reason-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.serviceCategory">
+      <path value="Appointment.serviceCategory" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.serviceCategory:serviceCategory">
+      <path value="Appointment.serviceCategory" />
+      <sliceName value="serviceCategory" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="service-category" />
+        </extension>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/service-category-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.serviceCategory:otherCategory">
+      <path value="Appointment.serviceCategory" />
+      <sliceName value="otherCategory" />
+      <short value="其他号源分类" />
+      <definition value="描述该号源的其他类别" />
+    </element>
+    <element id="Appointment.serviceType">
+      <path value="Appointment.serviceType" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.serviceType:serviceType">
+      <path value="Appointment.serviceType" />
+      <sliceName value="serviceType" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="service-type" />
+        </extension>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/service-type-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.serviceType:otherType">
+      <path value="Appointment.serviceType" />
+      <sliceName value="otherType" />
+      <short value="其他服务项目分类" />
+      <definition value="门诊号源的其他服务项目分类" />
+    </element>
+    <element id="Appointment.specialty">
+      <path value="Appointment.specialty" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.specialty:specialty">
+      <path value="Appointment.specialty" />
+      <sliceName value="specialty" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="specialty" />
+        </extension>
+        <strength value="preferred" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/practice-setting-code-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.specialty:otherSpecialty">
+      <path value="Appointment.specialty" />
+      <sliceName value="otherSpecialty" />
+      <definition value="该门诊号源中执行的医疗服务者的其他专业要求" />
+    </element>
+    <element id="Appointment.appointmentType">
+      <path value="Appointment.appointmentType" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="appointment-type" />
+        </extension>
+        <strength value="preferred" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/appointment-type-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.reasonCode">
+      <path value="Appointment.reasonCode" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ApptReason" />
+        </extension>
+        <strength value="preferred" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/encounter-reason-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.minutesDuration">
+      <path value="Appointment.minutesDuration" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.slot">
+      <path value="Appointment.slot" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Slot" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/outpatient-slot" />
+      </type>
+    </element>
+    <element id="Appointment.basedOn">
+      <path value="Appointment.basedOn" />
+      <max value="0" />
+    </element>
+    <element id="Appointment.participant">
+      <path value="Appointment.participant" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Appointment.participant:consultingRoom">
+      <path value="Appointment.participant" />
+      <sliceName value="consultingRoom" />
+      <short value="诊室" />
+      <definition value="关联 该排班中的诊室资源，type 中固定为诊室" />
+      <max value="1" />
+    </element>
+    <element id="Appointment.participant:consultingRoom.type">
+      <path value="Appointment.participant.type" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ParticipantType" />
+        </extension>
+        <strength value="extensible" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/encounter-participant-type-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.participant:doctor">
+      <path value="Appointment.participant" />
+      <sliceName value="doctor" />
+      <short value="门诊医生" />
+      <definition value="关联 该排班中的门诊医生信息" />
+      <max value="1" />
+    </element>
+    <element id="Appointment.participant:doctor.type">
+      <path value="Appointment.participant.type" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ParticipantType" />
+        </extension>
+        <strength value="extensible" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/encounter-participant-type-vs" />
+      </binding>
+    </element>
+    <element id="Appointment.participant:otherParticipant">
+      <path value="Appointment.participant" />
+      <sliceName value="otherParticipant" />
+      <short value="其他参与者" />
+      <definition value="关联此班次中包含的号源将拥有此元素指定的其他医疗服务资源，如医生、设备、床位等。" />
+    </element>
+    <element id="Appointment.requestedPeriod">
+      <path value="Appointment.requestedPeriod" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

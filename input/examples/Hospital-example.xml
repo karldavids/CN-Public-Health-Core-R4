@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Organization xmlns="http://hl7.org/fhir">
+  <id value="Hospital-example"/>
+  <meta>
+    <profile value="http://StructureDefinition.hl7fhir.cn/Hospital"/>
+  </meta>
+  <!--0..1 医院编号-->
+  <identifier>
+    <!--0..1 医院编号 NamingSystem uri-->
+    <system value="https://www.cods.org.cn"/>
+    <!-- 0..1 医院编号 -->
+    <value value="ABC0000001"/>
+  </identifier>
+  <!-- 0..1 是否可用 -->
+  <active value="true"/>
+
+  <!-- 0..1 组织机构层级种类（固定为医院） -->
+  <type>
+    <coding>
+      <!--组织机构层级种类 CodeSystem地址-->
+      <system value="http://CodeSystem.hl7fhir.cn/hierarchy-kind"/>
+      <!-- 0..1 组织机构层级种类代码-->
+      <code value="A100"/>
+      <!-- 0..1 组织机构层级种类 -->
+      <display value="综合医院"/>
+    </coding>
+  </type>
+  <!-- 0..1 卫生机构(组织)类别 WS 218-2002， -->
+  <type>
+    <coding>
+      <!--卫生机构(组织)类别 CodeSystem地址-->
+      <system value="http://CodeSystem.hl7fhir.cn/health-institution-category"/>
+      <!-- 0..1 卫生机构(组织)类别代码-->
+      <code value="2"/>
+      <!-- 0..1 卫生机构(组织)类别 -->
+      <display value="医院"/>
+    </coding>
+  </type>
+  <!-- 0..1 组织机构类型 GB/T 20091-2006-->
+  <type>
+    <coding>
+      <!--组织机构类型 CodeSystem地址-->
+      <system value="http://CodeSystem.hl7fhir.cn/Classification-for-organizations"/>
+      <!-- 0..1 组织机构类型代码-->
+      <code value="5"/>
+      <!-- 0..1 组织机构类型 -->
+      <display value="事业单位"/>
+    </coding>
+  </type>
+  <!--0..1 地址-->
+  <address>
+    <!-- 0..1 地址的完整描述 -->
+    <text value="四川省成都市高新区XXXXXX路18号"/>
+  </address>
+  <!--  0..1 医院名称 -->
+  <name value="成都市XXXXX人民医院"/>
+  <!-- 0..* 医院别名 -->
+  <alias value="成都XX医院"/>
+  <!--  0..1 联系电话 -->
+  <telecom>
+    <!--  0..1 类型 phone | fax | email | pager | url | sms | other -->
+    <system value="phone"/>
+    <!-- 0..1 电话号码 -->
+    <value value="13309876352"/>
+  </telecom>
+  <!--  0..1 电子邮箱 -->
+  <telecom>
+    <!--  0..1 类型 phone | fax | email | pager | url | sms | other -->
+    <system value="email"/>
+    <!-- 0..1 电子邮箱 -->
+    <value value="cdyyy@qq.com"/>
+  </telecom>
+  <!--  0..1 官方网页 -->
+  <telecom>
+    <!--  0..1 类型 phone | fax | email | pager | url | sms | other -->
+    <system value="url"/>
+    <!-- 0..1 官方网页 -->
+    <value value="http://www.cdzxy.com/"/>
+  </telecom>
+  <!--0..1 图片 -->
+  <extension url="http://StructureDefinition.hl7fhir.cn/organization-picture">
+    <!--0..1 logo图片 -->
+    <extension url="logo">
+      <ValueAttachment>
+        <!-- 0..1 图片url -->
+        <url value="http://upload.cdzxy.com/2020/0703/thumb_309_232_20200703094539230.jpg"/>
+        <!-- 0..1 图片标题 -->
+        <title value="医院logo"/>
+      </ValueAttachment>
+    </extension>
+    <!--0..* 其他图片 -->
+    <extension url="images">
+      <ValueAttachment>
+        <!-- 0..1 图片url -->
+        <url value="http://upload.cdzxy.com/2020/0703/thumb_309_232_20200703094739309.jpg"/>
+        <!-- 0..1 图片标题 -->
+        <title value="医院实景图1"/>
+      </ValueAttachment>
+    </extension>
+    <extension url="images">
+      <ValueAttachment>
+        <!-- 0..1 图片url -->
+        <url value="http://upload.cdzxy.com/2017/0724/20170724063817937.jpg"/>
+        <!-- 0..1 图片标题 -->
+        <title value="医院实景图2"/>
+      </ValueAttachment>
+    </extension>
+  </extension>
+
+  <!--医院简介 -->
+  <extension url="http://StructureDefinition.hl7fhir.cn/BriefIntroduction">
+    <!--医院简介 -->
+    <valueString value="XXXXXXXX医院血液科针对【血小板减少】、【血小板增多】、【过敏性紫癜】、【贫血】等病提供专业治疗方案。"/>
+  </extension>
+</Organization>

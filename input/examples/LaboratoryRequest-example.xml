@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ServiceRequest xmlns="http://hl7.org/fhir">
+
+	<!--0..1 检验申请单ID-->
+	<id value="LaboratoryRequest-example"/>
+	<meta>
+		<profile value="http://StructureDefinition.hl7fhir.cn/laboratory-request"/>
+	</meta>
+
+	<!-- 0..* 申请单编号 -->
+	<identifier>
+		<!--0..1 申请单编号NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/laboratory-request-identity"/>
+		<!-- 0..1 申请单编号 -->
+		<value value="[string]"/>
+	</identifier>
+
+	<!-- 0..1 检验申请组标识符 -->
+	<requisition>
+		<!--0..1 检验申请组编号NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/laboratory-request-group"/>
+		<!-- 0..1 检验申请组编号 -->
+		<value value="[string]"/>
+	</requisition>
+
+	<!-- 1..1  申请单状态  -->
+	<status value="[code]">
+		<extension url="http://StructureDefinition.hl7fhir.cn/resource-status">
+			<valueCoding>
+				<!-- 0..1 申请单状态 CodeSystem url  地址(draft | active | on-hold | revoked | completed | entered-in-error | unknown )-->
+				<system value="http://hl7.org/fhir/request-status"/>
+				<!-- 0..1 申请单状态代码-->
+				<code value="active"/>
+				<!-- 0..1申请单状态说明 -->
+				<display value="正常"/>
+			</valueCoding>
+		</extension>
+	</status>
+
+
+	<!-- 1..1 申请意图   -->
+	<intent value="[code]">
+		<extension url="http://StructureDefinition.hl7fhir.cn/request-intent">
+			<valueCoding>
+				<!-- 0..1 申请意图 CodeSystem url  地址(proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option )-->
+				<system value="http://hl7.org/fhir/request-intent"/>
+				<!-- 0..1 申请意图代码-->
+				<code value="order"/>
+				<!-- 0..1 申请意图说明 -->
+				<display value="命令"/>
+			</valueCoding>
+		</extension>
+	</intent>
+
+	<!-- 0..* 检验分类 -->
+	<category>
+		<coding>
+			<!-- 0..1 检验分类 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/laboratoryrequest-category"/>
+			<!-- 0..1 检验分类代码-->
+			<code value="[code]"/>
+			<!-- 0..1 检验分类说明 -->
+			<display value="[string]"/>
+		</coding>
+	</category>
+	
+
+	<!-- 0..1 检验项目（包）代码 -->
+	<code>
+		<coding>
+			<!-- 0..1 检验项目（包）代码 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/laboratory-items"/>
+			<!-- 0..1 检验项目（包）代码-->
+			<code value="A001"/>
+			<!-- 0..1 检验项目（包）说明 -->
+			<display value="血常规"/>
+		</coding>
+	</code>
+	<!--  0..* 项目明细 -->
+	<orderDetail>
+		<coding>
+			<!-- 0..1 项目明细 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/laboratory-items-detail"/>
+			<!-- 0..1 项目明细代码-->
+			<code value="A00100001"/>
+			<!-- 0..1 项目明细说明 -->
+			<display value="红细胞"/>
+		</coding>
+	</orderDetail>
+
+	<!-- 1..1 患者 -->
+	<subject>
+		<!-- 0..1  Reference(Patient）关联患者信息 -->
+		<reference value="Patient/23422"/>
+	</subject>
+
+	<!-- 0..1 医疗事件 -->
+	<encounter>
+		<!-- 0..1  Reference(Encounter）关联医疗事件信息 -->
+		<reference value="Encounter/334322"/>
+	</encounter>
+
+	<!-- 0..1 申请单有效期间 -->
+	<occurrencePeriod>
+		<!--  0..1 申请单计划开始日期时间 -->
+		<start value="2019-02-20T13:00:00Z"/>
+		<!--  0..1 申请单计划结束日期时间 -->
+		<end value="2019-02-20T13:00:00Z"/>
+	</occurrencePeriod>
+
+	<!-- 0..1 检查申请日期-->
+	<authoredOn value="2019-02-20T13:00:00Z"/>
+
+	<!-- 0..1 申请请求机构 -->
+	<requester>
+		<!-- 0..1  Reference(Organization）关联科室信息 -->
+		<reference value="Organization/32232323"/>
+	</requester>
+
+	<!-- 0..* 执行申请的医生 -->
+	<performer>
+		<!-- 0..1  Reference(Practitioner）关联医护人员信息 -->
+		<reference value="Practitioner/21122112"/>
+	</performer>
+
+	<!-- 0..1 诊断 -->
+	<reasonCode>
+		<coding>
+			<!-- 0..1 诊断ICD-10 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/condition-code"/>
+			<!-- 0..1 诊断ICD-10代码-->
+			<code value="01"/>
+			<!-- 0..1 诊断ICD-10说明 -->
+			<display value="霍乱"/>
+		</coding>
+	</reasonCode>
+
+	<!-- 0..1 主诉 -->
+	<reasonCode>
+		<coding>
+			<!-- 0..1 卫生信息数据元目录 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/health-data-element-dictionary"/>
+			<!-- 0..1 卫生信息数据元目录代码-->
+			<code value="DE04.01.119.00"/>
+			<!-- 0..1 卫生信息数据元目录说明 -->
+			<display value="主诉"/>
+		</coding>
+		<!-- 0..1 主诉描述 -->
+		<text value="主诉描述。。。。。。。。。。"/>
+	</reasonCode>
+
+	<!-- 0..1 症状描述（现病史） -->
+	<reasonCode>
+		<coding>
+			<!-- 0..1 卫生信息数据元目录 CodeSystem url  地址-->
+			<system value="http://CodeSystem.hl7fhir.cn/health-data-element-dictionary"/>
+			<!-- 0..1 卫生信息数据元目录代码-->
+			<code value="DE04.01.117.00"/>
+			<!-- 0..1 卫生信息数据元目录说明 -->
+			<display value="症状描述"/>
+		</coding>
+		<!-- 0..1 症状描述（现病史） -->
+		<text value="症状描述。。。。。。。"/>
+	</reasonCode>
+	<!-- 0..* Reference(Specimen) 标本-->
+	<specimen>
+		<!-- 0..1  Reference(Specimen）关联标本信息 -->
+		<reference value="Specimen/23322323"/>
+	</specimen>
+	<!-- 0..* 申请单备注 -->
+	<note>
+		<!-- 1..1 备注详细信息 -->
+		<text value="[markdown]"/>
+	</note>
+</ServiceRequest>

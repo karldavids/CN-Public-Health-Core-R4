@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<Encounter xmlns="http://hl7.org/fhir">
+	<!--0.1 住院ID-->
+	<id value="EncounterHospitalized-example"/>
+
+	<meta>
+		<profile value="http://StructureDefinition.hl7fhir.cn/encounter-hospitalized"/>
+	</meta>
+	<!--0..* 住院号 -->
+	<identifier>
+		<!-- 0..1 住院号NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/hospitalized-identifier"/>
+		<!-- 0..1 住院号 -->
+		<value value="20192737378181"/>
+	</identifier>
+
+	<!-- 1..1 住院状态   +-->
+	<status>
+		<extension url="http://StructureDefinition.hl7fhir.cn/resource-status">
+			<valueCoding>
+				<!-- 0..1 住院状态 CodeSystem url -->
+				<system value="http://hl7.org/fhir/encounter-status"/>
+				<!-- 0..1 住院状态代码-->
+				<code value="arrived"/>
+				<!-- 0..1 住院状态说明 -->
+				<display value="arrived"/>
+			</valueCoding>
+		</extension>
+	</status>
+
+	<!-- 1..1 医疗活动类别（固定为住院） -->
+	<class>
+		<!--0..1 医疗活动类别  -->
+		<coding>
+			<!--0..1  医疗活动类别 CodeSsystem地址-->
+			<system value="http://CodeSsystem.hl7fhir.cn/encounter-code"/>
+			<!--0..1  医疗活动类别-->
+			<code value="02"/>
+			<!--0..1 医疗活动类别说明-->
+			<display value="住院"/>
+		</coding>
+	</class>
+
+	<!-- 0..1 患者  -->
+	<subject>
+		<!-- 0..1  Reference(Patient）关联患者信息 -->
+		<reference value="Patient/123"/>
+	</subject>
+
+
+
+	<!-- 0..* 提供服务的人员 -->
+	<participant>
+		<!-- 0..* 参与人类型 -->
+		<type>
+			<!--0..1 参与人类型  -->
+			<coding>
+				<!--0..1  参与人类型代码 CodeSsystem地址-->
+				<system value="http://CodeSsystem.hl7fhir.cn/encounter-participant-type"/>
+				<!--0..1  参与人类型代码-->
+				<code value="01"/>
+				<!--0..1 参与人类型代码说明-->
+				<display value="主管医生"/>
+			</coding>
+		</type>
+		<!-- 0..1 医生 -->
+		<individual>
+			<!-- 0..1  Reference(Practitioner）关联医护人员信息-->
+			<reference value="Practitioner/1234"/>
+		</individual>
+	</participant>
+
+
+	<!-- 0..1 在该医疗活动的治疗的时间周期 -->
+	<period>
+		<!--  0..1 入院日期 -->
+		<start value="2019-02-20T13:00:00Z"/>
+	</period>
+
+	<!-- 0..* 本次入院关联的转诊申请 -->、
+	<appointment>
+		<!-- 0..1  Reference(Appointment）转诊申请-->
+		<reference value="Appointment/12354423"/>
+	</appointment>
+
+	<!-- 0..1 入出院信息及住院概要信息 -->
+	<hospitalization>
+
+		<!-- 0..1 转出的机构 -->
+		<origin>
+			<!-- 0..1  Reference(Organization）关联组织机构信息（医院） -->
+			<reference value="Organization/123456"/>
+		</origin>
+
+
+		<!-- 0..1 入院途径 -->
+		<admitSource>
+			<!--0..1 入院途径  -->
+			<coding>
+				<!--0..1  入院途径 CodeSsystem地址-->
+				<system value="http://CodeSystem.hl7fhir.cn/encounter-hospital-way"/>
+				<!--0..1  入院途径-->
+				<code value="04"/>
+				<!--0..1 入院途径说明-->
+				<display value="转诊"/>
+			</coding>
+		</admitSource>
+	</hospitalization>
+
+	<!-- 0..* 病床信息（转诊患者根据情况，未安床该节点可不填写） -->
+	<location>
+		<!-- 1..1 Reference(Location) 预安排的床位 -->
+		<location>
+			<!-- 0..1  Reference(Location）关联位置信息（病床） -->
+			<reference value="Location/1234"/>
+		</location>
+		<!-- 0..1 床位状态固定为planned，表示计划安排  planned | active | reserved | completed -->
+		<status value="planned"/>
+	</location>
+
+
+	<!-- 0..1  入院科室信息 -->
+	<serviceProvider>
+		<!-- 0..1  Reference(Organization）关联组织机构信息（科室） -->
+		<reference value="Organization/1234"/>
+	</serviceProvider>
+</Encounter>
+
+
+
+

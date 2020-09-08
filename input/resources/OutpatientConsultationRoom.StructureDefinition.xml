@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="outpatient-consultation-room" />
+  <url value="http://StructureDefinition.hl7fhir.cn/outpatient-consultation-room" />
+  <name value="OutpatientConsultationRoom" />
+  <title value="门诊诊室" />
+  <status value="draft" />
+  <description value="描述门诊诊室的基本信息。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Location" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Location" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Location">
+      <path value="Location" />
+      <short value="门诊诊室信息" />
+      <definition value="描述门诊诊室的基本信息" />
+    </element>
+    <element id="Location.identifier">
+      <path value="Location.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Location.identifier:consultingRoomCode">
+      <path value="Location.identifier" />
+      <sliceName value="consultingRoomCode" />
+      <short value="门诊诊室编码" />
+      <definition value="Unique code or number identifying the location to its users.&#xD;&#xA;门诊诊室编码" />
+      <max value="1" />
+    </element>
+    <element id="Location.identifier:otherIdentifier">
+      <path value="Location.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其他业务编码" />
+      <definition value="Unique code or number identifying the location to its users.&#xD;&#xA;位置的其他业务编码" />
+    </element>
+    <element id="Location.identifier:pinYinCode">
+      <path value="Location.identifier" />
+      <sliceName value="pinYinCode" />
+      <short value="拼音码" />
+      <definition value="门诊诊室名称的拼音的首字母编码" />
+      <max value="1" />
+    </element>
+    <element id="Location.name">
+      <path value="Location.name" />
+      <short value="门诊诊室名称" />
+    </element>
+    <element id="Location.alias">
+      <path value="Location.alias" />
+      <short value="门诊诊室别名" />
+      <definition value="门诊诊室的别名列表" />
+    </element>
+    <element id="Location.description">
+      <path value="Location.description" />
+      <short value="门诊诊室详细信息" />
+      <definition value="有关门诊诊室的其他详细信息，可以作为进一步的信息显示" />
+    </element>
+    <element id="Location.type">
+      <path value="Location.type" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Location.type:LocationRoleType">
+      <path value="Location.type" />
+      <sliceName value="LocationRoleType" />
+      <definition value="指示在该位置类型。 此处固定为 门诊诊室" />
+      <max value="1" />
+    </element>
+    <element id="Location.type:otherType">
+      <path value="Location.type" />
+      <sliceName value="otherType" />
+      <short value="其他分类" />
+      <definition value="按其它分类维度对位置的分类" />
+    </element>
+    <element id="Location.address">
+      <path value="Location.address" />
+      <short value="门诊诊室地址" />
+      <definition value="门诊诊室的详细地址" />
+    </element>
+    <element id="Location.physicalType">
+      <path value="Location.physicalType" />
+      <definition value="位置的物理形式，例如建筑物、房间、车辆、道路。该处固定为  房间&#xD;&#xA;该处描述门诊诊室，固定为  房间" />
+    </element>
+    <element id="Location.managingOrganization">
+      <path value="Location.managingOrganization" />
+      <short value="管理该诊室的科室/部门" />
+      <definition value="管理该诊室的科室/部门" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://hl7.org/fhir/StructureDefinition/Organization" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/Department" />
+      </type>
+    </element>
+    <element id="Location.hoursOfOperation">
+      <path value="Location.hoursOfOperation" />
+      <definition value="该诊室的营业时间" />
+    </element>
+    <element id="Location.hoursOfOperation.daysOfWeek">
+      <path value="Location.hoursOfOperation.daysOfWeek" />
+      <definition value="描述一周之内的哪些天可使用该门诊诊室&#xD;&#xA;mon | tue | wed | thu | fri | sat | sun" />
+    </element>
+    <element id="Location.hoursOfOperation.openingTime">
+      <path value="Location.hoursOfOperation.openingTime" />
+      <definition value="不是全天开放的情况下，门诊诊室的开业时间" />
+    </element>
+    <element id="Location.hoursOfOperation.closingTime">
+      <path value="Location.hoursOfOperation.closingTime" />
+      <definition value="不是全天开放的情况下，门诊诊室的关闭时间" />
+    </element>
+    <element id="Location.endpoint">
+      <path value="Location.endpoint" />
+      <requirements value="组织可能在不同的位置拥有不同的系统，这些系统提供各种服务，并且需要能够定义技术连接细节，以便如何连接到它们，以及用于什么目的。" />
+    </element>
+  </differential>
+</StructureDefinition>

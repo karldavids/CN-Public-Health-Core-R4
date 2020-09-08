@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Slot xmlns="http://hl7.org/fhir">
+	<id value="OutpatientSlot-example"/>
+	<meta>
+		<profile value="http://StructureDefinition.hl7fhir.cn/outpatient-slot"/>
+	</meta>
+
+	<!-- 0..1 服务类别 -->
+	<serviceCategory>
+		<coding>
+			<!-- 0..1 服务类别 CodeSystem url  -->
+			<system value="http://CodeSystem.hl7fhir.cn/service-category"/>
+			<!-- 0..1 服务类别代码-->
+			<code value="01"/>
+			<!-- 0..1 服务类别名称 -->
+			<display value="医疗服务"/>
+		</coding>
+	</serviceCategory>
+
+	<!-- 0..1 服务项目分类 -->
+	<serviceType>
+		<coding>
+			<!-- 0..1 服务项目分类 CodeSystem url  -->
+			<system value="http://CodeSystem.hl7fhir.cn/service-type"/>
+			<!-- 0..1 服务项目分类代码-->
+			<code value="01"/>
+			<!-- 0..1 服务项目分类 -->
+			<display value="门诊预约挂号"/>
+		</coding>
+	</serviceType>
+
+	<!-- 0..1 患者预约的类型（非服务类型） -->
+	<appointmentType>
+		<coding>
+			<!-- 0..1 患者预约的类型 CodeSystem url  -->
+			<system value="http://CodeSystem.hl7fhir.cn/appointment-type"/>
+			<!-- 0..1 患者预约的类型-->
+			<code value="01"/>
+			<!-- 0..1 患者预约的类型 -->
+			<display value="网上预约"/>
+		</coding>
+	</appointmentType>
+
+	<!--0..1 FHIR扩展，号源数 -->
+	<extension url="http://SichuanMedicalCommunity.FHIR.PRESS/StructureDefinition/source-number" >
+		<valueRatio>
+			<!-- 0..1 已经挂号数字 -->
+			<numerator>
+				<!-- 0..1 数量 -->
+				<value value="30"/>
+				<!-- 0..1 单位 -->
+				<unit value="个"/>
+			</numerator>
+			<!-- 0..1 总号源数字 -->
+			<denominator>
+				<!-- 0..1 数量 -->
+				<value value="30"/>
+				<!-- 0..1 单位 -->
+				<unit value="个"/>
+			</denominator>
+		</valueRatio>
+	</extension>
+
+
+	<!-- 1..1 排班信息 -->
+	<schedule>
+		<!-- 0..1 Reference(Schedule) 关联排班信息 -->
+		<reference value="Schedule/32343"/>
+	</schedule>
+
+	<!-- 1..1 状态  busy | free | busy-unavailable | busy-tentative | entered-in-error  -->
+	<status value="free"/>
+
+	<!-- 1..1 开始时段-->
+	<start value="2019-02-20T13:00:00Z"/>
+	<!-- 1..1 结束时段 -->
+	<end value="2019-02-20T15:00:00Z"/>
+</Slot>

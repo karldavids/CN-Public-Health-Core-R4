@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Location xmlns="http://hl7.org/fhir">
+	<!--0..1 病床ID-->
+	<id value="HospitalBed-example"/>
+	<meta>
+		<profile value="http://StructureDefinition.hl7fhir.cn/hospital-bed"/>
+	</meta>
+
+	<!--0..* 病床号 -->
+	<identifier>
+		<!-- 0..1 病床号NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/hospital-bed-identifier"/>
+		<!-- 0..1 病床号 -->
+		<value value="X00001"/>
+	</identifier>
+
+	<!-- 0..1 病床名称 -->
+	<name value="骨1床"/>
+	<!-- 0..* 病床名称 -->
+	<alias value="骨科1病床"/>
+	<!-- 0..1 关于床位的其他详细信息，可以作为进一步的信息显示 -->
+	<description value="该病床为骨科1号病床"/>
+
+	<!-- 0..1 位置功能类型 -->
+	<type>
+		<!--0..1 位置功能类别  （固定为病床）-->
+		<coding>
+			<!--0..1  位置功能类别 CodeSsystem地址-->
+			<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
+			<!--0..1  位置功能类别-->
+			<code value="CHR"/>
+			<!--0..1 位置功能类别说明-->
+			<display value="Chronic Care Facility"/>
+		</coding>
+	</type>
+
+	<!-- 0..1 病床物理形式 -->
+	<physicalType>
+		<coding>
+			<!--病床物理形式 CodeSystem地址-->
+			<system value="http://terminology.hl7.org/CodeSystem/location-physical-type"/>
+			<!-- 0..1 病床物理形式代码-->
+			<code value="bd"/>
+			<!-- 0..1 病床物理形式 -->
+			<display value="床"/>
+		</coding>
+	</physicalType>
+
+	<!-- 0..1 Reference(Organization) 科室信息 -->
+	<managingOrganization>
+		<!-- 0..1  Reference(Organization）关联组织机构信息（科室） -->
+		<reference value="Organization/123456"/>
+	</managingOrganization>
+</Location>
+
+

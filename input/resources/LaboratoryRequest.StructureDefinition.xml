@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="laboratory-request" />
+  <url value="http://StructureDefinition.hl7fhir.cn/laboratory-request" />
+  <name value="LaboratoryRequest" />
+  <title value="实验室检验申请" />
+  <status value="draft" />
+  <description value="描述医院内 临床医生对患者提交实验室检验申请的资源。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="quick" />
+    <uri value="http://siframework.org/cqf" />
+    <name value="Quality Improvement and Clinical Knowledge (QUICK)" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="ServiceRequest" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/ServiceRequest" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="ServiceRequest">
+      <path value="ServiceRequest" />
+      <short value="检验申请" />
+      <definition value="描述医院内 临床医生对患者提交实验室检验申请的资源。" />
+    </element>
+    <element id="ServiceRequest.identifier">
+      <path value="ServiceRequest.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="ServiceRequest.identifier:laboratoryIdentifier">
+      <path value="ServiceRequest.identifier" />
+      <sliceName value="laboratoryIdentifier" />
+      <short value="检验申请单编号" />
+      <definition value="检验申请单标识符，唯一且明确检验申请。常用作业务标识符，唯一标识ID。可作为交叉索引使用。" />
+      <max value="1" />
+    </element>
+    <element id="ServiceRequest.identifier:otherIdentifier">
+      <path value="ServiceRequest.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其他编码" />
+      <definition value="检验申请单其他业务编码" />
+    </element>
+    <element id="ServiceRequest.instantiatesCanonical">
+      <path value="ServiceRequest.instantiatesCanonical" />
+      <short value="实例化FHIR协议或定义" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.instantiatesUri">
+      <path value="ServiceRequest.instantiatesUri" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.basedOn">
+      <path value="ServiceRequest.basedOn" />
+      <short value="基于主体" />
+      <definition value="按此要求完成的计划/提议/订单。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.replaces">
+      <path value="ServiceRequest.replaces" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.requisition">
+      <path value="ServiceRequest.requisition" />
+      <short value="服务组标识符" />
+      <definition value="该标识符可以描述 一个服务组标识。代表组合或组标识符。" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="ServiceRequest.status">
+      <path value="ServiceRequest.status" />
+      <short value="检验申请单状态" />
+      <definition value="检验申请单状态&#xD;&#xA;draft | active | on-hold | revoked | completed | entered-in-error | unknown" />
+    </element>
+    <element id="ServiceRequest.status.extension">
+      <path value="ServiceRequest.status.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.status.extension:status">
+      <path value="ServiceRequest.status.extension" />
+      <sliceName value="status" />
+      <short value="检验申请单状态" />
+      <definition value="描述检验申请单的各种状态" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/resource-status" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/request-status-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.intent">
+      <path value="ServiceRequest.intent" />
+      <short value="申请意图" />
+      <definition value="描述该申请的意图&#xD;&#xA;proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option" />
+    </element>
+    <element id="ServiceRequest.intent.extension">
+      <path value="ServiceRequest.intent.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.intent.extension:intent">
+      <path value="ServiceRequest.intent.extension" />
+      <sliceName value="intent" />
+      <short value="申请意图" />
+      <definition value="描述该申请的意图&#xD;&#xA;proposal | plan | directive | order | original-order | reflex-order | filler-order | instance-order | option" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/request-intent" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/request-intent-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.category">
+      <path value="ServiceRequest.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="检验申请分类" />
+      <definition value="为搜索、排序和显示目的而对服务进行分类的代码。如：生化检验、凝血检验" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.category:CategoryCode">
+      <path value="ServiceRequest.category" />
+      <sliceName value="CategoryCode" />
+      <short value="检验申请的一级分类" />
+      <definition value="为搜索、排序和显示目的而对服务进行分类的代码。如：生化检验、凝血检验" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestCategory" />
+        </extension>
+        <strength value="example" />
+        <description value="实验室检验分类代码表" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/laboratoryrequest-category-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.category:otherCategory">
+      <path value="ServiceRequest.category" />
+      <sliceName value="otherCategory" />
+      <short value="检验其他分类" />
+    </element>
+    <element id="ServiceRequest.priority">
+      <path value="ServiceRequest.priority" />
+      <short value="优先级" />
+      <definition value="描述处理 该请求的速度 routine | urgent | asap | stat" />
+    </element>
+    <element id="ServiceRequest.priority.extension">
+      <path value="ServiceRequest.priority.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="ServiceRequest.priority.extension:priority">
+      <path value="ServiceRequest.priority.extension" />
+      <sliceName value="priority" />
+      <short value="优先级" />
+      <definition value="描述处理 该请求的速度 routine | urgent | asap | stat" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/request-priority" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="优先级" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/request-priority-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.doNotPerform">
+      <path value="ServiceRequest.doNotPerform" />
+      <short value="是否取消" />
+      <definition value="如果记录表示不应该执行服务/过程，则将此设置为true。" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.code">
+      <path value="ServiceRequest.code" />
+      <short value="检验代码" />
+      <definition value="标识检验服务的代码" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestCode" />
+        </extension>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/procedure-code-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.orderDetail">
+      <path value="ServiceRequest.orderDetail" />
+      <short value="检验明细" />
+      <definition value="关于 检验服务的细节和说明。比如检验的明细项目。&#xD;&#xA;关于服务的其他细节和说明。例如，导尿管的订单可能会有外置或留置导尿管的订单细节，或者绷带的订单可能需要额外的说明说明如何使用绷带。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="OrderDetail" />
+        </extension>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/laboratoryrequest-orderdetail-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.quantity[x]">
+      <path value="ServiceRequest.quantity[x]" />
+      <short value="服务数量" />
+      <definition value="被请求的服务可以是一个数量" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.subject">
+      <path value="ServiceRequest.subject" />
+      <short value="订购服务的个人或实体" />
+      <definition value="对谁执行服务。这通常是指病人，但也可以在动物、一组人或动物、透析仪等设备，甚至是位置(通常用于环境扫描)上提出请求" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.encounter">
+      <path value="ServiceRequest.encounter" />
+      <short value="医疗事件" />
+      <definition value="提供关于发出此请求的医疗事件" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.occurrence[x]">
+      <path value="ServiceRequest.occurrence[x]" />
+      <short value="执行日期" />
+      <definition value="该申请执行的时间或者时间段或者频率。" />
+    </element>
+    <element id="ServiceRequest.asNeeded[x]">
+      <path value="ServiceRequest.asNeeded[x]" />
+      <short value="服务条件" />
+      <definition value="如果 选择 CodeableConcept类型，则它指示执行该服务的先决条件。例如“疼痛”、“突然发作”等等。" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.authoredOn">
+      <path value="ServiceRequest.authoredOn" />
+      <short value="实验室检验申请日期" />
+      <definition value="该实验室检验申请的创建日期" />
+    </element>
+    <element id="ServiceRequest.requester">
+      <path value="ServiceRequest.requester" />
+      <short value="下达申请者" />
+      <definition value="发起请求并负责激活请求的个人。通常指下达申请的医生" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.performerType">
+      <path value="ServiceRequest.performerType" />
+      <short value="执行者类型" />
+      <definition value="执行请求的服务人员的类型。" />
+      <max value="0" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.performer">
+      <path value="ServiceRequest.performer" />
+      <short value="执行者" />
+      <definition value="执行所请求的服务所需的执行者。例如，外科医生、皮肤病理学家、内窥镜医生等等。" />
+      <max value="0" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.locationCode">
+      <path value="ServiceRequest.locationCode" />
+      <short value="请求的位置编码" />
+      <definition value="程序应该以编码或自由文本形式实际发生的首选位置。例如在家或护理日托中心。" />
+      <max value="0" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.locationReference">
+      <path value="ServiceRequest.locationReference" />
+      <short value="请求的位置" />
+      <definition value="对过程实际应该发生的首选位置的引用。例如CT3检查室" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.reasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="服务理由代码" />
+      <definition value="以编码或文本形式描述请求此服务的解释或理由。这通常是为了计费。&quot;" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="ServiceRequest.reasonCode:DiagnoseCode">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="DiagnoseCode" />
+      <short value="诊断信息" />
+      <definition value="该患者的诊断编码信息 ICD-10" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestReason" />
+        </extension>
+        <strength value="example" />
+        <description value="诊断疾病或诊断的鉴别。" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/condition-code-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.reasonCode:ChiefComplaint">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="ChiefComplaint" />
+      <short value="主诉信息" />
+      <definition value="描述该患者的主诉信息" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestReason" />
+        </extension>
+        <strength value="example" />
+        <description value="卫生信息数据元目录" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/health-data-element-dictionary-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.reasonCode:ChiefComplaint.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <fixedCoding>
+        <code value="DE04.01.119.00" />
+      </fixedCoding>
+    </element>
+    <element id="ServiceRequest.reasonCode:ChiefComplaint.coding.display">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="ServiceRequest.reasonCode.coding.display" />
+      <fixedString value="主诉" />
+    </element>
+    <element id="ServiceRequest.reasonCode:PreviousHistory">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="PreviousHistory" />
+      <short value="症状（既往史）" />
+      <definition value="描述患者的症状（既往史）信息。" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="ServiceRequestReason" />
+        </extension>
+        <strength value="example" />
+        <description value="卫生信息数据元目录" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/health-data-element-dictionary-vs" />
+      </binding>
+    </element>
+    <element id="ServiceRequest.reasonCode:PreviousHistory.coding">
+      <path value="ServiceRequest.reasonCode.coding" />
+      <fixedCoding>
+        <code value="DE04.01.117.00" />
+      </fixedCoding>
+    </element>
+    <element id="ServiceRequest.reasonCode:otherReasonCode">
+      <path value="ServiceRequest.reasonCode" />
+      <sliceName value="otherReasonCode" />
+      <short value="其他理由代码" />
+      <definition value="以编码或文本形式描述请求此服务的解释或理由" />
+    </element>
+    <element id="ServiceRequest.reasonReference">
+      <path value="ServiceRequest.reasonReference" />
+      <short value="服务理由" />
+      <definition value="以资源链接的形式描述请求此服务的解释或理由。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.insurance">
+      <path value="ServiceRequest.insurance" />
+      <short value="相关保险" />
+      <definition value="交付所请求的服务可能需要的保险计划、覆盖范围扩展、预先授权和/或预先决定。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.supportingInfo">
+      <path value="ServiceRequest.supportingInfo" />
+      <short value="更多临床信息" />
+      <definition value="关于病人或标本的其他临床信息，可能影响服务。这些信息包括诊断、临床结果和其他观察结果。在实验室订货中，这些通常被称为“订单输入问题(AOEs)”。这包括生产者明确要求的观察(补充)，以提供完成订单所需的上下文或支持信息。例如，报告用于血气测量的吸入氧气量。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.specimen">
+      <path value="ServiceRequest.specimen" />
+      <short value="标本" />
+      <definition value="实验室程序将使用的一个或多个标本" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="ServiceRequest.bodySite">
+      <path value="ServiceRequest.bodySite" />
+      <max value="0" />
+    </element>
+    <element id="ServiceRequest.note">
+      <path value="ServiceRequest.note" />
+      <short value="备注" />
+      <definition value="关于服务请求的任何其他注释和评论。例如，内部账单注释。" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Annotation" />
+      </type>
+    </element>
+    <element id="ServiceRequest.patientInstruction">
+      <path value="ServiceRequest.patientInstruction" />
+      <short value="患者引导" />
+      <definition value="用病人或消费者能理解的术语编写的说明书。" />
+    </element>
+    <element id="ServiceRequest.relevantHistory">
+      <path value="ServiceRequest.relevantHistory" />
+      <short value="请求来源" />
+      <definition value="请求历史记录中的关键事件。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
