@@ -32,7 +32,7 @@
 	<status value="active"/>
 
 	<!-- 0..1 最后更新时间 -->
-	<date value="[dateTime]"/>
+	<date value="2019-11-12T13:00:00Z"/>
 	<!-- 0..1 发布者 -->
 	<publisher value="HL7FHIR.CN" />
 	<contact>
@@ -62,9 +62,9 @@
 	<!-- 0..1 使用和/或发布限制（版权） -->
 	<copyright value="[markdown]"/>
 	<!-- 0..1 计划定义何时被发布者批准 -->
-	<approvalDate value="2019"/>
+	<approvalDate value="2019-10-10"/>
 	<!-- 0..1 上次审核计划定义的时间 -->
-	<lastReviewDate value="2019"/>
+	<lastReviewDate value="2019-10-15"/>
 	<!-- 0..1 计划定义有效期 -->
 	<effectivePeriod>
 		<!-- 0..1 开始时间 -->
