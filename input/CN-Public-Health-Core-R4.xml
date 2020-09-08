@@ -36,18 +36,6 @@
 	<license value="AGPL-3.0-or-later" />
 	<!-- 实施指南里的内容是基于FHIR R4版本的 -->
 	<fhirVersion value="4.0.1"/>
-	<!-- 0..* Another Implementation guide this depends on -->
-	<dependsOn>	
-		<!-- 1..1 canonical(ImplementationGuide) Identity of the IG that this depends on -->
-		<uri>
-			<reference value="http://press.hl7fhir.cn/ImplementationGuide/CN-Core-R4"/>		
-		</uri>
-		<packageId value="hl7fhir.cn.core.r4"/>
-		<!-- 0..1 NPM Package name for IG this depends on -->
-		<version value="0.2.0"/>
-		<!-- 0..1 Version of the IG -->
-	</dependsOn>
-	
 	<definition>
 		<!--0..* 生成IG需求信息。其中grouping节点可由IGPublisher自动定义，也可手动定义个性化需求。 -->
 		<resource>
