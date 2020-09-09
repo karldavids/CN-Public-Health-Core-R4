@@ -25,7 +25,7 @@
 - [PractitionerRole](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-PractitionerRole.html)：医护人员工作信息资源，医务人员提供医疗服务时的岗位相关信息，包括所属组织、科室、角色/岗位等。
 
 关系图如下：
-![业务类图](../images-source/Class.png)
+![业务类图](..\images-source/Class.png)
 
 ### 工作流资源
 - [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动，描述期在流程中的作用。
@@ -33,7 +33,7 @@
 - [Task](http://hl7.org/fhir/r4/task.html)：任务资源，作为[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)的实例，每次开启流程后，每一个步骤都对应一个[Task](http://hl7.org/fhir/r4/task.html)资源，作为流程步骤的附加产物，并且关联该任务执行中 产出的业务资源。
 
 关系图如下：
-![工作流关系图](../images-source/PlanDefinition-ActivityDefinition-Task-Relationship.png)
+![工作流关系图](..\images-source/PlanDefinition-ActivityDefinition-Task-Relationship.png)
 
 ## 对接方式
 
@@ -44,7 +44,7 @@
 ### 通过双转平台对接
 
 
-![流程图](../images-source/sequence-platform.png)
+![流程图](..\images-source/sequence-platform.png)
 
 转诊路程：
 
@@ -56,7 +56,7 @@
 
 ### 通过双转平台操作
 
-![流程图](../images-source/sequence.png)
+![流程图](..\images-source/sequence.png)
 
 转诊流程：
 
@@ -73,7 +73,7 @@
 本场景中，使用[Bundle](http://hl7.org/fhir/r4/bundle.html) 资源作为 消息传输的载体，组装流程和业务数据，通过通信协议进行交互，数据传输结构如下：
 
 # 数据传输结构
-![数据结构](../images-source/bundle.png)
+![数据结构](..\images-source/bundle.png)
 
 
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
