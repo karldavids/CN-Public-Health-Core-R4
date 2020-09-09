@@ -196,59 +196,6 @@
 			<name value="参与者类型编码"/>
 		</resource>
 
-
-		<resource>
-			<reference>
-				<!-- 医疗健康服务的人员角色代码值域集 -->
-				<reference value="ValueSet/practitioner-role-vs"/>
-			</reference>
-			<name value="医疗健康服务的人员角色代码"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 预约的整体状态值域集 -->
-				<reference value="ValueSet/appointment-status-vs"/>
-			</reference>
-			<name value="预约的整体状态"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 预约服务分类值域集 -->
-				<reference value="ValueSet/service-category-vs"/>
-			</reference>
-			<name value="预约服务分类"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 服务项目分类值域集 -->
-				<reference value="ValueSet/service-type-vs"/>
-			</reference>
-			<name value="服务项目分类"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 专业要求值域集 -->
-				<reference value="ValueSet/practice-setting-code-vs"/>
-			</reference>
-			<name value=" 专业要求"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 预约类型值域集 -->
-				<reference value="ValueSet/appointment-type-vs"/>
-			</reference>
-			<name value=" 预约类型"/>
-		</resource>
-
-		
-		
-		
-
-
-		
-		
 		<resource>
 			<reference>
 				<!-- 应答预约状态编码值域集 -->
