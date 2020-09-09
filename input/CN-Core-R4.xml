@@ -64,26 +64,7 @@
 			<description value="预约参与状态，描述预约参与人的应约状态，包括同意、拒绝、未知、未响应等"/>
 		</resource>
 		
-		
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Organization） -->
-				<reference value="StructureDefinition/Organization"/>
-			</reference>
-			<description value="正式或非正式认可的群体或组织。包括医疗集团、医院、院区、科室、公司、机构、公司、部门、社区团体、医疗实践团体、医保、商保等。"/>
-		</resource>
 
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Hospital） -->
-				<reference value="StructureDefinition/Hospital"/>
-			</reference>
-			<description value="描述医院基本信息"/>
-		</resource>
-
-
-		
 		<resource>
 			<reference>
 				<!-- 本地资源定义（Address） -->
@@ -125,13 +106,7 @@
 			<description value="引用应该是对实际FHIR资源的引用，并且应该是可解析的(允许访问控制、临时不可用等)。解析可以通过从URL检索来实现，也可以在适用的情况下通过资源类型来实现，将绝对引用作为标准URL处理并在本地注册表/存储库中查找它。"/>
 		</resource>
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（OrganizationPicture） -->
-				<reference value="StructureDefinition/organization-picture"/>
-			</reference>
-			<description value="图片信息，主要描述 组织机构的相关图像信息，包括 logo和图片信息"/>
-		</resource>
+		
 
 		<resource>
 			<reference>
@@ -159,14 +134,7 @@
 		</resource>
 
 		
-		<resource>
-			<reference>
-				<!-- 本地资源定义（BriefIntroduction） -->
-				<reference value="StructureDefinition/BriefIntroduction"/>
-			</reference>
-			<description value="简要介绍，包括科室、医院、医护人员介绍"/>
-		</resource>
-
+		
 
 		
 
@@ -293,20 +261,6 @@
 			<description value="演示如何定义和引用住院双转的流程定义的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
 		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Organization/Hospital-example"/>
-			</reference>
-			<name value="医院示例"/>
-			<description value="演示如何定义和引用医院的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Hospital"/>
-		</resource>
-
-		
-
 
 		<resource>
 			<reference>
