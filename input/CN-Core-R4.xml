@@ -40,7 +40,29 @@
 		<!--0..* 生成IG需求信息。其中grouping节点可由IGPublisher自动定义，也可手动定义个性化需求。 -->
 
 		
+		<resource>
+			<reference>
+				<!-- 本地资源定义（HospitalReferral） -->
+				<reference value="StructureDefinition/hospital-referral"/>
+			</reference>
+			<description value="该资源描述住院转诊的的申请。包括上转、下转都使用该资源。"/>
+		</resource>
 
+		<resource>
+			<reference>
+				<!-- 本地资源定义（HospitalReferralResponse） -->
+				<reference value="StructureDefinition/hospital-referral-response"/>
+			</reference>
+			<description value="转诊申请应答"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（participation-status） -->
+				<reference value="StructureDefinition/participation-status"/>
+			</reference>
+			<description value="预约参与状态，描述预约参与人的应约状态，包括同意、拒绝、未知、未响应等"/>
+		</resource>
 		
 		
 		<resource>
@@ -552,6 +574,23 @@
 			</reference>
 			<name value="联系人关系"/>
 		</resource>
+		
+		<resource>
+			<reference>
+				<!-- 应答预约状态编码值域集 -->
+				<reference value="ValueSet/participationstatus-vs"/>
+			</reference>
+			<name value="应答预约状态编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 活动事件编码值域集 -->
+				<reference value="ValueSet/activity-code-vs"/>
+			</reference>
+			<name value="活动事件编码"/>
+		</resource>
+
 
 
 
