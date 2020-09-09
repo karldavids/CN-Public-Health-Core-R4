@@ -275,8 +275,8 @@
 			</page>
 			
 			<page>
-				<nameUrl value="patient-reg.html"/>
-				<title value="患者建档"/>
+				<nameUrl value="hospital-referral.html"/>
+				<title value="双向转诊-住院"/>
 				<generation value="markdown"/>
 			</page>
 	  
