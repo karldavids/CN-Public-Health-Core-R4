@@ -4,6 +4,7 @@
  <url value="http://ValueSet.hl7fhir.cn/encounter-participant-type-vs"/>
  <name value="encounter-participant-type-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
  <title value="参与者类型编码"/><!-- 0..1 Name for this value set (human friendly) -->
+    <description value="参与者类型，描述在医疗事件中，参与该医疗事件的类型编码，如 医生、护士、设备、诊室、救护车"/>
  <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
  <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
   <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->

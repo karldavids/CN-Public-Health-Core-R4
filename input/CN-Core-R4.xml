@@ -8,8 +8,8 @@
 	<url value="http://press.hl7fhir.cn/ImplementationGuide/CN-Core-R4"/>
 	<!-- 此实施指南的版本。除非指定了 "propagate-version" 扩展元素，否则所有引用资源都将继承此版本号 -->
 	<version value="0.2.0"/>
-	<name value="CN Core Implementation Guide"/>
-	<title value="中国核心实施指南"/>
+	<name value="Public Health CN Core Implementation Guide"/>
+	<title value="公卫实施指南"/>
 	<status value="draft"/>
 	<experimental value="true"/>
 	<publisher value="HL7FHIR.CN" />
@@ -23,7 +23,7 @@
 			<value value="contact@hl7fhir.cn"/>
 		</telecom>
 	</contact>
-	<description value="基于FHIR R4基础规范的中国核心规范实施指南。集成了GB国标、WS行标，且根据中国卫生行业特点对资源进行了资源修剪、扩展注册。"/>
+	<description value="基于FHIR R4基础规范的公共卫生实施指南。集成了GB国标、WS行标，且根据中国卫生行业特点和公共卫生的业务场景对资源进行了资源修剪、扩展注册。"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
@@ -53,7 +53,7 @@
 				<!-- 本地资源定义（HospitalReferralResponse） -->
 				<reference value="StructureDefinition/hospital-referral-response"/>
 			</reference>
-			<description value="转诊申请应答"/>
+			<description value="该资源描述在提交转诊申请后，由各个参与方 给出是否同意的转诊应答。包括 医生、患者。"/>
 		</resource>
 
 		<resource>
@@ -184,7 +184,7 @@
 				<reference value="PlanDefinition/PlanDefinition-hospital-referral"/>
 			</reference>
 			<name value="住院双转的流程定义示例"/>
-			<description value="演示如何定义和引用住院双转的流程定义的简单示例"/>
+			<description value="演示如何定义和引用住院双转的流程定义PlanDefinition的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
 		</resource>
 

@@ -5,6 +5,7 @@
  <name value="participationstatus-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
  <title value="应答预约状态编码"/><!-- 0..1 Name for this value set (human friendly) -->
  <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
+    <description value="被预约的参与者对于本次预约的应答，在这里描述对转诊的申请的明确回复，同意、不同意。"/>
  <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
   <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->
    <system value="http://hl7.org/fhir/participationstatus"/><!-- ?? 0..1 The system the codes come from --> 
