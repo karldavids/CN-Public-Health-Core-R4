@@ -14,8 +14,8 @@
 
 ### 业务资源  
 
-- [HospitalReferral](https://build.fhir.org/ig/HL7China/CN-Public-Health-Core-R4/branches/develop/StructureDefinition-HospitalReferral.html):双向转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
-- [HospitalReferralResponse](https://build.fhir.org/ig/HL7China/CN-Public-Health-Core-R4/branches/develop/StructureDefinition-HospitalReferralResponse.html)：双向转诊应答资源，该资源描述在提交转诊申请后，由接收方 给出是否同意的转诊应答。
+- [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):双向转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
+- [HospitalReferralResponse](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral-response.html)：双向转诊应答资源，该资源描述在提交转诊申请后，由接收方 给出是否同意的转诊应答。
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
 - [HospitalBed](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-hospital-bed.html)：病床信息资源，描述医院床位的基础信息以及当前状态。
 - [Patient](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-Patient.html)：患者资源，接受医疗健康服务的个人或动物，医疗过程是以患者为中心的。对交叉索进行中国本地化约定。
