@@ -325,59 +325,6 @@
 <reference value="MyLogicalModel/AS"/>
 </reference>
 </resource> -->
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Condition/PreviousHistory-example"/>
-			</reference>
-			<name value="既往史示例"/>
-			<description value="演示如何定义和引用既往史的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/previous-history"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Practitioner/Practitioner-example"/>
-			</reference>
-			<name value="医护人员示例"/>
-			<description value="演示如何定义和引用医护人员的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Practitioner"/>
-		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Schedule/OutpatientSchedule-example"/>
-			</reference>
-			<name value="门诊排班信息示例"/>
-			<description value="演示如何定义和引用门诊排班信息的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/outpatient-schedule"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Appointment/OutpatientRegistrationSource-example"/>
-			</reference>
-			<name value="门诊号源信息示例"/>
-			<description value="演示如何定义和引用门诊号源信息的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/outpatient-registration-source"/>
-		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Location/OutpatientConsultationRoom-example"/>
-			</reference>
-			<name value="门诊诊室示例"/>
-			<description value="演示如何定义和引用门诊诊室的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/outpatient-consultation-room"/>
-		</resource>
-
 		<resource>
 			<reference>
 				<!-- 资源示例 -->
@@ -387,77 +334,6 @@
 			<description value="演示如何定义和引用医院的简单示例"/>
 			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Hospital"/>
 		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Organization/EndemicArea-example"/>
-			</reference>
-			<name value="病区示例"/>
-			<description value="演示如何定义和引用病区的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/EndemicArea"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Organization/Department-example"/>
-			</reference>
-			<name value="科室示例"/>
-			<description value="演示如何定义和引用科室的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Department"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Condition/Diagnose-example"/>
-			</reference>
-			<name value="诊断示例"/>
-			<description value="演示如何定义和引用诊断的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Diagnose"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Condition/ChiefComplaint-example"/>
-			</reference>
-			<name value="主诉示例"/>
-			<description value="演示如何定义和引用主诉的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/chief-complaint"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="ServiceRequest/InspectRequest-example"/>
-			</reference>
-			<name value="检查申请示例"/>
-			<description value="演示如何定义和引用检查申请的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/inspect-request"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="ServiceRequest/LaboratoryRequest-example"/>
-			</reference>
-			<name value="实验室检验申请示例"/>
-			<description value="演示如何定义和引用实验室检验申请的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-request"/>
-		</resource>
-		
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Organization/Organization-example"/>
-			</reference>
-			<name value="组织机构示例"/>
-			<description value="演示如何定义和引用组织机构的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Organization"/>
-		</resource>
-
 		<resource>
 			<reference>
 				<!-- 严重程度值域集 -->
