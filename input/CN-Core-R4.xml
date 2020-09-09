@@ -38,64 +38,19 @@
 	<fhirVersion value="4.0.1"/>
 	<definition>
 		<!--0..* 生成IG需求信息。其中grouping节点可由IGPublisher自动定义，也可手动定义个性化需求。 -->
-		<resource>
-			<reference>
-				<!-- 本地资源定义（PreviousHistory） -->
-				<reference value="StructureDefinition/previous-history"/>
-			</reference>
-			<description value="既往史，既往史又称过去病史，即就医时医生向患者问询的患者既往的健康状况和过去曾经患过的疾病等方面的问题。
-既往健康状况包括饮食习惯等。病人平时健康状况，可能与其现患疾病有一定的关系，故对分析判断现发疾病的病情具有重要的参考价值。"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Patient） -->
-				<reference value="StructureDefinition/Patient"/>
-			</reference>
-			<description value="接受医疗健康服务的个人或动物，医疗过程是以患者为中心的。对交叉索进行中国本地化约定"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Practitioner） -->
-				<reference value="StructureDefinition/Practitioner"/>
-			</reference>
-			<description value="直接或间接参与提供医疗健康服务的人员及其从业资格证"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Slot） -->
-				<reference value="StructureDefinition/outpatient-slot"/>
-			</reference>
-			<description value="门诊号源时段"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（schedule） -->
-				<reference value="StructureDefinition/outpatient-schedule"/>
-			</reference>
-			<description value="门诊排班，号源所属班次，是排班表、排期表的组成部分，该资源主要描述门诊排班"/>
-		</resource>
+		
+		
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Appointment ） -->
-				<reference value="StructureDefinition/outpatient-registration-source"/>
-			</reference>
-			<description value="该资源描述门诊号源信息，包括号源、挂号都是用该资源。"/>
-		</resource>
+		
+
+		
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Department） -->
-				<reference value="StructureDefinition/Department"/>
-			</reference>
-			<description value="描述科室基本信息"/>
-		</resource>
+		
+
+
+		
 		
 		<resource>
 			<reference>
@@ -115,48 +70,13 @@
 		</resource>
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（EndemicArea） -->
-				<reference value="StructureDefinition/EndemicArea"/>
-			</reference>
-			<description value="描述病区基本信息"/>
-		</resource>
 
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Diagnose） -->
-				<reference value="StructureDefinition/Diagnose"/>
-			</reference>
-			<description value="诊断信息，从医学角度对人们的精神和体质状态作出的判断。对正常人的健康状态、劳动能力和某一特定的生理过程的判断；司法部门判定血缘关系和伤害性质也属诊断。用来认识疾病的诊断最广泛，是治疗、预后、预防的前提。"/>
-		</resource>
+		
 
+		
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（ChiefComplaint）  -->
-				<reference value="StructureDefinition/chief-complaint"/>
-			</reference>
-			<description value="是病人（来访者）自述自己的症状或（和）体征、性质，以及持续时间等内容。"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义 （ServiceRequest）-->
-				<reference value="StructureDefinition/inspect-request"/>
-			</reference>
-			<description value="医生下达检查申请单，包括多种检查类别，胃肠、影像、超声、病理等。"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（ServiceRequest） -->
-				<reference value="StructureDefinition/laboratory-request"/>
-			</reference>
-			<description value="描述医院内 临床医生对患者提交实验室检验申请的资源。"/>
-		</resource>
 		
 		<resource>
 			<reference>
@@ -232,77 +152,8 @@
 			<description value="由开始和结束时间组成的时间段范围。"/>
 		</resource>
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（ChineseEthnicity） -->
-				<reference value="StructureDefinition/ChineseEthnicity"/>
-			</reference>
-			<description value="中华56个民族"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（ChineseName） -->
-				<reference value="StructureDefinition/ChineseName"/>
-			</reference>
-			<description value="中国卫生健康场景中使用的姓名"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（date-start-work） -->
-				<reference value="StructureDefinition/date-start-work"/>
-			</reference>
-			<description value="描述该人员参加工作的开始日期"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（is-work-for-multi-org） -->
-				<reference value="StructureDefinition/is-work-for-multi-org"/>
-			</reference>
-			<description value="是否多地点执业医师，医师多点执业：是指符合条件的执业医师经卫生行政部门注册后，受聘在两个以上医疗机构执业的行为。"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Nationality） -->
-				<reference value="StructureDefinition/Nationality"/>
-			</reference>
-			<description value="国籍"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（politic-affiliation） -->
-				<reference value="StructureDefinition/politic-affiliation"/>
-			</reference>
-			<description value="政治面貌的编码及加入日期"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 本地资源定义（sexual-distinction-of-human） -->
-				<reference value="StructureDefinition/sexual-distinction-of-human"/>
-			</reference>
-			<description value="描述人的生理性别  遵循标准 GB/T 2261.1"/>
-		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 请求紧急程度（priority） -->
-				<reference value="StructureDefinition/request-priority"/>
-			</reference>
-			<description value="请求紧急程度"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 备注信息（Annotation） -->
-				<reference value="StructureDefinition/Annotation"/>
-			</reference>
-			<description value="需要备注的额外信息，包括作者与创建时间。"/>
-		</resource>
+		
+		
 		<resource>
 			<reference>
 				<!-- 本地资源定义（BriefIntroduction） -->
@@ -312,13 +163,7 @@
 		</resource>
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（SourceNumber） -->
-				<reference value="StructureDefinition/source-number"/>
-			</reference>
-			<description value="号源信息，描述号源时段中该时段 包括的总号源数和已经使用号源数。。"/>
-		</resource>
+		
 
 		<!--<resource>
 <reference>
