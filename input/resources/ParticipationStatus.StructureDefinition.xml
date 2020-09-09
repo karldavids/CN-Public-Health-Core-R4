@@ -3,8 +3,9 @@
   <id value="participation-status" />
   <url value="http://StructureDefinition.hl7fhir.cn/participation-status" />
   <name value="ParticipationStatus" />
+  <title value="预约参与状态" />
   <status value="draft" />
-  <description value="预约参与状态" />
+  <description value="预约参与状态，描述预约参与人的应约状态，包括同意、拒绝、未知、未响应等" />
   <fhirVersion value="4.0.1" />
   <mapping>
     <identity value="rim" />

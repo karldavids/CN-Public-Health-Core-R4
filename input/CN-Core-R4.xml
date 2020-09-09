@@ -65,14 +65,7 @@
 		</resource>
 		
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（Address） -->
-				<reference value="StructureDefinition/Address"/>
-			</reference>
-			<description value="符合中国描述地址习惯，并支持用行政区划编码生成详细地址和用于统计"/>
-		</resource>
-
+		
 		<resource>
 			<reference>
 				<!-- 本地资源定义（CodeableConcept） -->
@@ -81,13 +74,7 @@
 			<description value="可编码概念"/>
 		</resource>
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（ContactPoint） -->
-				<reference value="StructureDefinition/ContactPoint"/>
-			</reference>
-			<description value="联系方式，包括电话、传真、邮件等"/>
-		</resource>
+		
 
 
 		<resource>
@@ -117,13 +104,7 @@
 		</resource>
 
 
-		<resource>
-			<reference>
-				<!-- 本地资源定义（AdministrativeDivision） -->
-				<reference value="StructureDefinition/AdministrativeDivision"/>
-			</reference>
-			<description value="行政区划编码，中国县级以上行政区"/>
-		</resource>
+		
 
 		<resource>
 			<reference>
