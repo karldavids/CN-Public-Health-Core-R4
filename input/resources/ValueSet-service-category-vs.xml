@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir"> 
+	<id value="service-category-vs"/>
+ <url value="http://ValueSet.hl7fhir.cn/service-category-vs"/>
+ <name value="service-category-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
+ <title value="预约服务类别"/><!-- 0..1 Name for this value set (human friendly) -->
+ <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
+<description value="将在这次任命期间执行的服务的广泛分类。描述该时段的医疗服务的类别，此类别为大类别，如 医疗服务，康养服务，美容服务，儿童保健、老年护理等。"/>
+ <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
+  <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->
+   <system value="http://terminology.hl7.org/CodeSystem/service-category"/><!-- ?? 0..1 The system the codes come from --> 
+  </include>
+  <exclude><!-- ?? 0..* Content as for ValueSet.compose.include Explicitly exclude codes from a code system or other value sets --></exclude>
+ </compose>
+</ValueSet>

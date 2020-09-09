@@ -1,0 +1,1101 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="health-institution-or-organization-category-vs"/>
+    <meta>
+        <lastUpdated value="2020-03-12T20:05:26.599+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/health-institution-or-organization-category-vs"/>
+    <version value="V1"/>
+    <name value="health institution or organization category"/>
+    <title value="卫生机构(组织)类别"/>
+    <status value="draft"/>
+    <publisher value="中华人民共和国国家质量监督检验检疫总局"/>
+    <description value="国家GB级值域代码"/>
+    <jurisdiction>
+        <coding>
+            <system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
+            <code value="156"/>
+        </coding>
+        <text value="中国"/>
+    </jurisdiction>
+    <expansion>
+        <timestamp value="2020-07-06T16:31:33.068+08:00"/>
+        <total value="215"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A"/>
+            <display value="医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A100"/>
+            <display value="综合医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A2"/>
+            <display value="中医医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A210"/>
+            <display value="中医(综合)医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A220"/>
+            <display value="中医专科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A221"/>
+            <display value="肛肠医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A222"/>
+            <display value="骨伤医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A223"/>
+            <display value="针灸医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A224"/>
+            <display value="按摩医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A229"/>
+            <display value="其他中医专科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A300"/>
+            <display value="中西医结合医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A4"/>
+            <display value="民族医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A411"/>
+            <display value="蒙医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A412"/>
+            <display value="藏医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A413"/>
+            <display value="维医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A414"/>
+            <display value="傣医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A419"/>
+            <display value="其他民族医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A5"/>
+            <display value="专科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A511"/>
+            <display value="口腔医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A512"/>
+            <display value="眼科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A513"/>
+            <display value="耳鼻喉科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A514"/>
+            <display value="肿瘤医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A515"/>
+            <display value="心血管病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A516"/>
+            <display value="胸科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A517"/>
+            <display value="血液病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A518"/>
+            <display value="妇产(科)医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A519"/>
+            <display value="儿童医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A520"/>
+            <display value="精神病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A521"/>
+            <display value="传染病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A522"/>
+            <display value="皮肤病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A523"/>
+            <display value="结核病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A524"/>
+            <display value="麻风病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A525"/>
+            <display value="职业病医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A526"/>
+            <display value="骨科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A527"/>
+            <display value="康复医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A528"/>
+            <display value="整形外科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A529"/>
+            <display value="美容医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A539"/>
+            <display value="其他专科医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A600"/>
+            <display value="疗养院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A7"/>
+            <display value="护理院(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A710"/>
+            <display value="护理院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="A720"/>
+            <display value="护理站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="B"/>
+            <display value="社区卫生服务中心（站）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="B100"/>
+            <display value="社区卫生服务中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="B200"/>
+            <display value="社区卫生服务站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="C"/>
+            <display value="卫生院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="C100"/>
+            <display value="街道卫生院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="C2"/>
+            <display value="乡镇卫生院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="C210"/>
+            <display value="中心卫生院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="C220"/>
+            <display value="乡卫生院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D"/>
+            <display value="门诊部、诊所、医务室、村卫生室"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D1"/>
+            <display value="门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D110"/>
+            <display value="综合门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D120"/>
+            <display value="中医门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D121"/>
+            <display value="中医(综合)门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D122"/>
+            <display value="中医专科门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D130"/>
+            <display value="中西医结合门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D140"/>
+            <display value="民族医门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D150"/>
+            <display value="专科门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D151"/>
+            <display value="普通专科门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D152"/>
+            <display value="口腔门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D153"/>
+            <display value="眼科门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D154"/>
+            <display value="医疗美容门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D155"/>
+            <display value="精神卫生门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D159"/>
+            <display value="其他专科门诊部"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D2"/>
+            <display value="诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D211"/>
+            <display value="普通诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D212"/>
+            <display value="中医诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D213"/>
+            <display value="中西医结合诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D214"/>
+            <display value="民族医诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D215"/>
+            <display value="口腔诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D216"/>
+            <display value="医疗美容诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D217"/>
+            <display value="精神卫生诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D229"/>
+            <display value="其他诊所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D300"/>
+            <display value="卫生所(室)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D400"/>
+            <display value="医务室"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D500"/>
+            <display value="中小学卫生保健所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="D600"/>
+            <display value="村卫生室"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="E"/>
+            <display value="急救中心（站）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="E100"/>
+            <display value="急救中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="E200"/>
+            <display value="急救中心站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="E300"/>
+            <display value="急救站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F"/>
+            <display value="采供血机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F1"/>
+            <display value="血站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F110"/>
+            <display value="血液中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F120"/>
+            <display value="中心血站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F130"/>
+            <display value="基层血站、中心血库"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="F200"/>
+            <display value="单采血浆站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="G"/>
+            <display value="妇幼保健院(所、站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="G100"/>
+            <display value="妇幼保健院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="G200"/>
+            <display value="妇幼保健所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="G300"/>
+            <display value="妇幼保健站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="G400"/>
+            <display value="生殖保健中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H"/>
+            <display value="专科疾病防治院(所、站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H1"/>
+            <display value="专科疾病防治院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H111"/>
+            <display value="传染病防治院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H112"/>
+            <display value="结核病防治院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H113"/>
+            <display value="职业病防治院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H119"/>
+            <display value="其他专科疾病防治院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H2"/>
+            <display value="专科疾病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H211"/>
+            <display value="口腔病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H212"/>
+            <display value="精神病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H213"/>
+            <display value="皮肤病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H214"/>
+            <display value="结核病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H215"/>
+            <display value="麻风病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H216"/>
+            <display value="职业病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H217"/>
+            <display value="寄生虫病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H218"/>
+            <display value="地方病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H219"/>
+            <display value="血吸虫病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H220"/>
+            <display value="药物戒毒所(中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="H229"/>
+            <display value="其他专科疾病防治所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="J"/>
+            <display value="疾病预防控制中心(防疫站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="J100"/>
+            <display value="疾病预防控制中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="J200"/>
+            <display value="卫生防疫站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="J300"/>
+            <display value="卫生防病中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="J400"/>
+            <display value="预防保健中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="K100"/>
+            <display value="卫生监督所(局)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L"/>
+            <display value="卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L100"/>
+            <display value="卫生(综合)监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L200"/>
+            <display value="环境卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L300"/>
+            <display value="放射卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L400"/>
+            <display value="劳动(职业、工业)卫生监督检验"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L500"/>
+            <display value="食品卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L600"/>
+            <display value="学校卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="L900"/>
+            <display value="其他卫生监督检验(监测、检测)所(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M"/>
+            <display value="医学科学研究机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M100"/>
+            <display value="医学科学(研究)院（所）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M200"/>
+            <display value="预防医学研究院（所）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M300"/>
+            <display value="中医(药)研究院(所)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M400"/>
+            <display value="中西医结合研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M500"/>
+            <display value="民族医(药)学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M6"/>
+            <display value="医学专科研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M611"/>
+            <display value="基础医学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M612"/>
+            <display value="病毒学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M613"/>
+            <display value="老年医学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M614"/>
+            <display value="肿瘤(防治)研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M615"/>
+            <display value="心血管病研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M616"/>
+            <display value="血液学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M617"/>
+            <display value="整形外科研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M618"/>
+            <display value="精神卫生研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M619"/>
+            <display value="放射医学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M620"/>
+            <display value="医学生物学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M621"/>
+            <display value="生物医学工程研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M622"/>
+            <display value="实验动物研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M623"/>
+            <display value="结核病防治研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M624"/>
+            <display value="皮肤病与性病防治研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M625"/>
+            <display value="寄生虫病防治研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M626"/>
+            <display value="地方病防治研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M627"/>
+            <display value="血吸虫病防治研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M628"/>
+            <display value="流行病学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M629"/>
+            <display value="医学微生物学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M630"/>
+            <display value="环境卫生研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M631"/>
+            <display value="劳动卫生(职业病)研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M632"/>
+            <display value="营养与食品卫生研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M633"/>
+            <display value="儿少卫生研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M634"/>
+            <display value="医学信息研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M649"/>
+            <display value="其他医学专科研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="M700"/>
+            <display value="药学研究所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N"/>
+            <display value="医学教育机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N1"/>
+            <display value="医学普通高中等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N110"/>
+            <display value="医学普通高等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N111"/>
+            <display value="医学院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N112"/>
+            <display value="中医(药)学院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N113"/>
+            <display value="民族医(药)学院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N119"/>
+            <display value="其他医学普通高等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N120"/>
+            <display value="医学普通中等专业学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N121"/>
+            <display value="卫生学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N122"/>
+            <display value="中医(药)学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N123"/>
+            <display value="民族医(药)学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N124"/>
+            <display value="护士学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N129"/>
+            <display value="其他医学普通中等专业学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N2"/>
+            <display value="医学成人学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N210"/>
+            <display value="医学成人高等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N211"/>
+            <display value="职工医学院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N212"/>
+            <display value="卫生管理干部学院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N219"/>
+            <display value="其他医学成人高等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N220"/>
+            <display value="医学成人中等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N221"/>
+            <display value="卫生职业(工)中等专业学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N222"/>
+            <display value="中医(药)职业中等专业学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N223"/>
+            <display value="卫生进修学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N229"/>
+            <display value="其他医学成人中等学校"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="N300"/>
+            <display value="医学在职培训机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="O"/>
+            <display value="健康教育所(站、中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="O100"/>
+            <display value="健康教育所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="O200"/>
+            <display value="健康教育站(中心)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P"/>
+            <display value="其他卫生机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P1"/>
+            <display value="临床检验中心（所、站）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P110"/>
+            <display value="临床检验中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P120"/>
+            <display value="临床检验所（站）"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P2"/>
+            <display value="卫生新闻出版社"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P210"/>
+            <display value="卫生图书出版社"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P220"/>
+            <display value="卫生报纸出版社"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P230"/>
+            <display value="卫生杂志社"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P290"/>
+            <display value="其他卫生新闻出版社"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P9"/>
+            <display value="其他卫生事业机构"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P911"/>
+            <display value="精神病收容所"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P912"/>
+            <display value="麻风村"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P913"/>
+            <display value="卫生消毒站"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P914"/>
+            <display value="乡防保组"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P915"/>
+            <display value="农村改水中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P916"/>
+            <display value="计划生育技术服务中心(站)"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P917"/>
+            <display value="卫生机关服务中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P918"/>
+            <display value="卫生统计信息中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P919"/>
+            <display value="医学考试中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P920"/>
+            <display value="卫生人才交流中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P921"/>
+            <display value="医学科技交流中心"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="P939"/>
+            <display value="其他"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q"/>
+            <display value="卫生社会团体"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q100"/>
+            <display value="红十字会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q200"/>
+            <display value="医学会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q300"/>
+            <display value="卫生协会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q311"/>
+            <display value="输血协会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q312"/>
+            <display value="医师协会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q339"/>
+            <display value="其他卫生协会"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/health-institution-or-organization-category"/>
+            <code value="Q900"/>
+            <display value="其他卫生社会团体"/>
+        </contains>
+    </expansion>
+</ValueSet>

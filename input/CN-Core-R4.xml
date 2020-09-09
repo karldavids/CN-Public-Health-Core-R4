@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- 此资源所引用的内容都将作为指南的一部分生成。持续更新中 -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
 	<id value="hl7fhir.cn.core.r4"/>
@@ -38,8 +38,63 @@
 	<fhirVersion value="4.0.1"/>
 	<definition>
 		<!--0..* 生成IG需求信息。其中grouping节点可由IGPublisher自动定义，也可手动定义个性化需求。 -->
+
 		
 
+		
+		
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Organization） -->
+				<reference value="StructureDefinition/Organization"/>
+			</reference>
+			<description value="正式或非正式认可的群体或组织。包括医疗集团、医院、院区、科室、公司、机构、公司、部门、社区团体、医疗实践团体、医保、商保等。"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Hospital） -->
+				<reference value="StructureDefinition/Hospital"/>
+			</reference>
+			<description value="描述医院基本信息"/>
+		</resource>
+
+
+		
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Address） -->
+				<reference value="StructureDefinition/Address"/>
+			</reference>
+			<description value="符合中国描述地址习惯，并支持用行政区划编码生成详细地址和用于统计"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（CodeableConcept） -->
+				<reference value="StructureDefinition/CodeableConcept"/>
+			</reference>
+			<description value="可编码概念"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（ContactPoint） -->
+				<reference value="StructureDefinition/ContactPoint"/>
+			</reference>
+			<description value="联系方式，包括电话、传真、邮件等"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Identifier） -->
+				<reference value="StructureDefinition/Identifier"/>
+			</reference>
+			<description value="标识符，唯一且明确地标识某个域中的实体。常作为业务标识符（业务ID)使用，在不同业务域中的唯一标识ID"/>
+		</resource>
+		
 		<resource>
 			<reference>
 				<!-- 本地资源定义（Reference） -->
@@ -48,27 +103,454 @@
 			<description value="引用应该是对实际FHIR资源的引用，并且应该是可解析的(允许访问控制、临时不可用等)。解析可以通过从URL检索来实现，也可以在适用的情况下通过资源类型来实现，将绝对引用作为标准URL处理并在本地注册表/存储库中查找它。"/>
 		</resource>
 
+		<resource>
+			<reference>
+				<!-- 本地资源定义（OrganizationPicture） -->
+				<reference value="StructureDefinition/organization-picture"/>
+			</reference>
+			<description value="图片信息，主要描述 组织机构的相关图像信息，包括 logo和图片信息"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Coding） -->
+				<reference value="StructureDefinition/Coding"/>
+			</reference>
+			<description value="术语编码类型"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（AdministrativeDivision） -->
+				<reference value="StructureDefinition/AdministrativeDivision"/>
+			</reference>
+			<description value="行政区划编码，中国县级以上行政区"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 本地资源定义（Period） -->
+				<reference value="StructureDefinition/Period"/>
+			</reference>
+			<description value="由开始和结束时间组成的时间段范围。"/>
+		</resource>
+
+		
+		<resource>
+			<reference>
+				<!-- 本地资源定义（BriefIntroduction） -->
+				<reference value="StructureDefinition/BriefIntroduction"/>
+			</reference>
+			<description value="简要介绍，包括科室、医院、医护人员介绍"/>
+		</resource>
+
+
+		
+
 		<!--<resource>
 <reference>
 <reference value="MyLogicalModel/AS"/>
 </reference>
 </resource> -->
+
 		
-		
+
 		<resource>
 			<reference>
-				<!-- 应答预约状态编码值域集 -->
-				<reference value="ValueSet/participationstatus-vs"/>
+				<!-- 资源示例 -->
+				<reference value="Organization/Hospital-example"/>
 			</reference>
-			<name value="应答预约状态编码"/>
+			<name value="医院示例"/>
+			<description value="演示如何定义和引用医院的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Hospital"/>
+		</resource>
+
+		
+
+
+		<resource>
+			<reference>
+				<!-- 参与者类型编码值域集 -->
+				<reference value="ValueSet/encounter-participant-type-vs"/>
+			</reference>
+			<name value="参与者类型编码"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 医疗健康服务的人员角色代码值域集 -->
+				<reference value="ValueSet/practitioner-role-vs"/>
+			</reference>
+			<name value="医疗健康服务的人员角色代码"/>
 		</resource>
 
 		<resource>
 			<reference>
-				<!-- 活动事件编码值域集 -->
-				<reference value="ValueSet/activity-code-vs"/>
+				<!-- 医疗事件的广泛分类编码值域集 -->
+				<reference value="ValueSet/encounter-service-type-vs"/>
 			</reference>
-			<name value="活动事件编码"/>
+			<name value="医疗事件的广泛分类编码"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 在院特殊要求代码值域集 -->
+				<reference value="ValueSet/encounter-special-arrangements-vs"/>
+			</reference>
+			<name value="在院特殊要求代码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 特殊礼遇编码值域集 -->
+				<reference value="ValueSet/encounter-special-courtesy-vs"/>
+			</reference>
+			<name value="特殊礼遇编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 医疗事件状态值域集 -->
+				<reference value="ValueSet/encounter-status-vs"/>
+			</reference>
+			<name value="医疗事件状态"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 医疗事件特定类型编码值域集 -->
+				<reference value="ValueSet/encounter-type-vs"/>
+			</reference>
+			<name value="医疗事件特定类型编码"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 医疗事件分类代码值域集 -->
+				<reference value="ValueSet/act-encounter-code-vs"/>
+			</reference>
+			<name value="医疗事件分类代码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 诊断类型编码值域集 -->
+				<reference value="ValueSet/diagnosis-role-vs"/>
+			</reference>
+			<name value="诊断类型编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 文档类别编码值域集 -->
+				<reference value="ValueSet/document-category-vs"/>
+			</reference>
+			<name value="文档类别编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 文档分类编码值域集 -->
+				<reference value="ValueSet/document-type-vs"/>
+			</reference>
+			<name value="文档分类编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 入院方式编码值域集 -->
+				<reference value="ValueSet/encounter-admit-source-vs"/>
+			</reference>
+			<name value="入院方式编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 饮食偏好代码值域集 -->
+				<reference value="ValueSet/encounter-diet-vs"/>
+			</reference>
+			<name value="饮食偏好代码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 出院位置类别代码值域集 -->
+				<reference value="ValueSet/encounter-discharge-disposition-vs"/>
+			</reference>
+			<name value="出院位置类别代码"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<!-- 严重程度值域集 -->
+				<reference value="ValueSet/condition-severity-vs"/>
+			</reference>
+			<name value="严重程度"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 诊断状态值域集 -->
+				<reference value="ValueSet/condition-status-vs"/>
+			</reference>
+			<name value="诊断状态"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 诊断验证状态值域集 -->
+				<reference value="ValueSet/condition-ver-status-vs"/>
+			</reference>
+			<name value="诊断验证状态"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 疾病诊断编码值域集（ICD-10 ） -->
+				<reference value="ValueSet/condition-code-vs"/>
+			</reference>
+			<name value="疾病诊断编码"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 诊断部位值域集 -->
+				<reference value="ValueSet/body-site-vs"/>
+			</reference>
+			<name value="诊断部位"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 疾病分期种类值域集 -->
+				<reference value="ValueSet/condition-stage-type-vs"/>
+			</reference>
+			<name value="疾病分期种类"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!--疾病分期值域集 -->
+				<reference value="ValueSet/condition-stage-vs"/>
+			</reference>
+			<name value="疾病分期"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!--症状编码值域集 -->
+				<reference value="ValueSet/manifestation-or-symptom-vs"/>
+			</reference>
+			<name value="症状编码"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 组织机构层级种类值域集 -->
+				<reference value="ValueSet/hierarchy-kind-vs"/>
+			</reference>
+			<name value="组织机构层级种类"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 组织机构类型值域集 -->
+				<reference value="ValueSet/Classification-for-organizations-vs"/>
+			</reference>
+			<name value="组织机构类型"/>
+		</resource>
+		<resource>
+
+			<reference>
+				<!-- 卫生机构(组织)类别值域集 -->
+				<reference value="ValueSet/health-institution-or-organization-category-vs"/>
+			</reference>
+			<name value="卫生机构(组织)类别"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 医院等级值域集 -->
+				<reference value="ValueSet/hospitallevel-vs"/>
+			</reference>
+			<name value="医院等级"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 经济类型分类值域集 -->
+				<reference value="ValueSet/economic-type-classification-vs"/>
+			</reference>
+			<name value="经济类型分类"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 申请单状态值域集 -->
+				<reference value="ValueSet/request-status-vs"/>
+			</reference>
+			<name value="申请单状态"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 服务申请意图值域集 -->
+				<reference value="ValueSet/request-intent-vs"/>
+			</reference>
+			<name value="服务申请意图"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 检查分类值域集 -->
+				<reference value="ValueSet/inspectrequest-category-vs"/>
+			</reference>
+			<name value=" 检查分类"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 实验室检验分类值域集 -->
+				<reference value="ValueSet/laboratoryrequest-category-vs"/>
+			</reference>
+			<name value=" 实验室检验分类"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 请求紧急程度值域集 -->
+				<reference value="ValueSet/request-priority-vs"/>
+			</reference>
+			<name value=" 请求紧急程度"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 检验明细值域集 -->
+				<reference value="ValueSet/laboratoryrequest-orderdetail-vs"/>
+			</reference>
+			<name value=" 检验明细"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 检查明细值域集 -->
+				<reference value="ValueSet/inspectrequest-orderdetail-vs"/>
+			</reference>
+			<name value=" 检查明细"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 检查检验代码值域集 -->
+				<reference value="ValueSet/procedure-code-vs"/>
+			</reference>
+			<name value=" 检查检验代码"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 位置状态值域集 -->
+				<reference value="ValueSet/location-status-vs"/>
+			</reference>
+			<name value="位置状态"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 位置操作状态值域集 -->
+				<reference value="ValueSet/operation-status-vs"/>
+			</reference>
+			<name value="位置操作状态"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 位置功能类型值域集 -->
+				<reference value="ValueSet/location-role-type-vs"/>
+			</reference>
+			<name value="位置功能类型"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 位置物理形式值域集 -->
+				<reference value="ValueSet/location-physical-type-vs"/>
+			</reference>
+			<name value=" 位置物理形式"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 预约的整体状态值域集 -->
+				<reference value="ValueSet/appointment-status-vs"/>
+			</reference>
+			<name value="预约的整体状态"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 预约服务分类值域集 -->
+				<reference value="ValueSet/service-category-vs"/>
+			</reference>
+			<name value="预约服务分类"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 服务项目分类值域集 -->
+				<reference value="ValueSet/service-type-vs"/>
+			</reference>
+			<name value="服务项目分类"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 专业要求值域集 -->
+				<reference value="ValueSet/practice-setting-code-vs"/>
+			</reference>
+			<name value=" 专业要求"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 预约类型值域集 -->
+				<reference value="ValueSet/appointment-type-vs"/>
+			</reference>
+			<name value=" 预约类型"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 国籍值域集 -->
+				<reference value="ValueSet/countries-and-regions-vs"/>
+			</reference>
+			<name value="世界各国和地区名称"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 民族类别值域集 -->
+				<reference value="ValueSet/nationalites-of-PRC-vs"/>
+			</reference>
+			<name value="民族类别"/>
+		</resource>
+		<resource>
+			<reference>
+				<!-- 生理性别值域集 -->
+				<reference value="ValueSet/physiological-gender-vs"/>
+			</reference>
+			<name value="生理性别"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 政治面貌值域集 -->
+				<reference value="ValueSet/politic-affiliation-vs"/>
+			</reference>
+			<name value="政治面貌"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 联系人关系域集 -->
+				<reference value="ValueSet/contact-relationship-vs"/>
+			</reference>
+			<name value="联系人关系"/>
 		</resource>
 
 

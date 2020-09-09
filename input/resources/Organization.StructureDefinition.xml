@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Organization" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2020-05-11T06:32:27.087911+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/Organization" />
+  <name value="Organization" />
+  <title value="组织机构" />
+  <status value="draft" />
+  <publisher value="hl7fhir.cn" />
+  <description value="正式或非正式认可的群体或组织。包括医疗集团、医院、院区、科室、公司、机构、公司、部门、社区团体、医疗实践团体、医保、商保等。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization">
+      <path value="Organization" />
+      <short value="组织机构" />
+      <definition value="正式或非正式认可的群体或组织。包括医疗集团、医院、院区、科室、公司、机构、公司、部门、社区团体、医疗实践团体、医保、商保等。" />
+    </element>
+    <element id="Organization.extension">
+      <path value="Organization.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.extension:OrganizationPicture">
+      <path value="Organization.extension" />
+      <sliceName value="OrganizationPicture" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/organization-picture" />
+      </type>
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Organization.active">
+      <path value="Organization.active" />
+      <short value="是否在用" />
+      <definition value="组织的记录是否仍在使用中" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="机构种类、类别" />
+      <definition value="机构种类，如医院、卫生防疫站等。类别" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Organization.type:healthInstitutionCategory">
+      <path value="Organization.type" />
+      <sliceName value="healthInstitutionCategory" />
+      <short value="卫生机构(组织)类别" />
+      <definition value="WS 218-2002，卫生机构(组织)类别" />
+      <max value="1" />
+      <binding>
+        <strength value="required" />
+        <description value="WS 218-2002" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/health-institution-category-vs" />
+      </binding>
+    </element>
+    <element id="Organization.type:hierarchyKind">
+      <path value="Organization.type" />
+      <sliceName value="hierarchyKind" />
+      <short value="层级种类" />
+      <definition value="组织层级种类，如医院集团、医院、院区、科室等" />
+      <max value="1" />
+      <binding>
+        <strength value="extensible" />
+        <description value="组织层级种类" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/hierarchy-kind-vs" />
+      </binding>
+    </element>
+    <element id="Organization.type:ClassificationForOrganizations">
+      <path value="Organization.type" />
+      <sliceName value="ClassificationForOrganizations" />
+      <short value="组织机构类型" />
+      <definition value="《组织机构类型(GB/T 20091-2006)》" />
+      <max value="1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="OrganizationType" />
+        </extension>
+        <strength value="required" />
+        <description value="GB/T 20091-2006" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/Classification-for-organizations-vs" />
+      </binding>
+    </element>
+    <element id="Organization.type:otherType">
+      <path value="Organization.type" />
+      <sliceName value="otherType" />
+      <short value="其它分类" />
+      <definition value="按其它分类维度对组织机构分类" />
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name" />
+      <short value="名称" />
+      <definition value="此组织的名称" />
+    </element>
+    <element id="Organization.alias">
+      <path value="Organization.alias" />
+      <short value="别名" />
+      <definition value="该机构第其他名称或曾用名的列表，如第二名称等。" />
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom" />
+      <type>
+        <code value="ContactPoint" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/ContactPoint" />
+      </type>
+    </element>
+    <element id="Organization.address">
+      <path value="Organization.address" />
+      <type>
+        <code value="Address" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Address" />
+      </type>
+    </element>
+    <element id="Organization.partOf">
+      <path value="Organization.partOf" />
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy">
+          <valueBoolean value="true" />
+        </extension>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/Organization" />
+      </type>
+    </element>
+    <element id="Organization.contact">
+      <path value="Organization.contact" />
+      <max value="0" />
+    </element>
+    <element id="Organization.endpoint">
+      <path value="Organization.endpoint" />
+      <short value="服务终结点" />
+      <definition value="此组织提供的在线技术服务终结点" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

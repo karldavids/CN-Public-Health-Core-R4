@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir"> 
+	<id value="encounter-admit-source-vs"/>
+ <url value="http://ValueSet.hl7fhir.cn/encounter-admit-source-vs"/>
+ <name value="encounter-admit-source-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
+ <title value="入院方式编码"/><!-- 0..1 Name for this value set (human friendly) -->
+ <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
+ <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
+  <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->
+   <system value="http://terminology.hl7.org/CodeSystem/admit-source"/><!-- ?? 0..1 The system the codes come from --> 
+  </include>
+  <exclude><!-- ?? 0..* Content as for ValueSet.compose.include Explicitly exclude codes from a code system or other value sets --></exclude>
+ </compose>
+</ValueSet>
