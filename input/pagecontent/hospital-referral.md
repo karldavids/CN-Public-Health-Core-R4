@@ -34,6 +34,8 @@
 
 
 
+
+
 ## 对接方式
 
 双向转诊-住院 业务流程主要包括两类：
@@ -48,6 +50,8 @@
 
 
 
+
+
 >转诊路程：
 
 1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，转诊预约申请经过发送到 双转平台。
@@ -59,6 +63,8 @@
 ### 通过双转平台操作
 
 ![流程图](sequence.png)
+
+
 
 
 
@@ -78,6 +84,8 @@
 
 # 数据传输结构
 ![数据结构](structure-bundle.png)
+
+
 
 
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
