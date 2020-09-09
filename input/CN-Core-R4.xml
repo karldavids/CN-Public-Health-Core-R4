@@ -260,131 +260,6 @@
 			<name value="医疗健康服务的人员角色代码"/>
 		</resource>
 
-		
-
-
-		<resource>
-			<reference>
-				<!-- 在院特殊要求代码值域集 -->
-				<reference value="ValueSet/encounter-special-arrangements-vs"/>
-			</reference>
-			<name value="在院特殊要求代码"/>
-		</resource>
-
-		<resource>
-
-			<reference>
-				<!-- 卫生机构(组织)类别值域集 -->
-				<reference value="ValueSet/health-institution-or-organization-category-vs"/>
-			</reference>
-			<name value="卫生机构(组织)类别"/>
-		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 医院等级值域集 -->
-				<reference value="ValueSet/hospitallevel-vs"/>
-			</reference>
-			<name value="医院等级"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 经济类型分类值域集 -->
-				<reference value="ValueSet/economic-type-classification-vs"/>
-			</reference>
-			<name value="经济类型分类"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 申请单状态值域集 -->
-				<reference value="ValueSet/request-status-vs"/>
-			</reference>
-			<name value="申请单状态"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 服务申请意图值域集 -->
-				<reference value="ValueSet/request-intent-vs"/>
-			</reference>
-			<name value="服务申请意图"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 检查分类值域集 -->
-				<reference value="ValueSet/inspectrequest-category-vs"/>
-			</reference>
-			<name value=" 检查分类"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 实验室检验分类值域集 -->
-				<reference value="ValueSet/laboratoryrequest-category-vs"/>
-			</reference>
-			<name value=" 实验室检验分类"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 请求紧急程度值域集 -->
-				<reference value="ValueSet/request-priority-vs"/>
-			</reference>
-			<name value=" 请求紧急程度"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 检验明细值域集 -->
-				<reference value="ValueSet/laboratoryrequest-orderdetail-vs"/>
-			</reference>
-			<name value=" 检验明细"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 检查明细值域集 -->
-				<reference value="ValueSet/inspectrequest-orderdetail-vs"/>
-			</reference>
-			<name value=" 检查明细"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 检查检验代码值域集 -->
-				<reference value="ValueSet/procedure-code-vs"/>
-			</reference>
-			<name value=" 检查检验代码"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 位置状态值域集 -->
-				<reference value="ValueSet/location-status-vs"/>
-			</reference>
-			<name value="位置状态"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 位置操作状态值域集 -->
-				<reference value="ValueSet/operation-status-vs"/>
-			</reference>
-			<name value="位置操作状态"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 位置功能类型值域集 -->
-				<reference value="ValueSet/location-role-type-vs"/>
-			</reference>
-			<name value="位置功能类型"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 位置物理形式值域集 -->
-				<reference value="ValueSet/location-physical-type-vs"/>
-			</reference>
-			<name value=" 位置物理形式"/>
-		</resource>
-
 		<resource>
 			<reference>
 				<!-- 预约的整体状态值域集 -->
@@ -422,43 +297,12 @@
 			<name value=" 预约类型"/>
 		</resource>
 
-		<resource>
-			<reference>
-				<!-- 国籍值域集 -->
-				<reference value="ValueSet/countries-and-regions-vs"/>
-			</reference>
-			<name value="世界各国和地区名称"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 民族类别值域集 -->
-				<reference value="ValueSet/nationalites-of-PRC-vs"/>
-			</reference>
-			<name value="民族类别"/>
-		</resource>
-		<resource>
-			<reference>
-				<!-- 生理性别值域集 -->
-				<reference value="ValueSet/physiological-gender-vs"/>
-			</reference>
-			<name value="生理性别"/>
-		</resource>
+		
+		
+		
 
-		<resource>
-			<reference>
-				<!-- 政治面貌值域集 -->
-				<reference value="ValueSet/politic-affiliation-vs"/>
-			</reference>
-			<name value="政治面貌"/>
-		</resource>
 
-		<resource>
-			<reference>
-				<!-- 联系人关系域集 -->
-				<reference value="ValueSet/contact-relationship-vs"/>
-			</reference>
-			<name value="联系人关系"/>
-		</resource>
+		
 		
 		<resource>
 			<reference>
