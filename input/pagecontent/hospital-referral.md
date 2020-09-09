@@ -85,6 +85,7 @@
 > 转诊申请 
 
 ```xml
+<?xml version="1.0" encoding="utf-8" ?>
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="1234567890"/>
 	<type value="message"/>
@@ -654,6 +655,7 @@
 
 
 ```xml 
+<?xml version="1.0" encoding="utf-8" ?>
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="1234567890"/>
 	<type value="message"/>
@@ -799,7 +801,8 @@
 
 > 病历提交
 
-```xml 
+```xml
+<?xml version="1.0" encoding="utf-8" ?> 
 <Bundle xmlns="http://hl7.org/fhir">
 	<id value="1234567890"/>
 	<type value="message"/>
