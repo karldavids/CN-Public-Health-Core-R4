@@ -13,7 +13,7 @@
 
 >关系图如下：
 ![业务类图](Class.png)
-  
+
 - [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):双向转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
 - [HospitalReferralResponse](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral-response.html)：双向转诊应答资源，该资源描述在提交转诊申请后，由接收方 给出是否同意的转诊应答。
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
@@ -44,11 +44,7 @@
   
 ### 通过双转平台对接
 
-
-
 ![流程图](sequence-platform.png)
-  
-
 
 >转诊路程：
 
@@ -61,7 +57,6 @@
 ### 通过双转平台操作
 
 ![流程图](sequence.png)
-  
 
 > 转诊流程：
 
@@ -77,17 +72,19 @@
 
 本场景中，使用[Bundle](http://hl7.org/fhir/r4/bundle.html) 资源作为 消息传输的载体，组装流程和业务数据，通过通信协议进行交互，数据传输结构如下：
 
-# 数据传输结构
+### 数据传输结构
 
 >数据传输流程图如下：
 
 ![数据结构](structure-bundle.png) 
-  
+
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
 - message：使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 message。
 - transaction/transaction-response：使用事物请求/应答方式传输数据，该方式是一个事务-所有资源由服务器作为原子资源提交进行处理。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 transaction/transaction-response。
   
-# 数据传输示例（message）
+
+
+### 数据传输示例（message）
 
 > 转诊申请 
 
