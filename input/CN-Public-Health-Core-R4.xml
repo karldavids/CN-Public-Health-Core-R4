@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- 此资源所引用的内容都将作为指南的一部分生成。持续更新中 -->
 <ImplementationGuide xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../input-cache/schemas/R5/fhir-single.xsd">
-	<id value="hl7fhir.cn.core.r4"/>
+	<id value="public-health.hl7fhir.cn.core.r4"/>
 	<!--  <extension url="http://hl7.org/fhir/tools/StructureDefinition/igpublisher-spreadsheet">
     <valueString value="resources-spreadsheet.xml"/>
   </extension>-->
@@ -31,7 +31,7 @@
 		</coding>
 		<text value="中国"/>
 	</jurisdiction>
-	<packageId value="hl7fhir.cn.core.r4" />
+	<packageId value="public-health.hl7fhir.cn.core.r4" />
 	<!-- 参见 https://spdx.org/licenses/AGPL-3.0-or-later.html -->
 	<license value="AGPL-3.0-or-later" />
 	<!-- 实施指南里的内容是基于FHIR R4版本的 -->
