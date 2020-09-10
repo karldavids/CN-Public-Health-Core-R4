@@ -7,7 +7,7 @@
 		<resource>
 			<MessageHeader xmlns="http://hl7.org/fhir">
 				<!--1.1 消息ID（实例ID，重发不变）-->
-				<id value="A00000000001"/>
+				<id value="MessageHeader-0001"/>
 				<!--消息事件 1..1-->
 				<eventCoding>
 					<!-- 0..1 事件类型 CodeSystem url  -->
@@ -30,7 +30,7 @@
 				</source>
 				<!--消息实际内容 0..*-->
 				<focus>
-					<!-- 0..1 Reference(Task) 关联工作流信息（Appointment） -->
+					<!-- 0..1 Reference(Appointment) 关联工作流信息 -->
 					<reference value="Appointment/Appointment-hospital-referral"/>
 				</focus>
 			</MessageHeader>
@@ -42,7 +42,7 @@
 		<resource>
 			<Appointment xmlns="http://hl7.org/fhir">
 				<!-- 0..1 住院转诊预约逻辑ID -->
-				<id value="Appointment-hospital-referral"/>
+				<id value="Appointment-hospital-referral-example"/>
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral"/>
 				</meta>
@@ -204,7 +204,7 @@
 					<!--行政区划代码(由于行政区划为12位村) -->
 					<extension url="http://StructureDefinition.hl7fhir.cn/AdministrativeDivision">
 						<!--行政区划代码 -->
-						<valueStrng value="5101002029378110"/>
+						<valueString value="5101002029378110"/>
 					</extension>
 				</address>
 
