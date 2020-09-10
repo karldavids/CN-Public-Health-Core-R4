@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DocumentReference xmlns="http://hl7.org/fhir">
 	<!--0..1 病历文档ID-->
-	<id value="DocumentReference001-example"/>
+	<id value="DocumentReference003-example"/>
 
 	<meta>
 		<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
@@ -11,7 +11,7 @@
 		<!-- 0..1 病历文档标识符NamingSystem uri-->
 		<system value="http://NamingSystem.hl7fhir.cn/document-Identifier"/>
 		<!-- 0..1 病历文档标识符 -->
-		<value value="DocumentReference001-example"/>
+		<value value="DocumentReference003-example"/>
 	</masterIdentifier>
 	<!-- 1..1 文档引用状态  current | superseded | entered-in-error -->
 	<status >
