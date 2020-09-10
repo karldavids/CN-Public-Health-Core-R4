@@ -43,9 +43,9 @@
 			<!-- 文档类别CodeSystem  地址 -->
 			<system value="http://CodeSystem.hl7fhir.cn/document-category"/>
 			<!-- 0..1 文档类别编码 -->
-			<code value="HSDC00.05"/>
+			<code value="HSDC00.09"/>
 			<!-- 0..1 文档类别名称 -->
-			<display value="转诊（院）记录"/>
+			<display value="检验报告"/>
 		</coding>
 	</category>
 	<!-- 0..1 患者 -->
@@ -68,7 +68,7 @@
 		<reference value="Organization/Hospital001-example"/>
 	</custodian>
 	<!-- 0..1 文档描述 -->
-	<description value="城乡居民健康档案基本数据集-转诊（院）记录"/>
+	<description value="城乡居民健康档案基本数据集-检验报告"/>
 	<!-- 0..* 安全级别 -->
 	<securityLabel>
 		<coding>
@@ -93,7 +93,7 @@
 			<!-- 0..1 文件大小 -->
 			<size value="24"/>
 			<!-- 0..1 文档标题 -->
-			<title value="转诊（院）记录"/>
+			<title value="检验报告"/>
 			<!-- 0..1 创建该附件日期 -->
 			<creation value="2019-02-20T13:00:00Z"/>
 		</attachment>
