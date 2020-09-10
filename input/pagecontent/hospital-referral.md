@@ -8,7 +8,7 @@
 ## 双线转诊流-住院 流程定义
 
 
->关系图如下：
+>流程定义结构如下：
 ![流程定义](PlanDefinition-ActivityDefinition-Task-Relationship.png)
   
 1.	先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)资源进行定义。
@@ -28,9 +28,11 @@
 - [上传完整病历示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Task-Medical-records-submitted-example.html)
 
 
-### 流程定义使用的资源
+### 流程定义资源
 - [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动，描述期在流程中的作用。
 - [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：活动计划资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
+
+### 流程实例资源
 - [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
 - [HospitalReferralResponse](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral-response.html)：转诊预约应答资源，该资源描述在提交转诊申请后，由接收方给出是否同意的转诊应答。
 - [Task](http://hl7.org/fhir/r4/task.html):任务资源，再改场景下描述上传病历的步骤任务。
