@@ -50,7 +50,7 @@
 	<lastModified value="2019-02-10T13:00:00Z"/>
 	<!-- 0..1 任务创建者，关联医护人员 -->
 	<requester>
-		<reference value="Practitioner/1234"/>
+		<reference value="Practitioner/Practitioner001-example"/>
 	</requester>
 
 	<!-- 0..* 任务备注 -->

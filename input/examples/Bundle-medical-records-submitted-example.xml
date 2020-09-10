@@ -83,7 +83,7 @@
 				<lastModified value="2019-02-10T13:00:00Z"/>
 				<!-- 0..1 任务创建者，关联医护人员 -->
 				<requester>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</requester>
 				<!-- 0..* 任务备注 -->
 				<note>
@@ -106,7 +106,7 @@
 				<title value="患者张三的在院病历记录"/><!-- 0..1 Descriptive name for the list -->			
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/12345"/>
+					<reference value="Patient/Patient001-example"/>
 				</subject>
 				<!-- 0..1 病历集合生成日期 -->
 				<date value="2019-02-10T13:00:00Z"/>
@@ -114,19 +114,19 @@
 				<entry>
 					<!-- 1..1 关联病历文档 1-->
 					<item>
-						<reference value="Bundle/BLA000001"/>
+						<reference value="DocumentReference/DocumentReference002-example"/>
 					</item>
 				</entry>
 				<entry>
 					<!-- 1..1 关联病历文档 2-->
 					<item>
-						<reference value="Bundle/BLA000002"/>
+						<reference value="DocumentReference/DocumentReference003-example"/>
 					</item>
 				</entry>
 				<entry>
 					<!-- 1..1 关联病历文档 3-->
 					<item>
-						<reference value="Bundle/BLA000003"/>
+						<reference value="DocumentReference/DocumentReference004-example"/>
 					</item>
 				</entry>				
 			</List>
@@ -139,7 +139,7 @@
 		<resource>
 			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
-				<id value="BLA000001"/>
+				<id value="DocumentReference002-example"/>
 
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
@@ -150,7 +150,7 @@
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/document-Identifier"/>
 					<!-- 0..1 病历文档标识符 -->
-					<value value="BLA000001"/>
+					<value value="DocumentReference002-example"/>
 				</masterIdentifier>
 				<!-- 1..1 文档引用状态  current | superseded | entered-in-error -->
 				<status >
@@ -184,12 +184,12 @@
 						<!-- 0..1 文档类别编码 -->
 						<code value="HSDC00.XX"/>
 						<!-- 0..1 文档类别名称 -->
-						<display value="病历1"/>
+						<display value="检验报告"/>
 					</coding>
 				</category>
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/12345"/>
+					<reference value="Patient/Patient001-example"/>
 				</subject>
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
@@ -197,18 +197,18 @@
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
    Patient|RelatedPerson) 文档编写者 -->
 				<author>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</author>
 				<!-- 0..1 文档审核者 -->
 				<authenticator>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Organization01"/>
+					<reference value="Organization/Hospital001-example"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
-				<description value="城乡居民健康档案基本数据集-病历1"/>
+				<description value="城乡居民健康档案基本数据集-检验报告"/>
 				<!-- 0..* 安全级别 -->
 				<securityLabel>
 					<coding>
@@ -234,7 +234,7 @@
 						<!-- 0..1 文件大小 -->
 						<size value="24"/>
 						<!-- 0..1 文档标题 -->
-						<title value="病历1"/>
+						<title value="检验报告"/>
 						<!-- 0..1 创建该附件日期 -->
 						<creation value="2019-02-20T13:00:00Z"/>
 					</attachment>
@@ -248,7 +248,7 @@
 		<resource>
 			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
-				<id value="BLA000002"/>
+				<id value="DocumentReference003-example"/>
 
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
@@ -259,7 +259,7 @@
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/document-Identifier"/>
 					<!-- 0..1 病历文档标识符 -->
-					<value value="BLA000002"/>
+					<value value="DocumentReference003-example"/>
 				</masterIdentifier>
 				<!-- 1..1 文档引用状态  current | superseded | entered-in-error -->
 				<status >
@@ -293,12 +293,12 @@
 						<!-- 0..1 文档类别编码 -->
 						<code value="HSDC00.XX"/>
 						<!-- 0..1 文档类别名称 -->
-						<display value="病历2"/>
+						<display value="医药处方"/>
 					</coding>
 				</category>
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/Patient01"/>
+					<reference value="Patient/Patient001-example"/>
 				</subject>
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
@@ -306,15 +306,15 @@
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
    Patient|RelatedPerson) 文档编写者 -->
 				<author>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</author>
 				<!-- 0..1 文档审核者 -->
 				<authenticator>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Organization01"/>
+					<reference value="Organization/Hospital001-example"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
 				<description value="城乡居民健康档案基本数据集-病历2"/>
@@ -343,7 +343,7 @@
 						<!-- 0..1 文件大小 -->
 						<size value="24"/>
 						<!-- 0..1 文档标题 -->
-						<title value="病历2"/>
+						<title value="医药处方"/>
 						<!-- 0..1 创建该附件日期 -->
 						<creation value="2019-02-20T13:00:00Z"/>
 					</attachment>
@@ -357,7 +357,7 @@
 		<resource>
 			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
-				<id value="BLA000003"/>
+				<id value="DocumentReference004-example"/>
 
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
@@ -368,7 +368,7 @@
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/document-Identifier"/>
 					<!-- 0..1 病历文档标识符 -->
-					<value value="BLA000003"/>
+					<value value="DocumentReference004-example"/>
 				</masterIdentifier>
 				<!-- 1..1 文档引用状态  current | superseded | entered-in-error -->
 				<status >
@@ -402,12 +402,12 @@
 						<!-- 0..1 文档类别编码 -->
 						<code value="HSDC00.XX"/>
 						<!-- 0..1 文档类别名称 -->
-						<display value="病历3"/>
+						<display value="出院小结"/>
 					</coding>
 				</category>
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/Patient01"/>
+					<reference value="Patient/Patient001-example"/>
 				</subject>
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
@@ -415,15 +415,15 @@
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
    Patient|RelatedPerson) 文档编写者 -->
 				<author>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</author>
 				<!-- 0..1 文档审核者 -->
 				<authenticator>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Organization01"/>
+					<reference value="Organization/Hospital001-example"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
 				<description value="城乡居民健康档案基本数据集-病历3"/>
@@ -452,7 +452,7 @@
 						<!-- 0..1 文件大小 -->
 						<size value="24"/>
 						<!-- 0..1 文档标题 -->
-						<title value="病历3"/>
+						<title value="出院小结"/>
 						<!-- 0..1 创建该附件日期 -->
 						<creation value="2019-02-20T13:00:00Z"/>
 					</attachment>

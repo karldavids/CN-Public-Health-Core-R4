@@ -74,7 +74,7 @@
 				</participantType>
 				<!-- 0..1 患者编码 -->
 				<actor>
-					<reference value="Patient /Patient01"/>
+					<reference value="Patient /Patient001-example"/>
 				</actor>
 				<!-- 1..1 转诊确定状态 默认为（同意接收转诊） accepted   accepted | declined | tentative | needs-action -->
 				<participantStatus value="accepted"/>
