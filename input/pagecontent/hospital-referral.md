@@ -29,8 +29,8 @@
 
 
 ### 流程定义资源
-- [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动，描述期在流程中的作用。
-- [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：活动计划资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
+- [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动步骤，描述其在流程中的作用。
+- [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：流程定义资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
 
 ### 流程实例资源
 - [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
@@ -70,6 +70,8 @@
 
 
 ## 数据交互流程
+
+数据交互流程遵循[PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)定义的流程规则和步骤，满足传输数据结构，使用[Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体组装数据。
 
 双向转诊-住院 数据交互主要包括两类：
 - 转入医院和转出医院都具备自己的系统，并且和双向转诊平台做数据接入，实现功能。
