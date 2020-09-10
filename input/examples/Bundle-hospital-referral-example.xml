@@ -135,7 +135,7 @@
 					</type>
 					<!-- 0..1  Reference(Patient）关联患者信息 -->
 					<actor>
-						<reference value="Patient/Patient01"/>
+						<reference value="Patient/Patient001-example"/>
 					</actor>
 					<!-- 1..1  状态 固定为accepted（确定）    accepted | declined | tentative | needs-action -->
 					<status value="accepted"/>

@@ -42,7 +42,7 @@
 	<description value="患者到转入医院办理手续入院后，转出医院上传病历信息。"/>
 	<!-- 0..1 Reference(Any) 关联该任务正在处理的资源 -->
 	<focus>
-		<reference value="List/C0000001"/>
+		<reference value="List/List001-example"/>
 	</focus>
 	<!-- ?? 0..1 任务创建日期 -->
 	<authoredOn value="2019-02-10T13:00:00Z"/>

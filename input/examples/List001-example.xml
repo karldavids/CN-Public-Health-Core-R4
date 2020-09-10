@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<List xmlns="http://hl7.org/fhir">
+	<id value="List001-example"/>
+	<!-- 1..1 列表状态 current | retired | entered-in-error -->
+	<status value="current"/>
+	<!-- 1..1 列表模式，这里选择快照 working | snapshot | changes -->
+	<mode value="snapshot"/>
+	<title value="患者张三的在院病历记录"/>
+	<!-- 0..1 Descriptive name for the list -->
+	<!-- 0..1 患者 -->
+	<subject>
+		<reference value="Patient/Patient001-example"/>
+	</subject>
+	<!-- 0..1 病历集合生成日期 -->
+	<date value="2019-02-10T13:00:00Z"/>
+	<!--  0..* 病历列表条目-->
+	<entry>
+		<!-- 1..1 关联病历文档 1-->
+		<item>
+			<reference value="DocumentReference/DocumentReference002-example"/>
+		</item>
+	</entry>
+	<entry>
+		<!-- 1..1 关联病历文档 2-->
+		<item>
+			<reference value="DocumentReference/DocumentReference003-example"/>
+		</item>
+	</entry>
+	<entry>
+		<!-- 1..1 关联病历文档 3-->
+		<item>
+			<reference value="DocumentReference/DocumentReference004-example"/>
+		</item>
+	</entry>
+</List>
