@@ -7,7 +7,7 @@
 
 ## 双线转诊流-住院 流程定义
 
-###  流程结构定义
+###  流程定义资源
 
 &emsp;&emsp;这里描述整个双向转诊-住院的物业流程是如何通过FHIR的流程定义资源实现。
 该流程中主要涉及到两个核心资源：
@@ -37,9 +37,7 @@
 - [上传完整病历示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Task-Medical-records-submitted-example.html)
 
 
-### 流程定义资源
-- [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动步骤，描述其在流程中的作用。
-- [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：流程定义资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
+
 
 ### 流程实例资源
 - [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
