@@ -93,33 +93,7 @@
 			</Task>
 		</resource>
 	</entry>
-	<!--************************病历集合******************************-->
-	<entry>
-		<resource>
-			<Bundle xmlns="http://hl7.org/fhir">
-				<id value="BL000001"/>
-				<type value="batch"/>
-				<!--************************病历1******************************-->
-				<entry>
-					<resource>
-						<reference value="Bundle/BLA000001"/>
-					</resource>
-				</entry>
-				<!--************************病历2******************************-->
-				<entry>
-					<resource>
-						<reference value="Bundle/BLA000002"/>
-					</resource>
-				</entry>
-				<!--************************病历3******************************-->
-				<entry>
-					<resource>
-						<reference value="Bundle/BLA000003"/>
-					</resource>
-				</entry>
-			</Bundle>
-		</resource>
-	</entry>
+	
 	<!--************************病历1******************************-->
 	<entry>
 		<resource>
