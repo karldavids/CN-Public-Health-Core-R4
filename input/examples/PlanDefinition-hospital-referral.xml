@@ -79,7 +79,7 @@
 		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
 		<prefix value="1"/>
 		<!-- 0..1 步骤名称 -->
-		<title value="提交转诊预约申请"/>
+		<title value="转诊预约申请"/>
 		<!-- 0..1 简要描述行动 -->
 		<description value="[string]"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
@@ -246,7 +246,7 @@
 		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
 		<prefix value="3"/>
 		<!-- 0..1 步骤名称 -->
-		<title value="患者到诊"/>
+		<title value="患者到诊应答"/>
 		<!-- 0..1 简要描述行动 -->
 		<description value="[string]"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
@@ -261,7 +261,7 @@
 				<!-- 0..1 事件类型代码-->
 				<code value="C01003"/>
 				<!-- 0..1 事件类型名称 -->
-				<display value="患者到诊"/>
+				<display value="患者到诊应答"/>
 			</coding>
 		</code>
 
@@ -310,7 +310,7 @@
 		<!-- 0..1 操作前缀 (e.g. 1. or A.) -->
 		<prefix value="4"/>
 		<!-- 0..1 步骤名称 -->
-		<title value="提交转诊完整病历"/>
+		<title value="上传完整病历"/>
 		<!-- 0..1 简要描述行动 -->
 		<description value="[string]"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
@@ -325,7 +325,7 @@
 				<!-- 0..1 事件类型代码-->
 				<code value="C01004"/>
 				<!-- 0..1 事件类型名称 -->
-				<display value="提交转诊完整病历"/>
+				<display value="上传完整病历"/>
 			</coding>
 		</code>
 
