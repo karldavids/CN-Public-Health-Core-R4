@@ -7,9 +7,11 @@
 
 ## 双线转诊流-住院 流程定义
 
+ ###  流程定义结构
 
->流程定义结构如下：
 ![流程定义](PlanDefinition-ActivityDefinition-Task-Relationship.png)
+   
+ ###  流程具体定义
   
 1.	先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)资源进行定义。
 具体定义如下：
