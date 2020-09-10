@@ -44,12 +44,11 @@
 
 本场景中，使用[Bundle](http://hl7.org/fhir/r4/bundle.html) 资源作为 消息传输的载体，组装流程和业务数据，通过通信协议进行交互，数据传输结构如下：
 
-### 数据结构
-
->数据组装结构图如下：
+### 数据结构图
 
 ![数据结构](structure-bundle.png) 
 
+### 数据结构说明
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
 - message：使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 message，[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)引用一个 工作流资源的实例。工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
 - transaction/transaction-response：使用事物请求/应答方式传输数据，该方式是一个事务-所有资源由服务器作为原子资源提交进行处理。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 transaction/transaction-response。该方式第一个资源为工作流资源的实例，工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
