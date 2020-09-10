@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <Organization xmlns="http://hl7.org/fhir">
   <id value="Hospital001-example"/>
-<text value="成都XX医院"/>
   <meta>
     <profile value="http://StructureDefinition.hl7fhir.cn/Hospital"/>
   </meta>
