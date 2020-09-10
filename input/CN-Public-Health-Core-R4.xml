@@ -190,8 +190,8 @@
 
 		<resource>
 			<reference>
-				<!-- PlanDefinition资源示例 -->
-				<reference value="Bundle/Bundle-hospital-referral-exampl"/>
+				<!-- Bundle资源示例 -->
+				<reference value="Bundle/Bundle-hospital-referral-example"/>
 			</reference>
 			<name value="提交转诊预约申请的消息交换示例"/>
 			<description value="演示转诊申请实际交互场景的数据交换示例"/>
