@@ -60,9 +60,11 @@
 			<display value="Treatment"/>
 		</coding>
 	</topic>
+	<!-- 0..1 资源类型 -->
+	<kind value="Task"/>
 	<!-- 0..1 canonical(StructureDefinition) 资源的profile文件地址 -->
 	<profile>
-		<reference value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
+		<reference value="http://hl7.org/fhir/StructureDefinition/Task"/>
 	</profile>
 	
 	<!-- 0..1 优先级 routine | urgent | asap | stat -->

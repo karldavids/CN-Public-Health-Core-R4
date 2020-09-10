@@ -92,6 +92,16 @@
 			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
 		</resource>
 		
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Task/Medical-records-submitted-example"/>
+			</reference>
+			<name value="提交转诊完整病历任务示例"/>
+			<description value="演示如何定义和引用提交转诊完整病历任务的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+		
 		
 		<resource>
 			<reference>
@@ -137,45 +147,12 @@
 
 
 
-		<resource>
-			<reference>
-				<!-- Task资源示例 -->
-				<reference value="Task/Task-patient-arrive-response"/>
-			</reference>
-			<name value="患者到诊Task示例"/>
-			<description value="演示如何定义和引用患者到诊Task的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
-		</resource>
 
-		<resource>
-			<reference>
-				<!-- Task资源示例 -->
-				<reference value="Task/Task-medical-records-submitted"/>
-			</reference>
-			<name value="提交转诊完整病历Task示例"/>
-			<description value="演示如何定义和引用提交转诊完整病历Task的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
-		</resource>
+		
 
-		<resource>
-			<reference>
-				<!-- Task资源示例 -->
-				<reference value="Task/Task-application-for-referral-appointment-response"/>
-			</reference>
-			<name value="转诊预约申请应答Task示例"/>
-			<description value="演示如何定义和引用转诊预约申请应答Task的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
-		</resource>
+	
 
-		<resource>
-			<reference>
-				<!-- Task资源示例 -->
-				<reference value="Task/Task-application-for-referral-appointment"/>
-			</reference>
-			<name value="转诊预约申请Task示例"/>
-			<description value="演示如何定义和引用转诊预约申请Task的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
-		</resource>
+
 
 
 		<resource>

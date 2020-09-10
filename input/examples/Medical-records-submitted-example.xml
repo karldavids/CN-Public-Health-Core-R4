@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Task xmlns="http://hl7.org/fhir">
-	<id value="Task-patient-arrive-response"/>
+	<id value="Medical-records-submitted-example"/>
 
 
 	<!-- 0..1 canonical(ActivityDefinition) 关联ActivityDefinition -->
 	<instantiatesCanonical>
-		<reference value="http://ActivityDefinition.hl7fhir.cn/patient-arrive-response"/>
+		<reference value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
 	</instantiatesCanonical>
 
 
@@ -21,9 +21,9 @@
 			<!-- 0..1 事件类型 CodeSystem url  -->
 			<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
 			<!-- 0..1 事件类型代码-->
-			<code value="C01003"/>
+			<code value="C01004"/>
 			<!-- 0..1 事件类型名称 -->
-			<display value="患者到诊"/>
+			<display value="转诊完整病历上传"/>
 		</coding>
 	</businessStatus>
 
@@ -39,10 +39,10 @@
 		</coding>
 	</code>
 	<!-- 0..1 任务描述 -->
-	<description value="患者到诊，回传患者到诊信息。"/>
+	<description value="患者到转入医院办理手续入院后，转出医院上传病历信息。"/>
 	<!-- 0..1 Reference(Any) 关联该任务正在处理的资源 -->
 	<focus>
-		<reference value="AppointmentResponse/B0000001"/>
+		<reference value="List/C0000001"/>
 	</focus>
 	<!-- ?? 0..1 任务创建日期 -->
 	<authoredOn value="2019-02-10T13:00:00Z"/>
