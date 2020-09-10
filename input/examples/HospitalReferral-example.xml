@@ -58,7 +58,7 @@
 	
 	<!-- 0..* Reference(Any) 该次预约的相关信息（转诊病历） -->
 	<supportingInformation>
-		<reference value="DocumentReference/A000000001"/>
+		<reference value="DocumentReference/DocumentReference001-example"/>
 	</supportingInformation>
 	<!-- 0..1 预约申请时间 -->
 	<created value="2019-02-10T13:00:00Z"/>
