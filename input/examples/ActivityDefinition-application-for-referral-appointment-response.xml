@@ -16,7 +16,7 @@
 	<!-- ?? 0..1 活动名称（计算机友好） -->
 	<name value="application-for-referral-appointment-response"/>
 	<!-- 0..1 活动名称（人友好） -->
-	<title value="转诊预约申请应答"/>
+	<title value="转诊预约应答"/>
 	<!-- 1..1 状态 draft | active | retired | unknown -->
 	<status value="active"/>
 

@@ -5,14 +5,35 @@
 &emsp;&emsp;医生根据患者个人意愿并综合患者病情、转入医院学科特长和床位占用情况等信息发送转诊预约申请请求，经转入医院医生审核确认同意后反馈转出医院，告知患者，同步传送电子病历、检查检验结果信息和（或）电子健康档案信息，患者到诊后，回传患者到诊消息通知。主要业务过程包括床位信息查询、转诊预约申请提交、申请审核与确认、审核应答、履约情况确认、病历上传等。
 
 
-## FHIR资源应用
+## 双线转诊流-住院 流程定义
 
-> 在本场景中主要使用到以下资源：
-
-### 业务资源  
 
 >关系图如下：
-![业务类图](Class.png)
+![流程定义](..\images/PlanDefinition-ActivityDefinition-Task-Relationship.png)
+  
+1.	先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)资源进行定义。
+具体定义如下：
+- [转诊预约申请-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-application-for-referral-appointment.html)
+- [转诊预约应答-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-application-for-referral-appointment-response.html)
+- [患者到诊应答-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-patient-arrive-response.html)
+- [上传完整病历-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-medical-records-submitted.html)
+
+2.	使用[PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)资源进行定义整个转向转诊-住院的业务流程，[PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)资源中包含Action节点，改节点为0..*定义，可以组装多个步骤。每个Action使用 [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)定义的步骤进行关联。
+3.	流程开始后，每次实例化具体的资源对应 [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)定义的步骤，具体资源示例如下：
+
+- [转诊预约申请示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Appointment-HospitalReferral-example.html)
+- [转诊预约应答示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/AppointmentResponse-HospitalReferralResponse-example.html)
+- [患者到诊应答示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/AppointmentResponse-PatientArriveResponse-example.html)
+- [上传完整病历示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Task-Medical-records-submitted-example.html)
+
+### 流程定义使用的资源
+- [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动，描述期在流程中的作用。
+- [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：活动计划资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
+
+### 实际流程使用的业务资源  
+
+>关系图如下：
+![业务类图](..\images/Class.png)
 
 - [HospitalReferral](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral.html):双向转诊预约申请资源，该资源描述医院转诊的的申请。包括上转、下转都使用该资源。
 - [HospitalReferralResponse](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/StructureDefinition-hospital-referral-response.html)：双向转诊应答资源，该资源描述在提交转诊申请后，由接收方 给出是否同意的转诊应答。
@@ -23,17 +44,7 @@
 - [Department](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-Department.html)：科室/部门资源，描述医院科室/部门的基础信息。
 - [Hospital](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-Hospital.html)：医院资源，描述医疗机构（医院）的基本信息。
 - [PractitionerRole](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-PractitionerRole.html)：医护人员工作信息资源，医务人员提供医疗服务时的岗位相关信息，包括所属组织、科室、角色/岗位等。
-
-
-### 工作流资源
-
->关系图如下：
-![工作流关系图](PlanDefinition-ActivityDefinition-Task-Relationship.png)
-  
-- [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动，描述期在流程中的作用。
-- [PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)：活动计划资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
-- [Task](http://hl7.org/fhir/r4/task.html)：任务资源，作为[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)的实例，每次开启流程后，每一个步骤都对应一个[Task](http://hl7.org/fhir/r4/task.html)资源，作为流程步骤的附加产物，并且关联该任务执行中 产出的业务资源。
-
+- [List](http://hl7.org/fhir/r4/list.html)：集合资源，在该场景下对患者的完整病历进行打包操作。
 
 
 ## 对接方式
@@ -44,7 +55,7 @@
   
 ### 通过双转平台对接
 
-![流程图](sequence-platform.png)
+![流程图](..\images/sequence-platform.png)
 
 >转诊路程：
 
@@ -56,7 +67,7 @@
 
 ### 通过双转平台操作
 
-![流程图](sequence.png)
+![流程图](..\images/sequence.png)
 
 > 转诊流程：
 
@@ -76,7 +87,7 @@
 
 >数据传输流程图如下：
 
-![数据结构](structure-bundle.png) 
+![数据结构](..\images/structure-bundle.png) 
 
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
 - message：使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 message。
