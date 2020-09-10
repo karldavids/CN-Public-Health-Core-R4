@@ -9,7 +9,7 @@
 
 
 >关系图如下：
-![流程定义](..\images/PlanDefinition-ActivityDefinition-Task-Relationship.png)
+![流程定义](PlanDefinition-ActivityDefinition-Task-Relationship.png)
   
 1.	先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)资源进行定义。
 具体定义如下：
@@ -44,7 +44,7 @@
 
 >数据组装结构图如下：
 
-![数据结构](..\images/structure-bundle.png) 
+![数据结构](structure-bundle.png) 
 
 [Bundle](http://hl7.org/fhir/r4/bundle.html)作为数据载体，[Bundle](http://hl7.org/fhir/r4/bundle.html)资源下的[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
 - message：使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 message，[MessageHeader](http://hl7.org/fhir/r4/messageheader.html)引用一个 工作流资源的实例。工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
@@ -54,7 +54,7 @@
 ### 实际流程使用的业务资源  
 
 >关系图如下：
-![业务类图](..\images/Class.png)
+![业务类图](Class.png)
 
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
 - [HospitalBed](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-hospital-bed.html)：病床信息资源，描述医院床位的基础信息以及当前状态。
@@ -75,7 +75,7 @@
   
 ### 通过双转平台对接
 
-![流程图](..\images/sequence-platform.png)
+![流程图](sequence-platform.png)
 
 >具体流程：
 
@@ -86,7 +86,7 @@
 
 ### 通过双转平台操作
 
-![流程图](..\images/sequence.png)
+![流程图](sequence.png)
 
 > 具体流程：
 
