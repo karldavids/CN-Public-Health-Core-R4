@@ -53,9 +53,9 @@
 - transaction/transaction-response：使用事物请求/应答方式传输数据，该方式是一个事务-所有资源由服务器作为原子资源提交进行处理。[Bundle.type](http://hl7.org/fhir/r4/bundle-definitions.html#Bundle.type)节点为 transaction/transaction-response。该方式第一个资源为工作流资源的实例，工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
 
 
-### 实际流程使用的业务资源  
+### 流程资源和业务资源关  
 
->关系图如下：
+>介绍流程资源和业务资源的相互关联关系，关系图如下：
 ![业务类图](Class.png)
 
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
