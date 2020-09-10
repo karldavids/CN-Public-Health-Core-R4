@@ -3,7 +3,7 @@
   <id value="hospital-referral-response" />
   <url value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response" />
   <name value="HospitalReferralResponse" />
-  <title value="转诊申请应答" />
+  <title value="转诊预约应答" />
   <status value="draft" />
   <description value="该资源描述在提交转诊申请后，由接收方 给出是否同意的转诊应答。" />
   <fhirVersion value="4.0.1" />

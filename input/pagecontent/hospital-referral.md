@@ -19,6 +19,7 @@
 - [上传完整病历-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-medical-records-submitted.html)
 
 2.	使用[PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)资源进行定义整个双向转诊-住院的业务流程，[PlanDefinition](http://hl7.org/fhir/r4/plandefinition.html)资源中包含Action节点，该节点为0..*定义，可以组装多个步骤。每个Action关联一个 [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)定义的步骤。
+- [住院双转流程-PlanDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)
 3.	流程开始后，每次步骤实例化具体的资源对应 [ActivityDefinition](http://hl7.org/fhir/r4/activitydefinition.html)定义的步骤，具体资源示例如下：
 
 - [转诊预约申请示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Appointment-HospitalReferral-example.html)
@@ -76,7 +77,7 @@
 
 ![流程图](..\images/sequence-platform.png)
 
->转诊路程：
+>具体流程：
 
 1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，转诊预约申请经过发送到 双转平台。 [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)
 2.	双转平台根据实际情况进行审批,审批通过后，通过双转平台下发申请审核应答到转出医院。[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
@@ -87,7 +88,7 @@
 
 ![流程图](..\images/sequence.png)
 
-> 转诊流程：
+> 具体流程：
 
 1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，转诊预约申请经过双转平台发送到 转入医院。 [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)	
 2.	转入医院医生根据实际情况进行审批,审批通过后，通过双转平台下发申请审核应答到转出医院。[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
