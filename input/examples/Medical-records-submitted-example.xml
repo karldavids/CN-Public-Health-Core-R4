@@ -23,7 +23,7 @@
 			<!-- 0..1 事件类型代码-->
 			<code value="C01004"/>
 			<!-- 0..1 事件类型名称 -->
-			<display value="转诊完整病历上传"/>
+			<display value="上传完整病历"/>
 		</coding>
 	</businessStatus>
 
