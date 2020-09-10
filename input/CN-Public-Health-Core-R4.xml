@@ -193,8 +193,41 @@
 				<!-- Bundle资源示例 -->
 				<reference value="Bundle/Bundle-hospital-referral-example"/>
 			</reference>
-			<name value="提交转诊预约申请的消息交换示例"/>
+			<name value="转诊预约申请消息交换示例"/>
 			<description value="演示转诊申请实际交互场景的数据交换示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		
+
+		<resource>
+			<reference>
+				<!-- Bundle资源示例 -->
+				<reference value="Bundle/Bundle-hospital-referral-response-example"/>
+			</reference>
+			<name value="转诊预约应答消息交换示例"/>
+			<description value="演示转诊预约应答实际交互场景的数据交换示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- Bundle资源示例 -->
+				<reference value="Bundle/Bundle-patient-arrive-response-example"/>
+			</reference>
+			<name value="患者到诊应答消息交换示例"/>
+			<description value="演示患者到诊应答实际交互场景的数据交换示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<!-- Bundle资源示例 -->
+				<reference value="Bundle/Bundle-medical-records-submitted-example"/>
+			</reference>
+			<name value="转诊完整病历上传消息交换示例"/>
+			<description value="演示转诊完整病历上传实际交互场景的数据交换示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 

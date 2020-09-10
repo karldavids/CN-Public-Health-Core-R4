@@ -42,7 +42,7 @@
 		<resource>
 			<Appointment xmlns="http://hl7.org/fhir">
 				<!-- 0..1 住院转诊预约逻辑ID -->
-				<id value="Appointment-hospital-referral-example"/>
+				<id value="Appointment-hospital-referral"/>
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral"/>
 				</meta>
@@ -115,7 +115,7 @@
 					</type>
 					<!-- 0..1  Reference(Practitioner）关联医护人员信息 -->
 					<actor>
-						<reference value="Practitioner/1234"/>
+						<reference value="Practitioner/Practitioner01"/>
 					</actor>
 					<!-- 1..1  状态 固定为 needs-action（需要回应）    accepted | declined | tentative | needs-action -->
 					<status value="needs-action"/>
@@ -135,7 +135,7 @@
 					</type>
 					<!-- 0..1  Reference(Patient）关联患者信息 -->
 					<actor>
-						<reference value="Patient/Patient-example"/>
+						<reference value="Patient/Patient01"/>
 					</actor>
 					<!-- 1..1  状态 固定为accepted（确定）    accepted | declined | tentative | needs-action -->
 					<status value="accepted"/>
@@ -148,7 +148,7 @@
 		<resource>
 			<Patient xmlns="http://hl7.org/fhir">
 				<!--0..1 患者ID-->
-				<id value="Patient-example"/>
+				<id value="Patient01"/>
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/Patient"/>
 				</meta>
@@ -302,22 +302,22 @@
 				</category>
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/Patient-example"/>
+					<reference value="Patient/Patient01"/>
 				</subject>
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
    Patient|RelatedPerson) 文档编写者 -->
 				<author>
-					<reference value="Practitioner/Practitioner-example"/>
+					<reference value="Practitioner/Practitioner01"/>
 				</author>
 				<!-- 0..1 文档审核者 -->
 				<authenticator>
-					<reference value="Practitioner/Practitioner-example"/>
+					<reference value="Practitioner/Practitioner01"/>
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Organization-example"/>
+					<reference value="Organization/Organization01"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
 				<description value="城乡居民健康档案基本数据集-转诊（院）记录"/>

@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Bundle xmlns="http://hl7.org/fhir">
+	<id value="Bundle-patient-arrive-response-example"/>
+	<type value="message"/>
+	<!--************************消息头****************************-->
+	<entry>
+		<resource>
+			<MessageHeader xmlns="http://hl7.org/fhir">
+				<!--1.1 消息ID（实例ID，重发不变）-->
+				<id value="MessageHeader-0003"/>
+				<!--消息事件 1..1-->
+				<eventCoding>
+					<!-- 0..1 事件类型 CodeSystem url  -->
+					<system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
+					<!-- 0..1 事件类型代码-->
+					<code value="C01003"/>
+					<!-- 0..1 事件类型名称 -->
+					<display value="患者到诊"/>
+				</eventCoding>
+				<!-- 1..1 消息源应用程序 -->
+				<source>
+					<!-- 0..1 系统名称（发送消息的系统） -->
+					<name value="[string]"/>
+					<!-- 0..1 软件名称（子系统名称） -->
+					<software value="[string]"/>
+					<!-- 0..1 运行的软件版本（当前版本） -->
+					<version value="[string]"/>
+					<!-- 1..1 ID地址(当前操作客户端IP地址) -->
+					<endpoint value="[uri]"/>
+				</source>
+				<!--消息实际内容 0..*-->
+				<focus>
+					<!-- 0..1 Reference(AppointmentResponse) 关联工作流信息 -->
+					<reference value="AppointmentResponse/patient-arrive-response"/>
+				</focus>
+			</MessageHeader>
+		</resource>
+	</entry>
+
+	<!--************************患者到诊******************************-->
+	<entry>
+		<resource>
+			<AppointmentResponse xmlns="http://hl7.org/fhir">
+				<!-- 0..1 患者到诊应答逻辑ID -->
+				<id value="patient-arrive-response"/>
+				<meta>
+					<profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
+				</meta>
+				<!-- 0..* 同意转诊编号 -->
+				<identifier>
+					<!-- 0..1 同意转诊编号NamingSystem uri-->
+					<system value="http://NamingSystem.hl7fhir.cn/hospital-referral-response-identifier"/>
+					<!-- 0..1 同意转诊编号 -->
+					<value value="YBAU00003"/>
+				</identifier>
+				<!-- 1..1 Reference(Appointment) 申请编号 -->
+				<appointment>
+					<reference value="Appointment/Appointment-hospital-referral"/>
+				</appointment>
+				<!-- 0..1 允许转诊的开始时间 -->
+				<start value="2019-02-10T13:00:00Z"/>
+				<!-- 0..1 允许转诊的结束时间 -->
+				<end value="2019-02-11T13:00:00Z"/>
+				<!-- 0..* 参与者角色（该处为固定为医护人员） -->
+				<participantType>
+					<coding>
+						<!-- 0..1 参与者角色 CodeSystem url  -->
+						<system value="http://CodeSystem.hl7fhir.cn/encounter-participant-type"/>
+						<!-- 0..1 参与者角色代码-->
+						<code value="01"/>
+						<!-- 0..1 参与者角色 -->
+						<display value="患者"/>
+					</coding>
+				</participantType>
+				<!-- 0..1 患者编码 -->
+				<actor>
+					<reference value="Patient /Patient01"/>
+				</actor>
+				<!-- 1..1 转诊确定状态 默认为（同意接收转诊） accepted   accepted | declined | tentative | needs-action -->
+				<participantStatus value="accepted"/>
+				<!-- 0..1 备注 -->
+				<comment value="患者已经到诊。"/>
+			</AppointmentResponse>
+		</resource>
+	</entry>
+</Bundle>
