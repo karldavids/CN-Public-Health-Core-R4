@@ -8,7 +8,7 @@
 	
 	<!-- 1..1 Reference(Appointment) 申请编号 -->
 	<appointment>
-		<reference value="Appointment/12345678"/>
+		<reference value="Appointment/HospitalReferral-example"/>
 	</appointment>
 
 	<!-- 0..1 允许转诊的开始时间 -->
@@ -28,7 +28,7 @@
 	</participantType>
 	<!-- 0..1 同意转诊医生编码 -->
 	<actor>
-		<reference value="Practitioner/1234"/>
+		<reference value="Practitioner/Practitioner001-example"/>
 	</actor>
 	<!-- 1..1 转诊确定状态 默认为（同意接收转诊） accepted   accepted | declined | tentative | needs-action -->
 	<participantStatus value="accepted"/>
