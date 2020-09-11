@@ -15,7 +15,7 @@
 - [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动步骤，描述其在流程中的作用。
 - [PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)：流程定义资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
 
-![流程定义](PlanDefinition-ActivityDefinition-Task-Relationship.png)
+![流程定义](..\images/PlanDefinition-ActivityDefinition-Task-Relationship.png)
 
 
 ###  流程具体定义
@@ -47,31 +47,28 @@
 
 ## 数据组装方式
 
-本场景中，使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html) 资源作为 消息传输的载体，组装流程和业务数据，通过通信协议进行交互，数据传输结构如下：
-
-### 数据结构图
-
-![数据结构](structure-bundle.png) 
-
-
-### 数据结构说明
-[Bundle](http://www.hl7fhir.cn/R4/bundle.html)作为数据载体，[Bundle](http://www.hl7fhir.cn/R4/bundle.html)资源下的[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点在该场景下可选择两种方式：
-- message：使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)。[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点为 message，[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)引用一个 工作流资源的实例。工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
-- transaction/transaction-response：使用事物请求/应答方式传输数据，该方式是一个事务-所有资源由服务器作为原子资源提交进行处理。[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点为 transaction/transaction-response。该方式第一个资源为工作流资源的实例，工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
-  
-### 消息定义
-使用message消息方式传输数据之前，必须先定义[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html),通过对[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html)的定义，明确消息体的具体结构，消息定义和**数据结构图**中定义一直，以FHIR 语法方式描述整个数据结构，具体结构如下示例：
+本场景中，使用[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html)定义每个消息体结构，遵循[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的Action节点下对应的步骤定义，每个步骤对应相应的消息定义，明确消息体的具体结构，以FHIR 语法方式描述整个数据结构，具体结构如下示例：
 - [转诊预约申请-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转出医疗机构向转入医疗结构发起转诊预约申请时使用，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为Appointment资源(1..1),可以包含其他Resource资源（0..*），并且该消息具备2个应答消息：1.转入医院收到转诊申请后，根据自己医院情况和患者病情，审核是否通过转诊，审批通过后，作出应答。2.患者到达转入医院，办理手续后，发起患者到诊应答。
 - [转诊预约应答-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-response-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转入医疗机构收到转入医疗机构发起的转诊申请，并且审批是否通过后使用，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为AppointmentResponse资源(1..1),可以包含其他Resource资源（0..*），并且该消息不需要应答。
 - [患者到诊应答-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-patient-arrive-response-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转出医院接收到转诊预约应答，并且通过审批后，患者到达转入医疗机构，发送患者到诊应答消息，使用该消息发送患者到诊应答信息，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为AppointmentResponse资源(1..1),可以包含其他Resource资源（0..*），并且该消息具备1个应答消息：患者到达转入医院，办理手续后，收到该患者到诊应答的消息，通过该消息上传完整病历作为应答。
 - [上传完整病历-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-medical-records-submitted-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转出医疗机构收到患者到诊应答消息后，使用该消息上传完整病历信息，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为Task资源(1..1),可以包含其他Resource资源（0..*），并且该消息不需要应答。
 
 
+### 消息结构说明
+本场景暂时只支持Message方式，其他方式在进一步定义中，消息结构使用
+[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据，[Bundle](http://www.hl7fhir.cn/R4/bundle.html)资源下的[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点在该场景下选择：message。
 
+使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)。[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点为 message，[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)引用一个 工作流资源的实例。工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
+
+### 消息体定义结构图
+
+![数据结构](..\images/structure-bundle.png) 
+
+  
 ### 流程资源和业务资源关  
 
 >介绍流程资源和业务资源的相互关联关系，关系图如下：
-![业务类图](Class.png)
+![业务类图](..\images/Class.png)
 
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
 - [HospitalBed](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-hospital-bed.html)：病床信息资源，描述医院床位的基础信息以及当前状态。
@@ -82,11 +79,9 @@
 - [PractitionerRole](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-PractitionerRole.html)：医护人员工作信息资源，医务人员提供医疗服务时的岗位相关信息，包括所属组织、科室、角色/岗位等。
 - [List](http://www.hl7fhir.cn/R4/list.html)：集合资源，在该场景下对患者的完整病历进行打包操作。
 
-
-
 ## 数据交互流程
 
-数据交互流程遵循[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)定义的流程规则和步骤，满足传输数据结构，使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)作为数据载体组装数据。
+数据交互流程遵循[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)定义的流程规则和步骤，按照[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html)定义每个消息体结构组装数据
 
 双向转诊-住院 数据交互主要包括两类：
 - 转入医院和转出医院都具备自己的系统，并且和双向转诊平台做数据接入，实现功能。
@@ -94,30 +89,30 @@
   
 ### 通过双转平台对接
 
-![流程图](sequence-platform.png)
+![流程图](..\images/sequence-platform.png)
 
 >具体流程：
 
-1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，转诊预约申请经过发送到 双转平台。 [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)
-2.	双转平台根据实际情况进行审批,审批通过后，通过双转平台下发申请审核应答到转出医院。[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
-3.	患者到转入医院报到后，办理入院手续，双转平台回传患者到诊通知到转出医院。[患者到诊应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-patient-arrive-response-example.html)
-4.	根据到诊通知，转出医院上传该患者相关的病历资料到双转平台。[上传完整病历消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-medical-records-submitted-example.html)
+1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，发送转诊预约申请经过发送到 双转平台。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第一个action节点定义的步骤-转诊预约申请，按照[转诊预约申请消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见： [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)
+2.	双转平台根据实际情况进行审批，通过双转平台下发转诊预约应答到转出医院。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第二个action节点定义的步骤-转诊预约应答，按照[转诊预约应答消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-response-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
+3.	患者到转入医院报到后，办理入院手续，双转平台回传患者到诊应答到转出医院。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第三个action节点定义的步骤-患者到诊应答，按照[患者到诊应答消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-patient-arrive-response-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[患者到诊应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-patient-arrive-response-example.html)
+4.	根据到诊通知，转出医院上传该患者相关的病历资料到双转平台。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第四个action节点定义的步骤-上传完整病历，按照[上传完整病历消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-medical-records-submitted-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[上传完整病历消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-medical-records-submitted-example.html)
 
 ### 通过双转平台操作
 
-![流程图](sequence.png)
+![流程图](..\images/sequence.png)
 
 > 具体流程：
 
-1.	转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，转诊预约申请经过双转平台发送到 转入医院。 [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)	
-2.	转入医院医生根据实际情况进行审批,审批通过后，通过双转平台下发申请审核应答到转出医院。[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
-3.	患者到转入医院报到后，办理入院手续，回传患者到诊通知到转出医院。[患者到诊应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-patient-arrive-response-example.html)
-4.	根据到诊通知，转出医院上传该患者相关的病历资料到双转平台，并且转发到转入医院。[上传完整病历消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-medical-records-submitted-example.html)
+1.	转出医院根据获取到的双转平台的科室床位资源情况，发起转诊预约申请，附带基本病情介绍发送到双转平台，该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第一个action节点定义的步骤-转诊预约申请，按照[转诊预约申请消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见： [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)。	
+2.	双转平台根据实际情况进行审批，下发转诊预约应答到转出医院。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第二个action节点定义的步骤-转诊预约应答，按照[转诊预约应答消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-response-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[转诊预约应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-response-example.html)
+3.	患者到转入医院报到后，办理入院手续，双转平台回传患者到诊通知到转出医院。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第三个action节点定义的步骤-患者到诊应答，按照[患者到诊应答消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-patient-arrive-response-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[患者到诊应答消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-patient-arrive-response-example.html)
+4.	根据到诊通知，转出医院上传该患者相关的病历资料到双转平台，该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第四个action节点定义的步骤-上传完整病历，按照[上传完整病历消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-medical-records-submitted-example.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见：[上传完整病历消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-medical-records-submitted-example.html)
 
 
 ## 数据交换方式
 
-FHIR的数据交换方式支持多种类型包括：FHIR + REST、服务方式、消息方式
+FHIR的数据交换方式支持多种类型包括：FHIR + REST、服务方式、消息方式。本场景中支持消息方式进行交互，其他方式正在制定中。
 
 ### FHIR + REST 方式
 FHIR + REST（“ RESTful FHIR”），是当今实施FHIR的主要方法，FHIR被描述为基于REST的常见行业级别用法的“ RESTful”规范。实际上，FHIR仅支持REST成熟度模型的级别2 作为核心规范的一部分，尽管通过使用扩展也可以实现完全级别3的一致性。因为FHIR是标准，所以它依赖于资源结构和接口的标准化。这可能被视为违反REST原则，但是对于确保跨不同系统的一致互操作性至关重要。[FHIR + REST 方式 详细说明参见此处](http://www.hl7fhir.cn/R4/http.html)
