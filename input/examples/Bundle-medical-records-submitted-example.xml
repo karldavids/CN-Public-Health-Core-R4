@@ -33,6 +33,10 @@
 					<!-- 0..1 Reference(Task) 关联任务信息（Task） -->
 					<reference value="Task/Task-medical-records-submitted"/>
 				</focus>
+				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
+ 				<definition>
+					<reference value="MessageDefinition/MessageDefinition-medical-records-submitted-example"/>
+				</definition>
 			</MessageHeader>
 		</resource>
 	</entry>
