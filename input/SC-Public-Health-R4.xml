@@ -181,7 +181,7 @@
 				<reference value="Bundle/Bundle-hospital-referral-example"/>
 			</reference>
 			<name value="转诊预约申请消息交换Bundle示例"/>
-			<description value="演示转诊申请实际交互场景的数据交换Bundle示例"/>
+			<description value="演示如何定义和引用转诊申请实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
@@ -193,7 +193,7 @@
 				<reference value="Bundle/Bundle-hospital-referral-response-example"/>
 			</reference>
 			<name value="转诊预约应答消息交换Bundle示例"/>
-			<description value="演示转诊预约应答实际交互场景的数据交换Bundle示例"/>
+			<description value="演示如何定义和引用转诊预约应答实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
@@ -204,7 +204,7 @@
 				<reference value="Bundle/Bundle-patient-arrive-response-example"/>
 			</reference>
 			<name value="患者到诊应答消息交换Bundle示例"/>
-			<description value="演示患者到诊应答实际交互场景的数据交换Bundle示例"/>
+			<description value="演示如何定义和引用患者到诊应答实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 		
@@ -214,7 +214,7 @@
 				<reference value="Bundle/Bundle-medical-records-submitted-example"/>
 			</reference>
 			<name value="上传完整病历消息交换Bundle示例"/>
-			<description value="演示上传完整病历实际交互场景的数据交换Bundle示例"/>
+			<description value="演示如何定义和引用上传完整病历实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
@@ -226,7 +226,7 @@
 				<reference value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
 			</reference>
 			<name value="转诊预约申请消息定义MessageDefinition的示例"/>
-			<description value="演示转诊申请消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用转诊申请消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 
@@ -238,7 +238,7 @@
 				<reference value="MessageDefinition/MessageDefinition-hospital-referral-response-example"/>
 			</reference>
 			<name value="转诊预约应答消息定义MessageDefinition的示例"/>
-			<description value="演示转诊预约应答消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用转诊预约应答消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 
@@ -249,7 +249,7 @@
 				<reference value="MessageDefinition/MessageDefinition-patient-arrive-response-example"/>
 			</reference>
 			<name value="患者到诊应答消息定义MessageDefinition的示例"/>
-			<description value="演示患者到诊应答消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用患者到诊应答消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 		
@@ -259,8 +259,18 @@
 				<reference value="MessageDefinition/MessageDefinition-medical-records-submitted-example"/>
 			</reference>
 			<name value="上传完整病历消息定义MessageDefinition的示例"/>
-			<description value="演示上传完整病历消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用上传完整病历消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- Patient资源示例 -->
+				<reference value="Patient/Patient001-example"/>
+			</reference>
+			<name value="患者张三的示例"/>
+			<description value="演示如何定义和引用患者张三的示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/Patient"/>
 		</resource>
 
 
