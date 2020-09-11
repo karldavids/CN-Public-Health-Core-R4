@@ -50,14 +50,12 @@
     
   <!-- 1..1 Coding|uri 事件定义 -->
   <eventCoding>
-    <coding>
       <!-- 0..1 事件类型 CodeSystem url  -->
       <system value="http://CodeSystem.hl7fhir.cn/activity-code"/>
       <!-- 0..1 事件类型代码-->
       <code value="C01003"/>
       <!-- 0..1 事件类型名称 -->
       <display value="患者到诊应答"/>
-    </coding>
   </eventCoding>
   
   <!-- 0..1 消息类型 consequence | currency | notification -->

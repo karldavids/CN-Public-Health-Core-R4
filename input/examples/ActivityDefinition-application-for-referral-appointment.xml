@@ -4,7 +4,13 @@
 	<!-- 0..1 ActivityDefinition 的全局URL -->
 	<url value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment"/>
 	
- 	<text>定义双向转诊-住院流程的转诊预约申请活动，通过创建ActivityDefinition的实例，医疗预防机构根据病情需要，将本单位诊疗的病人转到另一个医疗预防机构诊疗或处理 提交的预约申请。该活动的实际参与者：该预约申请参与者有两个，分别为患者和转入医院医护人员。</text>
+ 	<text>
+	  <!-- from Element: extension -->
+ 	<status value="additional"/><!-- 1..1 generated | extensions | additional | empty -->
+	  <div xmlns="http://www.w3.org/1999/xhtml"> 
+	  定义双向转诊-住院流程的转诊预约申请活动，通过创建ActivityDefinition的实例，医疗预防机构根据病情需要，将本单位诊疗的病人转到另一个医疗预防机构诊疗或处理 提交的预约申请。该活动的实际参与者：该预约申请参与者有两个，分别为患者和转入医院医护人员。
+	   </div>
+	</text>
 	<!-- 0..* 活动标识符 -->
 	<identifier>
 		<!-- 0..1 活动标识符NamingSystem uri-->
