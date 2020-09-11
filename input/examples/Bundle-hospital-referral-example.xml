@@ -98,7 +98,7 @@
 				<end value="2019-02-20T13:00:00Z"/>
 				<!-- 0..* Reference(Any) 该次预约的相关信息（转诊病历） -->
 				<supportingInformation>
-					<reference value="DocumentReference/DocumentReference00001"/>
+					<reference value="DocumentReference/DocumentReference001-example"/>
 				</supportingInformation>
 				<!-- 0..1 预约申请时间 -->
 				<created value="2019-02-10T13:00:00Z"/>
@@ -119,7 +119,7 @@
 					</type>
 					<!-- 0..1  Reference(Practitioner）关联医护人员信息 -->
 					<actor>
-						<reference value="Practitioner/Practitioner01"/>
+						<reference value="Practitioner/Practitioner001-example"/>
 					</actor>
 					<!-- 1..1  状态 固定为 needs-action（需要回应）    accepted | declined | tentative | needs-action -->
 					<status value="needs-action"/>
@@ -153,6 +153,9 @@
 			<Patient xmlns="http://hl7.org/fhir">
 				<!--0..1 患者ID-->
 				<id value="Patient001-example"/>
+				<meta>
+					<profile value="http://StructureDefinition.hl7fhir.cn/Patient"/>
+				</meta>
 				<!--1..* 身份证件号 -->
 				<identifier>
 					<!--证件类型-->
@@ -254,7 +257,11 @@
 		<resource>
 			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
-				<id value="DocumentReference00001"/>
+				<id value="DocumentReference001-example"/>
+
+				<meta>
+					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
+				</meta>
 				<!-- 0..1 病历文档标识符 -->
 				<masterIdentifier>
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
@@ -299,22 +306,22 @@
 				</category>
 				<!-- 0..1 患者 -->
 				<subject>
-					<reference value="Patient/Patient01"/>
+					<reference value="Patient/Patient001-example"/>
 				</subject>
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
    Patient|RelatedPerson) 文档编写者 -->
 				<author>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</author>
 				<!-- 0..1 文档审核者 -->
 				<authenticator>
-					<reference value="Practitioner/Practitioner01"/>
+					<reference value="Practitioner/Practitioner001-example"/>
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Organization01"/>
+					<reference value="Organization/Organization001-example"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
 				<description value="城乡居民健康档案基本数据集-转诊（院）记录"/>
