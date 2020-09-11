@@ -35,7 +35,7 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 活动定义的自然语言描述 -->
-	<description value="[markdown]"/>
+	<description value="定义双向转诊-住院流程的患者到诊应答活动，通过创建ActivityDefinition的实例，患者到达转入医院后，向转出医院发送患者到诊应答。该活动的参与者为患者本人"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>

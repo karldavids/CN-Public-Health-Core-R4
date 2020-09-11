@@ -35,7 +35,7 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 活动定义的自然语言描述 -->
-	<description value="[markdown]"/>
+	<description value="定义双向转诊-住院流程的上传完整病历活动，通过创建ActivityDefinition的实例，患者到诊确认后，转出医疗机构上传患者的完整的电子病历信息到转入医疗机构。该活动的实际参与者为转出医院医生。"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
@@ -44,7 +44,7 @@
 		<text value="中国"/>
 	</jurisdiction>
 	<!-- 0..1 描述活动定义的临床用法 -->
-	<usage value="患者到转入医疗机构办理手续入院后，转出医疗机构上传患者的完整的电子病历信息到接收医疗机构。"/>
+	<usage value="患者到诊确认后，转出医疗机构上传患者的完整的电子病历信息到转入医疗机构"/>
 	<!-- 0..1 活动定义何时被发布者批准 -->
 	<approvalDate value="2019-01-01"/>
 	<!-- 0..1 上次审核活动定义的时间 -->
@@ -72,7 +72,18 @@
 	<!-- 0..* 参与者信息 -->
 	<participant>
 		<!-- 1..1 参与者类型  patient | practitioner | related-person | device -->
-		<type value="patient"/>
+		<type value="practitioner"/>
+		<!-- 0..1 参与者角色 -->
+		<role>
+			<coding>
+				<!-- 0..1 参与者角色 CodeSystem url  -->
+				<system value="http://CodeSystem.hl7fhir.cn/encounter-participant-type"/>
+				<!-- 0..1 参与者角色代码-->
+				<code value="01"/>
+				<!-- 0..1 参与者角色 -->
+				<display value="责任医生"/>
+			</coding>
+		</role>
 	</participant>
 	
 	

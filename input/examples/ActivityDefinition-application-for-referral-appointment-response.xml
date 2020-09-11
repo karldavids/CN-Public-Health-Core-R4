@@ -35,7 +35,7 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 活动定义的自然语言描述 -->
-	<description value="[markdown]"/>
+	<description value="定义双向转诊-住院流程的转诊预约答应活动，通过创建ActivityDefinition的实例，对病人和(或)医生的转诊预约请求的答复，如确认或拒绝。在提交转诊申请后，由接收方给出是否同意的转诊应答，该活动的实际参与者：该预约申请参与者为转入医院医生。"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>

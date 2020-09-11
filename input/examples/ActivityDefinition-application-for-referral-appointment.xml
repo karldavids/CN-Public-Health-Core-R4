@@ -35,13 +35,7 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 活动定义的自然语言描述 -->
-	<description value="
-###  活动定义说明：
-定义双向转诊-住院流程的转诊预约申请活动，通过创建ActivityDefinition的实例，约束该活动的相应要素，具体约束如下：
-- 标题：转诊预约申请
-- 名称：application-for-referral-appointment
-- 使用场景和方法：医疗预防机构根据病情需要，将本单位诊疗的病人转到另一个医疗预防机构诊疗或处理 提交的预约申请。
-- 该活动的实际参与者：该预约申请参与者有两个，分别为患者和转入医院医护人员。"/>
+	<description value="定义双向转诊-住院流程的转诊预约申请活动，通过创建ActivityDefinition的实例，医疗预防机构根据病情需要，将本单位诊疗的病人转到另一个医疗预防机构诊疗或处理 提交的预约申请。该活动的实际参与者：该预约申请参与者有两个，分别为患者和转入医院医护人员。"/>
 	<jurisdiction>
 		<coding>
 			<system value="http://CodeSystem.hl7fhir.cn/countries-and-regions"/>
