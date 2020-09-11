@@ -81,7 +81,7 @@
 		<!-- 0..1 步骤名称 -->
 		<title value="转诊预约申请"/>
 		<!-- 0..1 简要描述行动 -->
-		<description value="[string]"/>
+		<description value="医疗预防机构根据病情需要，将本单位诊疗的病人转到另一个医疗预防机构诊疗或处理 提交的预约申请。"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
 		<textEquivalent value="[string]"/>
 		<!-- 0..1 routine | urgent | asap | stat -->
@@ -174,7 +174,7 @@
 		<!-- 0..1 步骤名称 -->
 		<title value="转诊预约应答"/>
 		<!-- 0..1 简要描述行动 -->
-		<description value="[string]"/>
+		<description value="对病人和(或)医生的转诊预约请求的答复，如确认或拒绝。在提交转诊申请后，由接收方给出是否同意的转诊应答"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
 		<textEquivalent value="[string]"/>
 		<!-- 0..1 routine | urgent | asap | stat -->
@@ -248,7 +248,7 @@
 		<!-- 0..1 步骤名称 -->
 		<title value="患者到诊应答"/>
 		<!-- 0..1 简要描述行动 -->
-		<description value="[string]"/>
+		<description value="患者到达转入医疗机构，转入医院回传患者到诊的相应信息到申请机构。"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
 		<textEquivalent value="[string]"/>
 		<!-- 0..1 routine | urgent | asap | stat -->
@@ -312,7 +312,7 @@
 		<!-- 0..1 步骤名称 -->
 		<title value="上传完整病历"/>
 		<!-- 0..1 简要描述行动 -->
-		<description value="[string]"/>
+		<description value="患者到转入医疗机构办理手续入院后，转出医疗机构上传患者的完整的电子病历信息到接收医疗机构。"/>
 		<!-- 0..1 人可读的行为描述（计算机无法自动执行） -->
 		<textEquivalent value="[string]"/>
 		<!-- 0..1 routine | urgent | asap | stat -->
