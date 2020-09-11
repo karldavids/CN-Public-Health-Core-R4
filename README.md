@@ -6,6 +6,6 @@
 
 ## 在线指南
 
-http://build.fhir.org/ig/HL7China/CN-Public-Health-Core-R4 为本项目构建的在线指南的开发版本。正式发布版本
+http://build.fhir.org/ig/HL7China/SC-Public-Health-R4 为本项目构建的在线指南的开发版本。正式发布版本
 
-https://www.hl7fhir.cn/ig/CN-Public-Health-Core-R4 将会是本指南的正式发布版本（尚未发布）
+https://www.hl7fhir.cn/ig/SC-Public-Health-R4 将会是本指南的正式发布版本（尚未发布）
