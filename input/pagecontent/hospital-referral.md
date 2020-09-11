@@ -67,7 +67,7 @@
 ### 流程资源和业务资源关系  
 
 > 介绍流程资源和业务资源的相互关联关系，关系图如下：
-
+  
 ![业务类图](Class.png)
 
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
@@ -91,7 +91,7 @@
 ### 通过双转平台对接
 
 ![流程图](sequence-platform.png)
-
+  
 > 具体流程：
 
 1. 转出医院根据获取到的转入医院的科室床位资源情况，发起转诊预约申请，附带基本病情介绍，发送转诊预约申请经过发送到 双转平台。该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第一个action节点定义的步骤-转诊预约申请，按照[转诊预约申请消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见： [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)。
@@ -102,7 +102,7 @@
 ### 通过双转平台操作
 
 ![流程图](sequence.png)
-
+  
 > 具体流程：
 
 1. 转出医院根据获取到的双转平台的科室床位资源情况，发起转诊预约申请，附带基本病情介绍发送到双转平台，该流程符合流程定义[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的第一个action节点定义的步骤-转诊预约申请，按照[转诊预约申请消息定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral.html)的消息结构定义使用[Bundle](http://www.hl7fhir.cn/R4/bundle.html)组装数据并发送，具体示例参见： [转诊预约申请消息交换示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Bundle-Bundle-hospital-referral-example.html)。
