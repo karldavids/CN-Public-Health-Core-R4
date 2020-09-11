@@ -7,7 +7,7 @@
   </extension>-->
 	<url value="http://press.hl7fhir.cn/ImplementationGuide/CN-Core-R4"/>
 	<!-- 此实施指南的版本。除非指定了 "propagate-version" 扩展元素，否则所有引用资源都将继承此版本号 -->
-	<version value="0.2.0"/>
+	<version value="0.0.2"/>
 	<name value="Public Health CN Core Implementation Guide"/>
 	<title value="公卫实施指南"/>
 	<status value="draft"/>
