@@ -46,7 +46,9 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 计划定义的自然语言描述 -->
-	<description value="[markdown]"/>
+	<description value="使用PlanDefinition资源进行定义整个双向转诊-住院的业务流程，该流程资源中包含Action节点，该节点为0..*定义，可以组装多个步骤。每个Action关联一个 ActivityDefinition定义的步骤。流程开始后，每次步骤实例化具体的资源对应 ActivityDefinition定义的步骤，该流程分为四个步骤，分别为转诊预约申请、转诊预约应答、患者到诊应答、上传完整病历
+转诊预约申请 为该流程的第一步，转诊申请发起后，根据转诊预约应答来确定下面步骤，如果为不同意，结束流程，如果为同意，等待患者到诊应答，患者到诊应答结束后，上传完整病历信息。
+该流程定义的总共4个action，分别对应上面四个步骤，并且通过relatedAction节点描述每个步骤和其他步骤的关系"/>
 	
 	<jurisdiction>
 		<coding>
