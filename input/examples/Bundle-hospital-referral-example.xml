@@ -153,9 +153,6 @@
 			<Patient xmlns="http://hl7.org/fhir">
 				<!--0..1 患者ID-->
 				<id value="Patient01"/>
-				<meta>
-					<profile value="http://StructureDefinition.hl7fhir.cn/Patient"/>
-				</meta>
 				<!--1..* 身份证件号 -->
 				<identifier>
 					<!--证件类型-->
@@ -258,10 +255,6 @@
 			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
 				<id value="DocumentReference00001"/>
-
-				<meta>
-					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
-				</meta>
 				<!-- 0..1 病历文档标识符 -->
 				<masterIdentifier>
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
