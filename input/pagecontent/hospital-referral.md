@@ -15,7 +15,7 @@
 - [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)：活动定义资源，定义在医务流程中每一个活动步骤，描述其在流程中的作用。
 - [PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)：流程定义资源，通过活动计划资源可以对活动定义资源进行组装，并且实现活动流程的定义，以及活动之前的先后关系，触发条件等信息，该资源可描述一个完整的业务流程。
 
-![流程定义](..\images/PlanDefinition-ActivityDefinition-Task-Relationship.png)
+![流程定义](PlanDefinition-ActivityDefinition-Task-Relationship.png)
 
 
 ###  流程具体定义
@@ -47,7 +47,12 @@
 
 ## 数据组装方式
 
-本场景中，使用[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html)定义每个消息体结构，遵循[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的Action节点下对应的步骤定义，每个步骤对应相应的消息定义，明确消息体的具体结构，以FHIR 语法方式描述整个数据结构，具体结构如下示例：
+### 消息体定义结构图
+
+![数据结构](structure-bundle.png) 
+
+
+本场景中，使用[MessageDefinition](http://www.hl7fhir.cn/R4/messagedefinition.html)定义每个消息体结构，遵循[住院双转流程定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)中的Action节点下对应的步骤定义，每个步骤对应一个的消息定义，明确消息体的具体结构，以FHIR 语法方式描述整个数据结构，具体结构如下示例：
 - [转诊预约申请-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转出医疗机构向转入医疗结构发起转诊预约申请时使用，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为Appointment资源(1..1),可以包含其他Resource资源（0..*），并且该消息具备2个应答消息：1.转入医院收到转诊申请后，根据自己医院情况和患者病情，审核是否通过转诊，审批通过后，作出应答。2.患者到达转入医院，办理手续后，发起患者到诊应答。
 - [转诊预约应答-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-hospital-referral-response-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转入医疗机构收到转入医疗机构发起的转诊申请，并且审批是否通过后使用，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为AppointmentResponse资源(1..1),可以包含其他Resource资源（0..*），并且该消息不需要应答。
 - [患者到诊应答-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-patient-arrive-response-example.html)：该消息定义为 双向转诊-住院场景中定义的消息，在转出医院接收到转诊预约应答，并且通过审批后，患者到达转入医疗机构，发送患者到诊应答消息，使用该消息发送患者到诊应答信息，该消息定义描述了在整个消息传输过程中必须具备的资源结构，包括 第一个资源 必须为MessageHeader资源（1..1）,第二个资源必须为AppointmentResponse资源(1..1),可以包含其他Resource资源（0..*），并且该消息具备1个应答消息：患者到达转入医院，办理手续后，收到该患者到诊应答的消息，通过该消息上传完整病历作为应答。
@@ -60,15 +65,13 @@
 
 使用消息发送的方式传输数据，第一个资源必须为第一个资源是[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)。[Bundle.type](http://www.hl7fhir.cn/R4/bundle-definitions.html#Bundle.type)节点为 message，[MessageHeader](http://www.hl7fhir.cn/R4/messageheader.html)引用一个 工作流资源的实例。工作流资源回关联业务资源实例，他们的关系为0..*.业务资源之间也会相互关联。
 
-### 消息体定义结构图
 
-![数据结构](..\images/structure-bundle.png) 
 
   
 ### 流程资源和业务资源关  
 
 >介绍流程资源和业务资源的相互关联关系，关系图如下：
-![业务类图](..\images/Class.png)
+![业务类图](Class.png)
 
 - [MedicalRecordDocumentation](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-medical-record-documentation.html)：病历引用资源，引用第三方的病历文书，并且把病历文书作为附件形式上传。
 - [HospitalBed](https://build.fhir.org/ig/HL7China/CN-CORE-R4/branches/develop/StructureDefinition-hospital-bed.html)：病床信息资源，描述医院床位的基础信息以及当前状态。
@@ -89,7 +92,7 @@
   
 ### 通过双转平台对接
 
-![流程图](..\images/sequence-platform.png)
+![流程图](sequence-platform.png)
 
 >具体流程：
 
@@ -100,7 +103,7 @@
 
 ### 通过双转平台操作
 
-![流程图](..\images/sequence.png)
+![流程图](sequence.png)
 
 > 具体流程：
 
@@ -114,6 +117,10 @@
 
 FHIR的数据交换方式支持多种类型包括：FHIR + REST、服务方式、消息方式。本场景中支持消息方式进行交互，其他方式正在制定中。
 
+### 消息方式
+FHIR资源可以在传统的消息传递上下文中使用，就像HL7 v2一样。符合此框架要求的应用程序符合“ FHIR消息传递”。支持大多数消息组建、ESB等消息引擎，支持异步消息和消息应答机制。
+[消息方式 详细说明参见此处](http://www.hl7fhir.cn/R4/messaging.html)
+
 ### FHIR + REST 方式
 FHIR + REST（“ RESTful FHIR”），是当今实施FHIR的主要方法，FHIR被描述为基于REST的常见行业级别用法的“ RESTful”规范。实际上，FHIR仅支持REST成熟度模型的级别2 作为核心规范的一部分，尽管通过使用扩展也可以实现完全级别3的一致性。因为FHIR是标准，所以它依赖于资源结构和接口的标准化。这可能被视为违反REST原则，但是对于确保跨不同系统的一致互操作性至关重要。[FHIR + REST 方式 详细说明参见此处](http://www.hl7fhir.cn/R4/http.html)
 
@@ -122,7 +129,5 @@ FHIR + REST（“ RESTful FHIR”），是当今实施FHIR的主要方法，FHIR
 FHIR + WS *使用Web服务服务作为通信协议而不是REST的FHIR实现。例如，这将包括使用FHIR资源作为SOAP调用中的有效负载参数。
 FHIR + SOA模式说明了在SOA做法指导下，在实现技术（SOAP，REST或其他）之上应用交互模式。[服务方式 详细说明参见此处](http://www.hl7fhir.cn/R4/services.html)
 
-### 消息方式
-FHIR资源可以在传统的消息传递上下文中使用，就像HL7 v2一样。符合此框架要求的应用程序符合“ FHIR消息传递”。支持大多数消息组建、ESB等消息引擎，支持异步消息和消息应答机制。
-[消息方式 详细说明参见此处](http://www.hl7fhir.cn/R4/messaging.html)
+
 
