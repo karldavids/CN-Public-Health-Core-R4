@@ -13,9 +13,9 @@
   </identifier>
   <!-- 0..1 版本 -->
   <version value="0.2.0"/>
-  <!-- ?? 0..1 计划名称（计算机友好）-->
+  <!-- ?? 0..1 消息名称（计算机友好）-->
   <name value="medical-records-submitted"/>
-  <!-- 0..1 计划名称（人友好） -->
+  <!-- 0..1 消息名称（人友好） -->
   <title value="上传完整病历"/>
   <!-- 1..1 状态 draft | active | retired | unknown -->
   <status value="active"/>
@@ -33,7 +33,7 @@
       <value value="contact@hl7fhir.cn"/>
     </telecom>
   </contact>
-  <!-- 0..1 计划定义的自然语言描述 -->
+  <!-- 0..1 消息定义的自然语言描述 -->
   <description value="[markdown]"/>
 
   <jurisdiction>
@@ -46,8 +46,6 @@
   <!-- 0..1 为什么定义此消息定义 -->
   <purpose value="[markdown]"/>
 
-  <!-- 0..1 使用和/或发布限制（版权） -->
-  <copyright value="[markdown]"/>
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
   <parent>

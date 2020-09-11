@@ -13,9 +13,9 @@
   </identifier>
   <!-- 0..1 版本 -->
   <version value="0.2.0"/>
-  <!-- ?? 0..1 计划名称（计算机友好）-->
+  <!-- ?? 0..1 消息名称（计算机友好）-->
   <name value="hospital-referral-response"/>
-  <!-- 0..1 计划名称（人友好） -->
+  <!-- 0..1 消息名称（人友好） -->
   <title value="转诊预约应答"/>
   <!-- 1..1 状态 draft | active | retired | unknown -->
   <status value="active"/>
@@ -45,9 +45,6 @@
   </jurisdiction>
   <!-- 0..1 为什么定义此消息定义 -->
   <purpose value="[markdown]"/>
-
-  <!-- 0..1 使用和/或发布限制（版权） -->
-  <copyright value="[markdown]"/>
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
   <parent>
@@ -105,15 +102,5 @@
   </focus>
   <!-- 0..1 应答方式 always | on-error | never | on-success -->
   <responseRequired value="never"/>
-  <allowedResponse>
-    <!-- 0..* Responses to this message -->
-    <message>
-      <!-- 1..1 canonical(MessageDefinition) Reference to allowed message definition response -->
-    </message>
-    <situation value="[markdown]"/>
-    <!-- 0..1 When should this response be used -->
-  </allowedResponse>
-  <graph>
-    <!-- 0..* canonical(GraphDefinition) Canonical reference to a GraphDefinition -->
-  </graph>
+  
 </MessageDefinition>

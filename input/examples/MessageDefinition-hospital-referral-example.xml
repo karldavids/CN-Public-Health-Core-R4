@@ -13,9 +13,9 @@
   </identifier>
   <!-- 0..1 版本 -->
   <version value="0.2.0"/>
-  <!-- ?? 0..1 计划名称（计算机友好）-->
+  <!-- ?? 0..1 消息名称（计算机友好）-->
   <name value="hospital-referral"/>
-  <!-- 0..1 计划名称（人友好） -->
+  <!-- 0..1 消息名称（人友好） -->
   <title value="转诊预约申请"/>
   <!-- 1..1 状态 draft | active | retired | unknown -->
   <status value="active"/>
@@ -45,9 +45,6 @@
   </jurisdiction>
   <!-- 0..1 为什么定义此消息定义 -->
   <purpose value="[markdown]"/>
-
-  <!-- 0..1 使用和/或发布限制（版权） -->
-  <copyright value="[markdown]"/>
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
   <parent>
