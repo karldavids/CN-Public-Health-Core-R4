@@ -48,9 +48,8 @@
 
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
-  <parent>
-    <reference value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
-  </parent>
+  <parent value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
+  
   <!-- 1..1 Coding|uri 事件定义 -->
   <eventCoding>
     <coding>
@@ -71,9 +70,8 @@
     <!-- 1..1 资源类型 Type of resource -->
     <code value="MessageHeader"/>
     <!-- 0..1 canonical(StructureDefinition) 该类型的结构定义 -->
-    <profile>
-      <reference value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
-    </profile>
+    <profile value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
+     
     <!-- 1..1 最小 -->
     <min value="1"/> 
     <!--  0..1 最大 -->
@@ -84,9 +82,8 @@
     <!-- 1..1 资源类型 Type of resource -->
     <code value="Task"/>
     <!-- 0..1 canonical(StructureDefinition) 该类型的结构定义 -->
-    <profile>
-      <reference value="http://hl7.org/fhir/StructureDefinition/Task"/>
-    </profile>
+    <profile value="http://hl7.org/fhir/StructureDefinition/Task"/>
+      
     <!-- 1..1 最小 -->
     <min value="1"/>
     <!--  0..1 最大 -->

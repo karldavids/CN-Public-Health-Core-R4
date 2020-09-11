@@ -4,9 +4,8 @@
 
 
 	<!-- 0..1 canonical(ActivityDefinition) 关联ActivityDefinition -->
-	<instantiatesCanonical>
-		<reference value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
-	</instantiatesCanonical>
+	<instantiatesCanonical value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
+	
 
 
 	<!-- 1..1 状态 draft | requested | received | accepted | + -->

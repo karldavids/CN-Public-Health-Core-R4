@@ -164,9 +164,8 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical>
-			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment"/>
-		</definitionCanonical>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment"/>
+		
 	</action>
 
 	<!-- 转诊预约应答 -->
@@ -238,9 +237,8 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical>
-			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment-response"/>
-		</definitionCanonical>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment-response"/>
+			
 	</action>
 
 	<!-- 患者到诊 -->
@@ -302,9 +300,8 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical>
-			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-patient-arrive-response"/>
-		</definitionCanonical>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-patient-arrive-response"/>
+			
 	</action>
 
 	<!-- 上传病历 -->
@@ -366,8 +363,7 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical>
-			<reference value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-medical-records-submitted"/>
-		</definitionCanonical>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-medical-records-submitted"/>
+			
 	</action>
 </PlanDefinition>

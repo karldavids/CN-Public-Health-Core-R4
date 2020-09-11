@@ -34,9 +34,8 @@
 					<reference value="AppointmentResponse/hospital-referral-response"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition>
-					<reference value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
-				</definition>
+ 				<definition value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
+					
 			</MessageHeader>
 		</resource>
 	</entry>

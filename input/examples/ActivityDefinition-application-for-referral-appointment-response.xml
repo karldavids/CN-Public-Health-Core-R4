@@ -63,10 +63,7 @@
 	<!-- 0..1 资源类型 -->
 	<kind value="AppointmentResponse"/>
 	<!-- 0..1 canonical(StructureDefinition) 资源的profile文件地址 -->
-	<profile>
-		<reference value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
-	</profile>
-	
+	<profile  value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
 	<!-- 0..1 优先级 routine | urgent | asap | stat -->
 	<priority value="routine"/>
 	<!-- 0..* 参与者信息 -->

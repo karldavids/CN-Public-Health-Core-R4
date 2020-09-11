@@ -63,9 +63,8 @@
 	<!-- 0..1 资源类型 -->
 	<kind value="Task"/>
 	<!-- 0..1 canonical(StructureDefinition) 资源的profile文件地址 -->
-	<profile>
-		<reference value="http://hl7.org/fhir/StructureDefinition/Task"/>
-	</profile>
+	<profile value="http://hl7.org/fhir/StructureDefinition/Task"/>
+	
 	
 	<!-- 0..1 优先级 routine | urgent | asap | stat -->
 	<priority value="routine"/>

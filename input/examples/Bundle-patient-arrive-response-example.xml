@@ -34,9 +34,8 @@
 					<reference value="AppointmentResponse/patient-arrive-response"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition>
-					<reference value="MessageDefinition/MessageDefinition-patient-arrive-response-example"/>
-				</definition>
+ 				<definition value="MessageDefinition/MessageDefinition-patient-arrive-response-example"/>
+					
 			</MessageHeader>
 		</resource>
 	</entry>

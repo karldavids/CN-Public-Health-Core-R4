@@ -34,9 +34,8 @@
 					<reference value="Task/Task-medical-records-submitted"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition>
-					<reference value="MessageDefinition/MessageDefinition-medical-records-submitted-example"/>
-				</definition>
+ 				<definition value="MessageDefinition/MessageDefinition-medical-records-submitted-example"/>
+				
 			</MessageHeader>
 		</resource>
 	</entry>

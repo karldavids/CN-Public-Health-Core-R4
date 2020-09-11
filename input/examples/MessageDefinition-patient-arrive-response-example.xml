@@ -46,9 +46,8 @@
   <!-- 0..1 为什么定义此消息定义 -->
   <purpose value="在数据交互过程中，为了规范整个消息体的格式和消息数据的应答关系，定义此消息体，满足 患者到诊应答步骤 需要传输的所有数据信息。"/>
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
-  <parent>
-    <reference value="http://ActivityDefinition.hl7fhir.cn/patient-arrive-response"/>
-  </parent>
+  <parent value="http://ActivityDefinition.hl7fhir.cn/patient-arrive-response"/>
+    
   <!-- 1..1 Coding|uri 事件定义 -->
   <eventCoding>
     <coding>
@@ -82,9 +81,8 @@
     <!-- 1..1 资源类型 Type of resource -->
     <code value="AppointmentResponse"/>
     <!-- 0..1 canonical(StructureDefinition) 该类型的结构定义 -->
-    <profile>
-      <reference value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
-    </profile>
+    <profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
+     
     <!-- 1..1 最小 -->
     <min value="1"/>
     <!--  0..1 最大 -->
@@ -104,9 +102,8 @@
   <!-- 0..* 对此消息的响应 -->
   <allowedResponse>
     <!-- 1..1 canonical(MessageDefinition) 响应消息 -->
-    <message>
-      	<reference value="MessageDefinitio/MessageDefinition-medical-records-submitted-example"/>
-    </message>
+    <message value="MessageDefinitio/MessageDefinition-medical-records-submitted-example"/>
+      
     <!-- 0..1 什么时候应该使用这个响应 -->
     <situation value="患者到达转入医院，办理手续后，收到该患者到诊应答的消息，通过该消息上传完整病历"/>  
   </allowedResponse>  

@@ -47,9 +47,8 @@
   <purpose value="在数据交互过程中，为了规范整个消息体的格式和消息数据的应答关系，定义此消息体，满足 转诊预约应答步骤 需要传输的所有数据信息。"/>
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
-  <parent>
-    <reference value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment-response"/>
-  </parent>
+  <parent value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment-response"/>
+  
   <!-- 1..1 Coding|uri 事件定义 -->
   <eventCoding>
     <coding>
@@ -70,9 +69,8 @@
     <!-- 1..1 资源类型 Type of resource -->
     <code value="MessageHeader"/>
     <!-- 0..1 canonical(StructureDefinition) 该类型的结构定义 -->
-    <profile>
-      <reference value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
-    </profile>
+    <profile value="http://hl7.org/fhir/StructureDefinition/MessageHeader"/>
+     
     <!-- 1..1 最小 -->
     <min value="1"/> 
     <!--  0..1 最大 -->
@@ -83,9 +81,8 @@
     <!-- 1..1 资源类型 Type of resource -->
     <code value="AppointmentResponse"/>
     <!-- 0..1 canonical(StructureDefinition) 该类型的结构定义 -->
-    <profile>
-      <reference value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
-    </profile>
+    <profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
+     
     <!-- 1..1 最小 -->
     <min value="1"/>
     <!--  0..1 最大 -->
