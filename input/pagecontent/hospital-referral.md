@@ -1,3 +1,5 @@
+# 双向转诊-住院场景
+
 ## 业务背景
 
 &emsp;&emsp;“双向转诊”，简而言之就是“小病进社区，大病进医院”，积极发挥大中型医院在人才、技术及设备等方面的优势，同时充分利用各社区医院的服务功能和网点资源，促使基本医疗逐步下沉社区，社区群众危重病、疑难病的救治到大中型医院。
@@ -20,18 +22,18 @@
 
 ### 流程具体定义
   
-1. 先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)资源进行定义，具体定义如下：
+> 先定义流程中的步骤，该流程分为四个步骤，使用[ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)资源进行定义，具体定义如下：
 
 - [转诊预约申请-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-application-for-referral-appointment.html)
 - [转诊预约应答-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-application-for-referral-appointment-response.html)
 - [患者到诊应答-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-patient-arrive-response.html)
 - [上传完整病历-ActivityDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/ActivityDefinition-ActivityDefinition-medical-records-submitted.html)
 
-2. 使用[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)资源进行定义整个双向转诊-住院的业务流程，[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)资源中包含Action节点，该节点为0..*定义，可以组装多个步骤。每个Action关联一个 [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)定义的步骤。转诊预约申请 为该流程的第一步，转诊申请发起后，根据转诊预约应答来确定下面步骤，如果为不同意，结束流程，如果为同意，等待患者到诊应答，患者到诊应答结束后，上传完整病历信息。
+> 使用[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)资源进行定义整个双向转诊-住院的业务流程，[PlanDefinition](http://www.hl7fhir.cn/R4/plandefinition.html)资源中包含Action节点，该节点为0..*定义，可以组装多个步骤。每个Action关联一个 [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)定义的步骤。转诊预约申请 为该流程的第一步，转诊申请发起后，根据转诊预约应答来确定下面步骤，如果为不同意，结束流程，如果为同意，等待患者到诊应答，患者到诊应答结束后，上传完整病历信息。
 
 - [住院双转流程-PlanDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/PlanDefinition-PlanDefinition-hospital-referral.html)
 
-3. 流程开始后，每次步骤实例化具体的资源对应 [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)定义的步骤，具体资源示例如下：
+> 流程开始后，每次步骤实例化具体的资源对应 [ActivityDefinition](http://www.hl7fhir.cn/R4/activitydefinition.html)定义的步骤，具体资源示例如下：
 
 - [转诊预约申请示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/Appointment-HospitalReferral-example.html)
 - [转诊预约应答示例](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/AppointmentResponse-HospitalReferralResponse-example.html)
