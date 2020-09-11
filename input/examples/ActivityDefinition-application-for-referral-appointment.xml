@@ -35,7 +35,8 @@
 		</telecom>
 	</contact>
 	<!-- 0..1 活动定义的自然语言描述 -->
-	<description value="### 活动定义说明：
+	<description value="
+###  活动定义说明：
 定义双向转诊-住院流程的转诊预约申请活动，通过创建ActivityDefinition的实例，约束该活动的相应要素，具体约束如下：
 - 标题：转诊预约申请
 - 名称：application-for-referral-appointment
