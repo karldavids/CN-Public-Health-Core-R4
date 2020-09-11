@@ -34,7 +34,7 @@
 					<reference value="Appointment/Appointment-hospital-referral"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
+ 				<definition value="http://MessageDefinition.hl7fhir.cn/hospital-referral"/>
 					
 			</MessageHeader>
 		</resource>
@@ -54,7 +54,7 @@
 					<!-- 0..1 转诊编号NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/hospital-referral-identifier"/>
 					<!-- 0..1 转诊编号 -->
-					<value value="Appointment00001"/>
+					<value value="Appointment-hospital-referral"/>
 				</identifier>
 				<!-- 1..1 预约状态 -->
 				<status value="booked">

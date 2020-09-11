@@ -34,7 +34,7 @@
 					<reference value="Task/Task-medical-records-submitted"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition value="MessageDefinition/MessageDefinition-medical-records-submitted-example"/>
+ 				<definition value="http://MessageDefinition.hl7fhir.cn/medical-records-submitted"/>
 				
 			</MessageHeader>
 		</resource>
@@ -45,9 +45,8 @@
 			<Task xmlns="http://hl7.org/fhir">
 				<id value="Task-medical-records-submitted"/>
 				<!-- 0..1 canonical(ActivityDefinition) 关联ActivityDefinition -->
-				<instantiatesCanonical>
-					<reference value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
-				</instantiatesCanonical>
+				<instantiatesCanonical value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
+					
 				<!-- 1..1 状态 draft | requested | received | accepted | + -->
 				<status value="requested"/>
 				<!-- 1..1 目的 unknown | proposal | plan | order | original-order | reflex-order | filler-order | instance-order | option -->

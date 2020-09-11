@@ -34,7 +34,7 @@
 					<reference value="AppointmentResponse/patient-arrive-response"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition value="MessageDefinition/MessageDefinition-patient-arrive-response-example"/>
+ 				<definition value="http://MessageDefinition.hl7fhir.cn/patient-arrive-response"/>
 					
 			</MessageHeader>
 		</resource>
@@ -58,7 +58,7 @@
 				</identifier>
 				<!-- 1..1 Reference(Appointment) 申请编号 -->
 				<appointment>
-					<reference value="Appointment/Appointment-hospital-referral"/>
+					<reference value="Appointment/HospitalReferral-example"/>
 				</appointment>
 				<!-- 0..1 允许转诊的开始时间 -->
 				<start value="2019-02-10T13:00:00Z"/>
