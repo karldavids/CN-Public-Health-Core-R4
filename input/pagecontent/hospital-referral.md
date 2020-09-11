@@ -67,6 +67,8 @@
 - [上传完整病历-MessageDefinition定义](https://build.fhir.org/ig/karldavids/CN-Public-Health-Core-R4/MessageDefinition-MessageDefinition-medical-records-submitted-example.html)
 
 
+
+
 ### 流程资源和业务资源关  
 
 >介绍流程资源和业务资源的相互关联关系，关系图如下：
