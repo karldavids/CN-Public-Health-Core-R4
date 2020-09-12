@@ -327,6 +327,15 @@
 			<description value="演示如何定义和引用出院小结的示例"/>
 		</resource>
 
+		<resource>
+			<reference>
+				<!-- DocumentReference资源示例 -->
+				<reference value="DocumentReference/DocumentReference004-example"/>
+			</reference>
+			<name value="病历-出院小结示例"/>
+			<description value="演示如何定义和引用出院小结的示例"/>
+		</resource>
+
 
 		<resource>
 			<reference>
