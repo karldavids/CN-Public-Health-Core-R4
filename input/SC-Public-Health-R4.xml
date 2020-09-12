@@ -415,17 +415,11 @@
            </page>
 
 
-			 <page>
-               <nameUrl value="useage-scenarios.html"/>
-               <title value="使用场景"/>
-               <generation value="markdown"/>
-
-               <page>
+			  <page>
                  <nameUrl value="hospital-referral.html"/>
 				<title value="双向转诊-住院"/>
 				<generation value="markdown"/> 
               </page>
-         	 </page>
 
 		  	 <page>
                <nameUrl value="downloads.html"/>
