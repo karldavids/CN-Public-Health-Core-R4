@@ -372,55 +372,62 @@
 				<title value="首页"/>
 				<generation value="markdown"/>
 			</page>
+
 			<page>
-				<nameUrl value="background.html"/>
-				<title value="Background"/>
-				<generation value="html"/>
-			</page>
-			<page>
-				<nameUrl value="spec.html"/>
-				<title value="核心规范"/>
-				<generation value="markdown"/>
-			</page>
-			<page>
-				<nameUrl value="downloads.html"/>
-				<title value="下载"/>
-				<generation value="html"/>
-			</page>
-			<page>
-				<nameUrl value="messages.html"/>
-				<title value="消息交换"/>
-				<generation value="markdown"/>
-			</page>
-			<page>
-				<nameUrl value="REST.html"/>
-				<title value="微服务API"/>
-				<generation value="markdown"/>
-			</page>
-			<page>
-				<nameUrl value="terminology.html"/>
-				<title value="术语编码"/>
-				<generation value="markdown"/>
-			</page>
-			<page>
-				<nameUrl value="extensions.html"/>
-				<title value="扩展元素"/>
-				<generation value="markdown"/>
-			</page>
-			
-			<page>
-				<nameUrl value="profiles.html"/>
-				<title value="资源结构"/>
-				<generation value="markdown"/>
-			</page>
-			
-			<page>
-				<nameUrl value="hospital-referral.html"/>
+                <nameUrl value="spec.html"/>
+                <title value="核心规范"/>
+                <generation value="markdown"/>
+
+               <page>
+                   <nameUrl value="profiles.html"/>
+                   <title value="资源结构"/>
+                   <generation value="markdown"/>
+              </page>
+
+               <page>
+                  <nameUrl value="extensions.html"/>
+                  <title value="扩展元素"/>
+                  <generation value="markdown"/>
+               </page>
+
+               <page>
+                  <nameUrl value="terminology.html"/>
+                   <title value="术语编码"/>
+                  <generation value="markdown"/>
+               </page>
+
+                <page>
+                  <nameUrl value="REST.html"/>
+                  <title value="微服务API"/>
+                   <generation value="markdown"/>
+               </page>
+
+                <page>
+                   <nameUrl value="messages.html"/>
+                   <title value="消息交换"/>
+                   <generation value="markdown"/>
+              </page>
+
+           </page>
+
+
+			 <page>
+               <nameUrl value="useage-scenarios.html"/>
+               <title value="使用场景"/>
+               <generation value="markdown"/>
+
+               <page>
+                 <nameUrl value="hospital-referral.html"/>
 				<title value="双向转诊-住院"/>
-				<generation value="markdown"/>
-			</page>
-	  
-	  
+				<generation value="markdown"/> 
+              </page>
+         	 </page>
+
+		  	 <page>
+               <nameUrl value="downloads.html"/>
+    			<title value="下载"/>
+    			<generation value="html"/>
+ 			 </page>
 			<!-- 
 			<page>
 				<nameUrl value="changes.html"/>
