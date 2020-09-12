@@ -421,7 +421,13 @@
 				<title value="双向转诊-住院"/>
 				<generation value="markdown"/> 
               </page>
-          </page>
+         	 </page>
+
+		  	 <page>
+               <nameUrl value="downloads.html"/>
+    			<title value="下载"/>
+    			<generation value="html"/>
+ 			 </page>
 			<!-- 
 			<page>
 				<nameUrl value="changes.html"/>
