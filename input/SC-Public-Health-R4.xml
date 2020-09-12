@@ -330,10 +330,10 @@
 		<resource>
 			<reference>
 				<!-- DocumentReference资源示例 -->
-				<reference value="DocumentReference/DocumentReference004-example"/>
+				<reference value="List/List001-example"/>
 			</reference>
-			<name value="病历-出院小结示例"/>
-			<description value="演示如何定义和引用出院小结的示例"/>
+			<name value="患者张三的在院病历记录示例"/>
+			<description value="演示如何定义和引用患者张三的在院病历记录示例"/>
 		</resource>
 
 
