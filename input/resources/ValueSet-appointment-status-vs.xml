@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir"> 
+	<id value="appointment-status-vs"/>
+ <url value="http://ValueSet.hl7fhir.cn/appointment-status-vs"/>
+ <name value="appointment-status-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
+ <title value="预约的整体状态"/><!-- 0..1 Name for this value set (human friendly) -->
+ <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
+<description value="预约的整体状态。每个此预约相关的人或物都有参与此预约流程相关的自己的状态。但整体状态表示每个参与者可用的共享状态。"/>
+ <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
+  <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->
+   <system value="http://hl7.org/fhir/appointmentstatus"/><!-- ?? 0..1 The system the codes come from --> 
+  </include>
+  <exclude><!-- ?? 0..* Content as for ValueSet.compose.include Explicitly exclude codes from a code system or other value sets --></exclude>
+ </compose>
+</ValueSet>
