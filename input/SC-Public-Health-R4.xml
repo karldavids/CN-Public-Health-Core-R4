@@ -372,7 +372,11 @@
 				<title value="首页"/>
 				<generation value="markdown"/>
 			</page>
-
+			<page>
+				<nameUrl value="background.html"/>
+				<title value="Background"/>
+				<generation value="html"/>
+			</page>
 			<page>
                 <nameUrl value="spec.html"/>
                 <title value="核心规范"/>
