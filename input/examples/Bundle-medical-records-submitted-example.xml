@@ -31,7 +31,7 @@
 				<!--消息实际内容 0..*-->
 				<focus>
 					<!-- 0..1 Reference(Task) 关联任务信息（Task） -->
-					<reference value="Task/Task-medical-records-submitted"/>
+					<reference value="Task/Medical-records-submitted-example"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
  				<definition>
@@ -44,7 +44,7 @@
 	<entry>
 		<resource>
 			<Task xmlns="http://hl7.org/fhir">
-				<id value="Task-medical-records-submitted"/>
+				<id value="Medical-records-submitted-example"/>
 				<!-- 0..1 canonical(ActivityDefinition) 关联ActivityDefinition -->
 				<instantiatesCanonical>
 					<reference value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>

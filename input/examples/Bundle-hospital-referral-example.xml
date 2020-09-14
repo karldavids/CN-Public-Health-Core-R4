@@ -31,11 +31,11 @@
 				<!--消息实际内容 0..*-->
 				<focus>
 					<!-- 0..1 Reference(Appointment) 关联工作流信息 -->
-					<reference value="Appointment/Appointment-hospital-referral"/>
+					<reference value="Appointment/HospitalReferral-example"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
  				<definition>
-					<reference value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
+					<reference value="MessageDefinition/hospital-referral-example"/>
 				</definition>
 			</MessageHeader>
 		</resource>
@@ -46,7 +46,7 @@
 		<resource>
 			<Appointment xmlns="http://hl7.org/fhir">
 				<!-- 0..1 住院转诊预约逻辑ID -->
-				<id value="Appointment-hospital-referral"/>
+				<id value="HospitalReferral-example"/>
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/hospital-referral"/>
 				</meta>
