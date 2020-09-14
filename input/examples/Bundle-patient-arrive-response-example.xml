@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="patient-arrive-response-example"/>
+	<id value="Bundle-patient-arrive-response-example"/>
 	<type value="message"/>
 	<!--************************消息头****************************-->
 	<entry>
@@ -34,8 +34,9 @@
 					<reference value="AppointmentResponse/patient-arrive-response"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition value="http://MessageDefinition.hl7fhir.cn/patient-arrive-response"/>
-					
+ 				<definition>
+					<reference value="MessageDefinition/MessageDefinition-patient-arrive-response-example"/>
+				</definition>
 			</MessageHeader>
 		</resource>
 	</entry>
@@ -58,7 +59,7 @@
 				</identifier>
 				<!-- 1..1 Reference(Appointment) 申请编号 -->
 				<appointment>
-					<reference value="Appointment/HospitalReferral-example"/>
+					<reference value="Appointment/Appointment-hospital-referral"/>
 				</appointment>
 				<!-- 0..1 允许转诊的开始时间 -->
 				<start value="2019-02-10T13:00:00Z"/>

@@ -34,8 +34,9 @@
 					<reference value="Appointment/Appointment-hospital-referral"/>
 				</focus>
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
- 				<definition value="http://MessageDefinition.hl7fhir.cn/hospital-referral"/>
-					
+ 				<definition>
+					<reference value="MessageDefinition/MessageDefinition-hospital-referral-example"/>
+				</definition>
 			</MessageHeader>
 		</resource>
 	</entry>
@@ -54,7 +55,7 @@
 					<!-- 0..1 转诊编号NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/hospital-referral-identifier"/>
 					<!-- 0..1 转诊编号 -->
-					<value value="Appointment-hospital-referral"/>
+					<value value="Appointment00001"/>
 				</identifier>
 				<!-- 1..1 预约状态 -->
 				<status value="booked">
@@ -146,7 +147,6 @@
 			</Appointment>
 		</resource>
 	</entry>
-
 	<!--************************患者信息******************************-->
 	<entry>
 		<resource>
@@ -255,9 +255,10 @@
 	<!--************************转诊病历******************************-->
 	<entry>
 		<resource>
-			 <DocumentReference xmlns="http://hl7.org/fhir">
+			<DocumentReference xmlns="http://hl7.org/fhir">
 				<!--0..1 病历文档ID-->
 				<id value="DocumentReference001-example"/>
+
 				<meta>
 					<profile value="http://StructureDefinition.hl7fhir.cn/medical-record-documentation"/>
 				</meta>
@@ -266,7 +267,7 @@
 					<!-- 0..1 病历文档标识符NamingSystem uri-->
 					<system value="http://NamingSystem.hl7fhir.cn/document-Identifier"/>
 					<!-- 0..1 病历文档标识符 -->
-					<value value="DocumentReference001-example"/>
+					<value value="1234567890"/>
 				</masterIdentifier>
 				<!-- 1..1 文档引用状态  current | superseded | entered-in-error -->
 				<status >
@@ -310,7 +311,7 @@
 				<!-- 0..1 文档编写日期 -->
 				<date value="2019-02-20T13:00:00Z"/>
 				<!-- 0..* Reference(Practitioner|PractitionerRole|Organization|Device|
-			   Patient|RelatedPerson) 文档编写者 -->
+   Patient|RelatedPerson) 文档编写者 -->
 				<author>
 					<reference value="Practitioner/Practitioner001-example"/>
 				</author>
@@ -320,7 +321,7 @@
 				</authenticator>
 				<!-- 0..1 Reference(Organization) 管理机构（管理文档的医疗机构） -->
 				<custodian>
-					<reference value="Organization/Hospital001-example"/>
+					<reference value="Organization/Organization001-example"/>
 				</custodian>
 				<!-- 0..1 文档描述 -->
 				<description value="城乡居民健康档案基本数据集-转诊（院）记录"/>
