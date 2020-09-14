@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <PlanDefinition xmlns="http://hl7.org/fhir">
-	<id value="PlanDefinition-hospital-referral"/>
+	<id value="hospital-referral"/>
 	<!-- 0..1 Canonical identifier for this plan definition, represented as a URI (globally unique) -->
 	<url value="http://PlanDefinition.hl7fhir.cn/hospital-referral"/>
 	<!-- 0..* 计划定义编号 -->
@@ -164,7 +164,7 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment"/>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment"/>
 		
 	</action>
 
@@ -237,7 +237,7 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment-response"/>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment-response"/>
 			
 	</action>
 
@@ -300,7 +300,7 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-patient-arrive-response"/>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/patient-arrive-response"/>
 			
 	</action>
 
@@ -363,7 +363,7 @@
 		<!-- 0..1 单次或者多次运行 single | multiple -->
 		<cardinalityBehavior value="single"/>
 		<!-- 0..1 该步骤的活动定义  -->
-		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-medical-records-submitted"/>
+		<definitionCanonical value="http://ActivityDefinition.hl7fhir.cn/medical-records-submitted"/>
 			
 	</action>
 </PlanDefinition>

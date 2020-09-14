@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ActivityDefinition xmlns="http://hl7.org/fhir">
-	<id value="ActivityDefinition-application-for-referral-appointment"/>
+	<id value="application-for-referral-appointment"/>
 	<!-- 0..1 ActivityDefinition 的全局URL -->
 	<url value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment"/>
 	<!-- 0..* 活动标识符 -->

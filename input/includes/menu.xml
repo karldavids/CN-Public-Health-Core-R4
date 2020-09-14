@@ -1,20 +1,8 @@
 ﻿<ul xmlns="http://www.w3.org/1999/xhtml" class="nav navbar-nav">
   <li><a href="index.html">首页</a></li>
   <li><a href="toc.html">目录</a></li>
-  <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">场景<b class="caret">
-      </b>
-    </a>
-    <ul class="dropdown-menu">
-      <li>
-        <a href="hospital-referral.html">双向转诊-住院</a>
-      </li>
-    </ul>
-  </li>
- 
-  
-    <li class="dropdown">
-    <a data-toggle="dropdown" href="#" class="dropdown-toggle">核心定义<b class="caret">
+      <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">规范定义<b class="caret">
       </b>
     </a>
     <ul class="dropdown-menu">
@@ -36,7 +24,17 @@
       </li>
     </ul>
   </li>
-  
+  <li class="dropdown">
+    <a data-toggle="dropdown" href="#" class="dropdown-toggle">场景<b class="caret">
+      </b>
+    </a>
+    <ul class="dropdown-menu">
+	
+      <li>
+        <a href="hospital-referral.html">双向转诊-住院</a>
+      </li>
+    </ul>
+  </li>
  
   <li class="dropdown">
     <a data-toggle="dropdown" href="#" class="dropdown-toggle">支持<b class="caret">
@@ -44,20 +42,13 @@
     </a>
     <ul class="dropdown-menu">
       <li>
-        <a target="_blank" href="http://hl7fhir.cn">FHIR中文版 <img src="external.png"/></a>
+        <a target="_blank" href="http://www.hl7fhir.cn">FHIR中文版</a>
       </li>
-	   <li>
-        <a target="_blank" href="http://terminology.hl7fhir.cn/">术语中心 <img src="external.png"/></a>
-      </li>
+	  
 	  <li>
-        <a target="_blank" href="http://fhir.press/">企标注册 <img src="external.png"/></a>
+        <a target="_blank" href="https://build.fhir.org/ig/HL7China/CN-CORE-R4/">中国核心实施指南</a>
       </li>
-	   <li>
-        <a target="_blank" href="http://fhir.plus">FHIR+统一认证 <img src="external.png"/></a>
-      </li>
-	  <li>
-        <a target="_blank" href="http://fhir.store">FHIR应用市场 <img src="external.png"/></a>
-      </li>
+
       <li>
         <a href="downloads.html">下载</a>
       </li>

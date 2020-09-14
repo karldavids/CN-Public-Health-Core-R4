@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Bundle xmlns="http://hl7.org/fhir">
-	<id value="Bundle-hospital-referral-example"/>
+	<id value="hospital-referral-example"/>
 	<type value="message"/>
 	<!--************************消息头****************************-->
 	<entry>

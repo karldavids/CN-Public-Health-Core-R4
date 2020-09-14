@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MessageDefinition xmlns="http://hl7.org/fhir">
-  <id value="MessageDefinition-hospital-referral"/>
+  <id value="hospital-referral"/>
   <!-- 0..1 Business Identifier for a given MessageDefinition -->
   <url value="http://MessageDefinition.hl7fhir.cn/hospital-referral"/>
 
@@ -47,7 +47,7 @@
   <purpose value="在数据交互过程中，为了规范整个消息体的格式和消息数据的应答关系，定义此消息体，满足 转诊预约申请步骤 需要传输的所有数据信息。"/>
 
   <!-- 0..* canonical(ActivityDefinition|PlanDefinition) Protocol/workflow this is part of -->
-  <parent value="http://ActivityDefinition.hl7fhir.cn/ActivityDefinition-application-for-referral-appointment"/>
+  <parent value="http://ActivityDefinition.hl7fhir.cn/application-for-referral-appointment"/>
    
   <!-- 1..1 Coding|uri 事件定义 -->
   <eventCoding>

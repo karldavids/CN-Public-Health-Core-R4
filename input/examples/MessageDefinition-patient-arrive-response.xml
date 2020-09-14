@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MessageDefinition xmlns="http://hl7.org/fhir">
-  <id value="MessageDefinition-patient-arrive-response"/>
+  <id value="patient-arrive-response"/>
   <!-- 0..1 Business Identifier for a given MessageDefinition -->
   <url value="http://MessageDefinition.hl7fhir.cn/patient-arrive-response"/>
 
