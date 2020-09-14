@@ -33,6 +33,17 @@
 					<!-- 0..1 Reference(Appointment) 关联工作流信息 -->
 					<reference value="Appointment/HospitalReferral-example"/>
 				</focus>
+
+				<focus>
+					<!-- 0..1 Reference(Appointment) 关联工作流信息 -->
+					<reference value="Patient/Patient001-example"/>
+				</focus>
+
+				<focus>
+					<!-- 0..1 Reference(Appointment) 关联工作流信息 -->
+					<reference value="DocumentReference/DocumentReference001-example"/>
+				</focus>
+
 				<!-- 0..1 canonical(MessageDefinition) Link to the definition for this message -->
  				<definition>
 					<reference value="MessageDefinition/hospital-referral-example"/>
