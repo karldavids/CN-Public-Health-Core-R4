@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Patient xmlns="http://hl7.org/fhir">
+	<!--0..1 患者ID-->
+	<id value="Patient001-example"/>
+	<meta>
+		<profile value="http://StructureDefinition.hl7fhir.cn/Patient"/>
+	</meta>
+	<!--1..* 身份证件号 -->
+	<identifier>
+		<!--证件类型-->
+		<type>
+			<coding>
+				<!-- 证件类型CodeSystem  地址 -->
+				<system value="http://CodeSystem.hl7fhir.cn/identity-document-type"/>
+				<!-- 0..1 证件类别编码 -->
+				<code value="01"/>
+				<!-- 0..1 证件类别名称 -->
+				<display value="身份证"/>
+			</coding>
+		</type>
+		<!--0..1 身份证件号码NamingSystem uri-->
+		<system value="http://NamingSystem.hl7fhir.cn/identityDocument"/>
+		<!-- 0..1 身份证件号码 -->
+		<value value="511002938706190932"/>
+	</identifier>
+	<!-- 0..* 患者姓名 -->
+	<name>
+		<!-- 0..1 全名 -->
+		<text value="张三"/>
+	</name>
+	<!-- 0..1 生理性别 -->
+	<gender>
+		<extension url="http://StructureDefinition.hl7fhir.cn/sexual-distinction-of-human">
+			<valueCoding>
+				<!-- 0..1 生理性别 CodeSystem url  地址-->
+				<system value="http://CodeSystem.hl7fhir.cn/physiological-gender"/>
+				<!-- 0..1 生理性别代码-->
+				<code value="01"/>
+				<!-- 0..1 生理性别说明 -->
+				<display value="男"/>
+			</valueCoding>
+		</extension>
+	</gender>
+	<!--  0..* 联系电话 -->
+	<telecom>
+		<!--  0..1 类型 phone | fax | email | pager | url | sms | other -->
+		<system value="phone"/>
+		<!-- 0..1 电话号码 -->
+		<value value="13387362763"/>
+	</telecom>
+	<!-- 0..1 出生日期 -->
+	<birthDate value="1980-02-01"/>
+	<!--0..1 地址-->
+	<address>
+		<!-- 0..1 地址的完整描述 -->
+		<text value="[string]"/>
+		<!--行政区划代码(由于行政区划为12位村) -->
+		<extension url="http://StructureDefinition.hl7fhir.cn/AdministrativeDivision">
+			<!--行政区划代码 -->
+			<valueString value="5101002029378110"/>
+		</extension>
+	</address>
+
+	<!--联系人 -->
+	<contact>
+		<relationship>
+			<coding>
+				<system value="http://CodeSystem.hl7fhir.cn/contact-relationship" />
+				<!-- 联系人关系代码 -->
+				<code value="father" />
+				<!-- 联系人关系名称 -->
+				<display value="父亲"/>
+			</coding>
+		</relationship>
+		<!-- 联系人姓名 -->
+		<name>
+			<text value="李四" />
+		</name>
+	</contact>
+	<!-- 0..1 婚姻状况 GB/T 2261.2-->
+	<maritalStatus>
+		<coding>
+			<!-- 婚姻状况CodeSystem  地址 -->
+			<system value="http://CodeSystem.hl7fhir.cn/marital-status"/>
+			<!-- 0..1 婚姻状况编码 -->
+			<code value="01"/>
+			<!-- 0..1 婚姻状况 -->
+			<display value="已婚"/>
+		</coding>
+	</maritalStatus>
+	<!-- 民族 -->
+	<extension url="http://StructureDefinition.hl7fhir.cn/ChineseEthnicity">
+		<valueCoding>
+			<system value="http://CodeSystem.hl7fhir.cn/nationalites-of-PRC"/>
+			<!-- 民族编码 -->
+			<code value="1"/>
+			<!-- 民族名称 -->
+			<display value="汉族"/>
+		</valueCoding>
+	</extension>
+</Patient>

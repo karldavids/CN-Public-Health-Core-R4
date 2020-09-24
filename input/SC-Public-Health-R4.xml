@@ -228,7 +228,33 @@
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 		
-		
+		<resource>
+			<reference>
+				<!-- Patient资源示例 -->
+				<reference value="Patient/Patient001-example"/>
+			</reference>
+			<name value="患者张三的示例"/>
+			<description value="演示如何定义和引用患者张三的示例"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- Practitioner资源示例 -->
+				<reference value="Practitioner/Practitioner001-example"/>
+			</reference>
+			<name value="医护人员李明明的示例"/>
+			<description value="演示如何定义和引用医护人员李明明的示例"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- Organization资源示例 -->
+				<reference value="Organization/Hospital001-example"/>
+			</reference>
+			<name value="医疗机构的示例"/>
+			<description value="演示如何定义和引用医疗机构的示例"/>
+		</resource>
 		
 
 		<!--    <resource>
