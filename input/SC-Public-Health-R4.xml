@@ -287,10 +287,10 @@
 		<resource>
 			<reference>
 				<!-- Organization资源示例 -->
-				<reference value="Organization/Hospital001-example"/>
+				<reference value="Location/HospitalBed001-example"/>
 			</reference>
-			<name value="医疗机构的示例"/>
-			<description value="演示如何定义和引用医疗机构的示例"/>
+			<name value="床位的示例"/>
+			<description value="演示如何定义和引用床位的示例"/>
 		</resource>
 		
 		<resource>
