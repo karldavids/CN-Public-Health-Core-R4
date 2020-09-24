@@ -15,7 +15,11 @@
     <value value="SYSBG0000QWERTY"/>
   </identifier>
 
-
+  <!-- 0..* 申请单信息 -->
+  <basedOn>
+    <!-- 0..1  Reference(ServiceRequest）关联申请单信息 -->
+    <reference value="ServiceRequest/LaboratoryRequest-example"/>
+  </basedOn>
 
   <!-- 1..1  报告状态  -->
   <status >
