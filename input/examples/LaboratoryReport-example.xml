@@ -15,11 +15,7 @@
     <value value="SYSBG0000QWERTY"/>
   </identifier>
 
-  <!-- 0..* 申请单信息 -->
-  <basedOn>
-    <!-- 0..1  Reference(ServiceRequest）关联申请单信息 -->
-    <reference value="ServiceRequest/LaboratoryRequest-example"/>
-  </basedOn>
+
 
   <!-- 1..1  报告状态  -->
   <status >
@@ -30,7 +26,7 @@
         <!-- 0..1 报告状态代码-->
         <code value="final"/>
         <!-- 0..1 报告状态说明 -->
-        <display value=" final "/>
+        <display value="final"/>
       </valueCoding>
     </extension>
   </status>
@@ -62,51 +58,18 @@
     </coding>
   </code>
 
-  <!-- 0..1 患者信息 -->
-  <subject>
-    <!-- 0..1  Reference(Patient）关联患者信息 -->
-    <reference value="Patient/Patient001-example"/>
-  </subject>
-  <!-- 0..1 医疗事件 -->
-  <encounter>
-    <!-- 0..1  Reference(Encounter）关联医疗事件信息 -->
-    <reference value="Encounter/EncounterHospitalized001-example"/>
-  </encounter>
+  
 
   <!-- 0..1 发布报告时间 -->
   <issued value="2019-02-10T13:00:00Z"/>
 
-  <!-- 0..* 检验医师 -->
-  <performer>
-    <!-- 0..1  Reference(Practitioner）关联医护人员信息 -->
-    <reference value="Practitioner/Practitioner001-example"/>
-  </performer>
+  
 
-  <!-- 0..* 发布报告者 -->
-  <resultsInterpreter>
-    <!-- 0..1  Reference(Practitioner）关联医护人员信息 -->
-    <reference value="Practitioner/Practitioner001-example"/>
-  </resultsInterpreter>
+  
 
-  <!-- 0..* Reference(Specimen)标本信息 -->
-  <specimen>
-    <!-- 0..1  Reference(Specimen）关联标本信息 -->
-    <reference value="Specimen/LaboratorySpecimen001-example"/>
-  </specimen>
+ 
 
-  <!-- 0..* 检验结果-->
-  <result>
-    <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-    <reference value="Observation/LaboratoryRoutineObservation001-example"/>
-  </result>
-  <result>
-    <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-    <reference value="Observation/LaboratoryRoutineObservation002-example"/>
-  </result>
-  <result>
-    <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-    <reference value="Observation/LaboratoryRoutineObservation003-example"/>
-  </result>
+  
 
   <!-- 0..1 检验结论文字描述 -->
   <conclusion value="患者血常规检查无异常。"/>
