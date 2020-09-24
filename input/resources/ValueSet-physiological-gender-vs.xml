@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="physiological-gender-vs"/>
+    <meta>
+        <lastUpdated value="2020-03-12T20:06:50.230+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/physiological-gender-vs"/>
+    <version value="V1"/>
+    <name value="physiological gender"/>
+    <title value="生理性别"/>
+    <status value="draft"/>
+    <publisher value="中华人民共和国国家质量监督检验检疫总局"/>
+    <description value="国家GB级值域代码"/>
+    <jurisdiction>
+        <coding>
+            <system value="http://ValueSet.hl7fhir.cn/countries-and-regions"/>
+            <code value="156"/>
+        </coding>
+        <text value="中国"/>
+    </jurisdiction>
+    <expansion>
+        <timestamp value="2020-07-14T16:15:38.215+08:00"/>
+        <total value="4"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/physiological-gender"/>
+            <code value="0"/>
+            <display value="未知的性别"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/physiological-gender"/>
+            <code value="1"/>
+            <display value="男性"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/physiological-gender"/>
+            <code value="2"/>
+            <display value="女性"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/physiological-gender"/>
+            <code value="9"/>
+            <display value="未说明的性别"/>
+        </contains>
+    </expansion>
+</ValueSet>

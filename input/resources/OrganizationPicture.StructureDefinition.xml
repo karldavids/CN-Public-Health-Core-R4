@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="organization-picture" />
+  <meta>
+    <versionId value="4" />
+    <lastUpdated value="2020-05-28T01:31:12.768721+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/organization-picture" />
+  <name value="OrganizationPicture" />
+  <title value="组织机构图片" />
+  <status value="draft" />
+  <description value="图片信息，主要描述 组织机构的相关图像信息，包括 logo和图片信息" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <context>
+    <type value="element" />
+    <expression value="Organization" />
+  </context>
+  <type value="Extension" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Extension">
+      <path value="Extension" />
+      <short value="机构的所有图片信息" />
+      <definition value="图片信息，主要描述 组织机构的相关图像信息，包括 logo和图片信息。&#xD;&#xA;在组织机构需要 描述关于该组织机构的图片、Logo信息的情况下使用。&#xD;&#xA;logo 0..1 图片信息0..*  支持多图片上传。..." />
+    </element>
+    <element id="Extension.extension">
+      <path value="Extension.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Extension.extension:logo">
+      <path value="Extension.extension" />
+      <sliceName value="logo" />
+      <short value="logo 图片信息" />
+      <definition value="描述机构的Logo信息 可上传一张logo图片" />
+      <max value="1" />
+    </element>
+    <element id="Extension.extension:logo.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="logo" />
+    </element>
+    <element id="Extension.extension:logo.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="Attachment" />
+      </type>
+    </element>
+    <element id="Extension.extension:images">
+      <path value="Extension.extension" />
+      <sliceName value="images" />
+      <short value="图片信息" />
+      <definition value="描述机构的图片信息，可上传多张图片信息" />
+    </element>
+    <element id="Extension.extension:images.url">
+      <path value="Extension.extension.url" />
+      <fixedUri value="images" />
+    </element>
+    <element id="Extension.extension:images.value[x]">
+      <path value="Extension.extension.value[x]" />
+      <type>
+        <code value="Attachment" />
+      </type>
+    </element>
+    <element id="Extension.url">
+      <path value="Extension.url" />
+      <fixedUri value="http://StructureDefinition.hl7fhir.cn/organization-picture" />
+    </element>
+    <element id="Extension.value[x]">
+      <path value="Extension.value[x]" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

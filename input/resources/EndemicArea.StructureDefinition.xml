@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="EndemicArea" />
+  <url value="http://StructureDefinition.hl7fhir.cn/EndemicArea" />
+  <name value="EndemicArea" />
+  <title value="病区信息" />
+  <status value="draft" />
+  <description value="描述病区的基本信息" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Organization" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Organization" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Organization">
+      <path value="Organization" />
+      <short value="病区" />
+      <definition value="描述病区的基本信息" />
+    </element>
+    <element id="Organization.extension">
+      <path value="Organization.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.extension:BriefIntroduction">
+      <path value="Organization.extension" />
+      <sliceName value="BriefIntroduction" />
+      <short value="病区简介" />
+      <definition value="对病区基本信息情况进行文字描述。" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/BriefIntroduction" />
+      </type>
+    </element>
+    <element id="Organization.identifier">
+      <path value="Organization.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.identifier:institutionCode">
+      <path value="Organization.identifier" />
+      <sliceName value="institutionCode" />
+      <short value="病区编码" />
+      <definition value="病区编码与映射的病区编码" />
+      <max value="1" />
+    </element>
+    <element id="Organization.identifier:pinYinCode">
+      <path value="Organization.identifier" />
+      <sliceName value="pinYinCode" />
+      <short value="拼音码" />
+      <definition value="病区名称的拼音的首字母编码" />
+      <max value="1" />
+    </element>
+    <element id="Organization.identifier:otherIdentifier">
+      <path value="Organization.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其他业务代码" />
+      <definition value="其它标识病区的业务ID" />
+    </element>
+    <element id="Organization.type">
+      <path value="Organization.type" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="机构种类、类别" />
+      <definition value="机构种类，如医院、卫生防疫站等。类别" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Organization.type:hierarchyKind">
+      <path value="Organization.type" />
+      <sliceName value="hierarchyKind" />
+      <short value="层级种类" />
+      <definition value="组织层级种类，如医院集团、医院、院区、科室等" />
+      <max value="1" />
+      <binding>
+        <strength value="extensible" />
+        <description value="组织层级种类" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/hierarchy-kind-vs" />
+      </binding>
+    </element>
+    <element id="Organization.type:otherType">
+      <path value="Organization.type" />
+      <sliceName value="otherType" />
+      <short value="其它分类" />
+      <definition value="按其它分类维度对组织机构分类" />
+    </element>
+    <element id="Organization.name">
+      <path value="Organization.name" />
+      <definition value="此病区的名称" />
+    </element>
+    <element id="Organization.alias">
+      <path value="Organization.alias" />
+      <short value="病区别名" />
+      <definition value="该病区的去他名称或曾用名的列表，如第二名称等。" />
+    </element>
+    <element id="Organization.telecom">
+      <path value="Organization.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Organization.telecom:TelecomPhone">
+      <path value="Organization.telecom" />
+      <sliceName value="TelecomPhone" />
+      <short value="联系电话" />
+      <definition value="病区联系电话" />
+      <max value="1" />
+      <fixedContactPoint>
+        <system value="phone" />
+      </fixedContactPoint>
+    </element>
+    <element id="Organization.telecom:TelecomEmail">
+      <path value="Organization.telecom" />
+      <sliceName value="TelecomEmail" />
+      <short value="电子邮箱" />
+      <definition value="病区电子邮箱" />
+      <max value="1" />
+      <fixedContactPoint>
+        <system value="email" />
+      </fixedContactPoint>
+    </element>
+    <element id="Organization.partOf">
+      <path value="Organization.partOf" />
+      <short value="上级机构" />
+      <definition value="描述本病区隶属于哪个医院" />
+      <type>
+        <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-hierarchy">
+          <valueBoolean value="true" />
+        </extension>
+        <code value="Reference" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/Organization" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/Hospital" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="contact-point-system-vs"/>
+    <meta>
+        <lastUpdated value="2020-08-20T18:59:02.945+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/contact-point-system-vs"/>
+    <version value="V1"/>
+    <name value="contact-point-system"/>
+    <title value="联系方式种类"/>
+    <status value="draft"/>
+    <publisher value="hl7fhir.cn"/>
+    <description value="联系方式所属体系（种类），如：电话、传真、邮件、微信、QQ等"/>
+    <jurisdiction>
+        <coding>
+            <system value="http://ValueSet.hl7fhir.cn/countries-and-regions"/>
+        </coding>
+    </jurisdiction>
+    <expansion>
+        <timestamp value="2020-08-25T15:50:58.862+08:00"/>
+        <total value="7"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="phone"/>
+            <display value="联系电话"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="fax"/>
+            <display value="传真"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="email"/>
+            <display value="电子邮箱"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="pager"/>
+            <display value="寻呼机"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="url"/>
+            <display value="包括网站，博客，Skype，Twitter，Facebook"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="sms"/>
+            <display value="短信"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/contact-point-system"/>
+            <code value="other"/>
+            <display value="其他"/>
+        </contains>
+    </expansion>
+</ValueSet>

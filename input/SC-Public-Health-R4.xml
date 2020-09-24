@@ -43,28 +43,37 @@
 		
 		<resource>
 			<reference>
-				<!-- 本地资源定义（HospitalReferral） -->
-				<reference value="StructureDefinition/hospital-referral"/>
+				<!-- 本地资源定义（LaboratoryRequest） -->
+				<reference value="StructureDefinition/laboratory-request"/>
 			</reference>
-			<description value="该资源描述住院转诊的的申请。包括上转、下转都使用该资源。"/>
+			<description value="描述医院内 临床医生对患者提交实验室检验申请的资源。"/>
 		</resource>
 
 		<resource>
 			<reference>
-				<!-- 本地资源定义（HospitalReferralResponse） -->
-				<reference value="StructureDefinition/hospital-referral-response"/>
+				<!-- 本地资源定义（LaboratoryReport） -->
+				<reference value="StructureDefinition/laboratory-report"/>
 			</reference>
-			<description value="该资源描述在提交转诊申请后，由各个参与方 给出是否同意的转诊应答。包括 医生、患者。"/>
+			<description value="对患者、患者组从中提取的标本进行的诊断试验的结果和解释。此报告包括了临床场景（如申请单、提供者信息），有些报告将单项指标结果、图像、文本和带编码的解释、以及带格式的诊断报告"/>
 		</resource>
 
 		<resource>
 			<reference>
-				<!-- 本地资源定义（participation-status） -->
-				<reference value="StructureDefinition/participation-status"/>
+				<!-- 本地资源定义（LaboratoryRoutineObservation） -->
+				<reference value="StructureDefinition/laboratory-routine-observation"/>
 			</reference>
-			<description value="预约参与状态，描述预约参与人的应约状态，包括同意、拒绝、未知、未响应等"/>
+			<description value="描述实验室常规检验的详细检验结果的反馈，如 生化检验、血液检验、临检检验。"/>
 		</resource>
 
+		<resource>
+			<reference>
+				<!-- 本地资源定义（LaboratorySpecimen） -->
+				<reference value="StructureDefinition/laboratory-specimen"/>
+			</reference>
+			<description value="在医院实验室检验中，用于分析的样品。"/>
+		</resource>
+		
+		
 		<!--<resource>
 <reference>
 <reference value="MyLogicalModel/AS"/>
@@ -75,43 +84,43 @@
 		<resource>
 			<reference>
 				<!-- 资源示例 -->
-				<reference value="Appointment/HospitalReferral-example"/>
+				<reference value="ServiceRequest/LaboratoryRequest-example"/>
 			</reference>
-			<name value="转诊预约申请示例"/>
-			<description value="演示如何定义和引用转诊预约申请的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral"/>
+			<name value="实验室检验申请示例"/>
+			<description value="演示如何定义和引用实验室检验申请的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-request"/>
 		</resource>
 
 
 		<resource>
 			<reference>
 				<!-- 资源示例 -->
-				<reference value="AppointmentResponse/HospitalReferralResponse-example"/>
+				<reference value="DiagnosticReport/LaboratoryReport-example"/>
 			</reference>
-			<name value="转诊预约应答示例"/>
-			<description value="演示如何定义和引用转诊预约应答的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
+			<name value="实验室检验报告示例"/>
+			<description value="演示如何定义和引用实验室检验报告的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
 		</resource>
 		
 		<resource>
 			<reference>
 				<!-- 资源示例 -->
-				<reference value="AppointmentResponse/PatientArriveResponse-example"/>
+				<reference value="Task/LaboratoryReportRelease-example"/>
 			</reference>
-			<name value="患者到诊应答示例"/>
-			<description value="演示如何定义和引用患者到诊应答的简单示例"/>
-			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/hospital-referral-response"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 资源示例 -->
-				<reference value="Task/Medical-records-submitted-example"/>
-			</reference>
-			<name value="上传完整病历示例"/>
-			<description value="演示如何定义和引用上传完整病历的简单示例"/>
+			<name value="发布实验室检验报告示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
 		</resource>
+
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Specimen/LaboratorySpecimen001-example"/>
+			</reference>
+			<name value="实验室检验标本示例"/>
+			<description value="演示如何定义和引用实验室检验标本的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-specimen"/>
+		</resource>
 		
 		
 		
@@ -119,70 +128,41 @@
 		<resource>
 			<reference>
 				<!-- ActivityDefinition资源示例 -->
-				<reference value="ActivityDefinition/application-for-referral-appointment"/>
+				<reference value="ActivityDefinition/ad-laboratory-request"/>
 			</reference>
-			<name value="转诊预约申请ActivityDefinition示例"/>
-			<description value="演示如何定义和引用转诊预约申请ActivityDefinition的简单示例"/>
+			<name value="实验室检验申请ActivityDefinition示例"/>
+			<description value="演示如何定义和引用实验室检验申请ActivityDefinition的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
 		</resource>
 
 		<resource>
 			<reference>
 				<!-- ActivityDefinition资源示例 -->
-				<reference value="ActivityDefinition/application-for-referral-appointment-response"/>
+				<reference value="ActivityDefinition/ad-laboratory-report-release"/>
 			</reference>
-			<name value="转诊预约应答ActivityDefinition示例"/>
-			<description value="演示如何定义和引用转诊预约应答ActivityDefinition的简单示例"/>
+			<name value="发布实验室检验报告ActivityDefinition示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告ActivityDefinition的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
 		</resource>
-
-		
-
-
-		<resource>
-			<reference>
-				<!-- ActivityDefinition资源示例 -->
-				<reference value="ActivityDefinition/patient-arrive-response"/>
-			</reference>
-			<name value="患者到诊应答ActivityDefinition示例"/>
-			<description value="演示如何定义和引用患者到诊应答ActivityDefinition的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
-		</resource>
-
-
-
-		<resource>
-			<reference>
-				<!-- ActivityDefinition资源示例 -->
-				<reference value="ActivityDefinition/medical-records-submitted"/>
-			</reference>
-			<name value="上传完整病历ActivityDefinition示例"/>
-			<description value="演示如何定义和引用上传完整病历ActivityDefinition的简单示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/ActivityDefinition"/>
-		</resource>
-
-	
-
-
 
 
 		<resource>
 			<reference>
 				<!-- PlanDefinition资源示例 -->
-				<reference value="PlanDefinition/hospital-referral"/>
+				<reference value="PlanDefinition/pd-regional-laboratory-inspection"/>
 			</reference>
 			<name value="住院双转的流程定义PlanDefinition示例"/>
-			<description value="演示如何定义和引用住院双转的流程定义PlanDefinition的简单示例"/>
+			<description value="演示如何定义和引用区域实验室检验的流程定义PlanDefinition的简单示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/PlanDefinition"/>
 		</resource>
 
 		<resource>
 			<reference>
 				<!-- Bundle资源示例 -->
-				<reference value="Bundle/hospital-referral-example"/>
+				<reference value="Bundle/laboratory-request-example"/>
 			</reference>
-			<name value="转诊预约申请消息交换Bundle示例"/>
-			<description value="演示如何定义和引用转诊申请实际交互场景的数据交换Bundle示例"/>
+			<name value="实验室检验申请消息交换Bundle示例"/>
+			<description value="演示如何定义和引用实验室检验申请实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
@@ -191,43 +171,51 @@
 		<resource>
 			<reference>
 				<!-- Bundle资源示例 -->
-				<reference value="Bundle/hospital-referral-response-example"/>
+				<reference value="Bundle/laboratory-report-release-example"/>
 			</reference>
-			<name value="转诊预约应答消息交换Bundle示例"/>
-			<description value="演示如何定义和引用转诊预约应答实际交互场景的数据交换Bundle示例"/>
+			<name value="发布实验室检验报告消息交换Bundle示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告实际交互场景的数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
+
+		
+		
+		
+
+
+		<resource>
+			<reference>
+				<!-- Bundle-RESTful资源示例 -->
+				<reference value="Bundle/laboratory-request-RESTful-example"/>
+			</reference>
+			<name value="实验室检验申请RESTful接口的Bundle示例"/>
+			<description value="演示如何定义和引用实验室检验申请实际交互场景的RESTful数据交换Bundle示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
+		</resource>
+
+		
 
 		<resource>
 			<reference>
 				<!-- Bundle资源示例 -->
-				<reference value="Bundle/patient-arrive-response-example"/>
+				<reference value="Bundle/laboratory-report-release-RESTful-example"/>
 			</reference>
-			<name value="患者到诊应答消息交换Bundle示例"/>
-			<description value="演示如何定义和引用患者到诊应答实际交互场景的数据交换Bundle示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
-		</resource>
-		
-		<resource>
-			<reference>
-				<!-- Bundle资源示例 -->
-				<reference value="Bundle/medical-records-submitted-example"/>
-			</reference>
-			<name value="上传完整病历消息交换Bundle示例"/>
-			<description value="演示如何定义和引用上传完整病历实际交互场景的数据交换Bundle示例"/>
+			<name value="发布实验室检验报告RESTful接口的Bundle示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告实际交互场景的RESTful数据交换Bundle示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Bundle"/>
 		</resource>
 
 
+		
 
 		<resource>
 			<reference>
 				<!-- MessageDefinition资源示例 -->
-				<reference value="MessageDefinition/hospital-referral"/>
+				<reference value="MessageDefinition/md-laboratory-request"/>
 			</reference>
-			<name value="转诊预约申请消息定义MessageDefinition的示例"/>
-			<description value="演示如何定义和引用转诊申请消息定义MessageDefinition的示例"/>
+			<name value="实验室检验申请消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用实验室检验申请消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 
@@ -236,33 +224,15 @@
 		<resource>
 			<reference>
 				<!-- MessageDefinition资源示例 -->
-				<reference value="MessageDefinition/hospital-referral-response"/>
+				<reference value="MessageDefinition/md-laboratory-report-release"/>
 			</reference>
-			<name value="转诊预约应答消息定义MessageDefinition的示例"/>
-			<description value="演示如何定义和引用转诊预约应答消息定义MessageDefinition的示例"/>
+			<name value="发布实验室检验报告消息定义MessageDefinition的示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告消息定义MessageDefinition的示例"/>
 			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
 		</resource>
 
 
-		<resource>
-			<reference>
-				<!-- MessageDefinition资源示例 -->
-				<reference value="MessageDefinition/patient-arrive-response"/>
-			</reference>
-			<name value="患者到诊应答消息定义MessageDefinition的示例"/>
-			<description value="演示如何定义和引用患者到诊应答消息定义MessageDefinition的示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
-		</resource>
 		
-		<resource>
-			<reference>
-				<!-- MessageDefinition资源示例 -->
-				<reference value="MessageDefinition/medical-records-submitted"/>
-			</reference>
-			<name value="上传完整病历消息定义MessageDefinition的示例"/>
-			<description value="演示如何定义和引用上传完整病历消息定义MessageDefinition的示例"/>
-			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/MessageDefinition"/>
-		</resource>
 
 		<resource>
 			<reference>
@@ -291,77 +261,6 @@
 			<name value="医疗机构的示例"/>
 			<description value="演示如何定义和引用医疗机构的示例"/>
 		</resource>
-
-		<resource>
-			<reference>
-				<!-- DocumentReference资源示例 -->
-				<reference value="DocumentReference/DocumentReference001-example"/>
-			</reference>
-			<name value="病历-转诊（院）记录示例"/>
-			<description value="演示如何定义和引用病历-转诊（院）记录的示例"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- DocumentReference资源示例 -->
-				<reference value="DocumentReference/DocumentReference002-example"/>
-			</reference>
-			<name value="病历-检验报告示例"/>
-			<description value="演示如何定义和引用病历-检验报告的示例"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- DocumentReference资源示例 -->
-				<reference value="DocumentReference/DocumentReference003-example"/>
-			</reference>
-			<name value="病历-医药处方示例"/>
-			<description value="演示如何定义和引用病历-医药处方的示例"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- DocumentReference资源示例 -->
-				<reference value="DocumentReference/DocumentReference004-example"/>
-			</reference>
-			<name value="病历-出院小结示例"/>
-			<description value="演示如何定义和引用病历-出院小结的示例"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- DocumentReference资源示例 -->
-				<reference value="List/List001-example"/>
-			</reference>
-			<name value="患者张三的在院病历记录示例"/>
-			<description value="演示如何定义和引用患者张三在院病历记录示例"/>
-		</resource>
-
-
-		<resource>
-			<reference>
-				<!-- 参与者类型编码值域集 -->
-				<reference value="ValueSet/encounter-participant-type-vs"/>
-			</reference>
-			<name value="参与者类型编码"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 应答预约状态编码值域集 -->
-				<reference value="ValueSet/participationstatus-vs"/>
-			</reference>
-			<name value="应答预约状态编码"/>
-		</resource>
-
-		<resource>
-			<reference>
-				<!-- 活动事件编码值域集 -->
-				<reference value="ValueSet/activity-code-vs"/>
-			</reference>
-			<name value="活动事件编码"/>
-		</resource>
-
 
 
 

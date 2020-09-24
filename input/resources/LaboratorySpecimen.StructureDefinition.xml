@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="laboratory-specimen" />
+  <url value="http://StructureDefinition.hl7fhir.cn/laboratory-specimen" />
+  <name value="LaboratorySpecimen" />
+  <title value="实验室检验标本" />
+  <status value="draft" />
+  <description value="在医院实验室检验中，用于分析的样品。" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Specimen" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Specimen" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Specimen">
+      <path value="Specimen" />
+      <short value="实验室检验标本" />
+      <definition value="在医院实验室检验中，用于分析的样品。" />
+    </element>
+    <element id="Specimen.identifier">
+      <path value="Specimen.identifier" />
+      <short value="外部标本编号" />
+      <definition value="这里描述条码号信息，可以是开单科室生成的标本唯一序列号" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Specimen.accessionIdentifier">
+      <path value="Specimen.accessionIdentifier" />
+      <short value="实验室条码号" />
+      <definition value="加入标本时由实验室指定的标识符。这不一定与标本标识符相同，取决于当地的实验室程序。" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Specimen.status">
+      <path value="Specimen.status" />
+      <short value="标本状态" />
+      <definition value="描述该标本的状态，如 可用|不可用|不能令人满意|进入错误" />
+    </element>
+    <element id="Specimen.status.extension">
+      <path value="Specimen.status.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Specimen.status.extension:status">
+      <path value="Specimen.status.extension" />
+      <sliceName value="status" />
+      <short value="标本状态" />
+      <definition value="描述该标本的状态，如 可用|不可用|不能令人满意|进入错误" />
+      <min value="0" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/resource-status" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/specimen-status-vs" />
+      </binding>
+    </element>
+    <element id="Specimen.type">
+      <path value="Specimen.type" />
+      <short value="标本类型" />
+      <definition value="形成标本的材料类型" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="example" />
+        <description value="标本类型" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/specimen-type-vs" />
+      </binding>
+    </element>
+    <element id="Specimen.subject">
+      <path value="Specimen.subject" />
+      <short value="采集来源者" />
+      <definition value="标本来自哪里。这可能来自患者，位置（例如，环境样品的来源）或物质或设备的采样" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Specimen.receivedTime">
+      <path value="Specimen.receivedTime" />
+      <short value="签收时间" />
+      <definition value="收到标本进行处理的时间" />
+    </element>
+    <element id="Specimen.parent">
+      <path value="Specimen.parent" />
+      <short value="父亲标本" />
+      <definition value="描述该标本的父标本。本标本可能是父标本的一部分。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Specimen.request">
+      <path value="Specimen.request" />
+      <short value="采集原因" />
+      <definition value="关于要求收集标本的服务要求的细节，这里代表申请单。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Specimen.collection">
+      <path value="Specimen.collection" />
+      <short value="采集" />
+      <definition value="有关标本收集的详细资料。" />
+    </element>
+    <element id="Specimen.collection.collector">
+      <path value="Specimen.collection.collector" />
+      <short value="采集表本者" />
+      <definition value="描述是谁采集的标本。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Specimen.collection.collected[x]">
+      <path value="Specimen.collection.collected[x]" />
+      <short value="采集时间" />
+      <definition value="从受试者处采集标本的时间-生理相关时间。" />
+      <type>
+        <code value="dateTime" />
+      </type>
+    </element>
+    <element id="Specimen.collection.duration">
+      <path value="Specimen.collection.duration" />
+      <short value="收集标本需要多长时间" />
+      <definition value="样本采集发生的时间跨度。" />
+    </element>
+    <element id="Specimen.collection.quantity">
+      <path value="Specimen.collection.quantity" />
+      <short value="采集标本的数量" />
+      <definition value="收集标本的数量;例如血液样本的体积，或解剖病理学样本的物理测量。" />
+    </element>
+    <element id="Specimen.collection.method">
+      <path value="Specimen.collection.method" />
+      <short value="采集方法" />
+      <definition value="描述采集标本的方法。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/specimen-collection-method-vs" />
+      </binding>
+    </element>
+    <element id="Specimen.collection.bodySite">
+      <path value="Specimen.collection.bodySite" />
+      <short value="位置" />
+      <definition value="描述采集标本的位置。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="example" />
+        <description value="采集部位信息" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/body-site-vs" />
+      </binding>
+    </element>
+    <element id="Specimen.collection.fastingStatus[x]">
+      <path value="Specimen.collection.fastingStatus[x]" />
+      <short value="采集标本时患者的状态" />
+      <definition value="在样本采集前的一段时间内禁食或减少某些或全部食物、饮料，或两者都禁食。" />
+    </element>
+    <element id="Specimen.processing">
+      <path value="Specimen.processing" />
+      <max value="0" />
+    </element>
+    <element id="Specimen.processing.procedure">
+      <path value="Specimen.processing.procedure" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Specimen.container">
+      <path value="Specimen.container" />
+      <max value="0" />
+    </element>
+    <element id="Specimen.container.type">
+      <path value="Specimen.container.type" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Specimen.condition">
+      <path value="Specimen.condition" />
+      <short value="标本性质" />
+      <definition value="描述样本性质的方式或状态。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Specimen.note">
+      <path value="Specimen.note" />
+      <type>
+        <code value="Annotation" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Annotation" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

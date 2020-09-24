@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir"> 
+	<id value="condition-ver-status-vs"/>
+ <url value="http://ValueSet.hl7fhir.cn/condition-ver-status-vs"/>
+ <name value="condition-ver-status-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
+ <title value="诊断验证状态"/><!-- 0..1 Name for this value set (human friendly) -->
+ <status value="draft"/><!-- 1..1 draft | active | retired | unknown -->
+  <description value="表示验证状态，如：初诊、暂时存在、确诊、错误的等。"/>
+ <compose>  <!-- 0..1 Content logical definition of the value set (CLD) --> 
+  <include>  <!-- 1..* Include one or more codes from a code system or other value set(s) -->
+   <system value="http://terminology.hl7.org/CodeSystem/condition-ver-status"/><!-- ?? 0..1 The system the codes come from --> 
+  </include>
+  <exclude><!-- ?? 0..* Content as for ValueSet.compose.include Explicitly exclude codes from a code system or other value sets --></exclude>
+ </compose>
+</ValueSet>

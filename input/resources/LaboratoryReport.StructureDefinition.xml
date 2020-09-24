@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="laboratory-report" />
+  <url value="http://StructureDefinition.hl7fhir.cn/laboratory-report" />
+  <name value="LaboratoryReport" />
+  <title value="实验室报告" />
+  <status value="draft" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="workflow" />
+    <uri value="http://hl7.org/fhir/workflow" />
+    <name value="Workflow Pattern" />
+  </mapping>
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="DiagnosticReport" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/DiagnosticReport" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="DiagnosticReport">
+      <path value="DiagnosticReport" />
+      <short value="实验室检验报告" />
+      <definition value="对患者、患者组从中提取的标本进行的诊断试验的结果和解释。此报告包括了临床场景（如申请单、提供者信息），有些报告将单项指标结果、图像、文本和带编码的解释、以及带格式的诊断报告" />
+    </element>
+    <element id="DiagnosticReport.identifier">
+      <path value="DiagnosticReport.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="检验业务变标识符" />
+      <definition value="检验标识符，唯一且明确地标识报告实体。业务标识符，在不同业务域中的唯一标识ID。可作为交叉索引使用。" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.identifier:laboratoryReportIdentifier">
+      <path value="DiagnosticReport.identifier" />
+      <sliceName value="laboratoryReportIdentifier" />
+      <short value="报告编号" />
+      <definition value="描述该检验报告的业务编号" />
+      <max value="1" />
+    </element>
+    <element id="DiagnosticReport.identifier:otherIdentifier">
+      <path value="DiagnosticReport.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其他业务标识符" />
+      <definition value="其他业务标识符" />
+    </element>
+    <element id="DiagnosticReport.basedOn">
+      <path value="DiagnosticReport.basedOn" />
+      <short value="该报告的来源（申请单）" />
+      <definition value="有关所请求的服务的详细信息。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.status">
+      <path value="DiagnosticReport.status" />
+      <short value="检验报告的状态" />
+      <definition value="检验报告的状态。registered | partial | preliminary | final +" />
+    </element>
+    <element id="DiagnosticReport.status.extension">
+      <path value="DiagnosticReport.status.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="DiagnosticReport.status.extension:status">
+      <path value="DiagnosticReport.status.extension" />
+      <sliceName value="status" />
+      <short value="检验报告状态" />
+      <definition value="描述检验报告的各种状态" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/resource-status" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <description value="检验报告状态" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/diagnostic-report-status-vs" />
+      </binding>
+    </element>
+    <element id="DiagnosticReport.category">
+      <path value="DiagnosticReport.category" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.category:CategoryCode">
+      <path value="DiagnosticReport.category" />
+      <sliceName value="CategoryCode" />
+      <short value="实验室检验分类代码" />
+      <definition value="为搜索、排序和显示目的而对服务进行分类的代码。如：生化检验、凝血检验" />
+      <max value="1" />
+      <binding>
+        <strength value="example" />
+        <description value="实验室检验分类代码表" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/laboratoryrequest-category-vs" />
+      </binding>
+    </element>
+    <element id="DiagnosticReport.category:otherCategory">
+      <path value="DiagnosticReport.category" />
+      <sliceName value="otherCategory" />
+      <short value="其他报告分类" />
+      <definition value="其他报告分类" />
+    </element>
+    <element id="DiagnosticReport.code">
+      <path value="DiagnosticReport.code" />
+      <short value="检验服务代码" />
+      <definition value="描述此检验报告的代码或名称，可描述检验打包项" />
+	  <type>
+		<code value="CodeableConcept"/>
+			<profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept"/>
+	  </type>
+      <binding>
+        <strength value="preferred" />
+        <description value="检验报告分类代码" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/procedure-code-vs" />
+      </binding>
+    </element>
+    <element id="DiagnosticReport.subject">
+      <path value="DiagnosticReport.subject" />
+      <short value="报告主题体" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.encounter">
+      <path value="DiagnosticReport.encounter" />
+      <short value="医疗事件" />
+      <definition value="该报告关联的医疗事件，如门诊，住院，体检等。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.effective[x]">
+      <path value="DiagnosticReport.effective[x]" />
+      <short value="得到报告数据的时间/时间段" />
+      <definition value="观测值所对应的时间或周期。" />
+      <type>
+        <code value="dateTime" />
+      </type>
+      <type>
+        <code value="Period" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Period" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.issued">
+      <path value="DiagnosticReport.issued" />
+      <short value="发布时间" />
+      <definition value="向提供者提供该版本报告的日期和时间，通常在报告经过审查和验证之后。" />
+    </element>
+    <element id="DiagnosticReport.performer">
+      <path value="DiagnosticReport.performer" />
+      <short value="诊断的医生" />
+      <definition value="如果对结果有疑问，需要知道与谁联系。还可能需要跟踪报告的来源以进行辅助数据分析。&quot;" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.resultsInterpreter">
+      <path value="DiagnosticReport.resultsInterpreter" />
+      <short value="报告发布者" />
+      <definition value="负责报告结论和解释的从业者或组织。通常指报告发布者" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.specimen">
+      <path value="DiagnosticReport.specimen" />
+      <short value="标本" />
+      <definition value="有关此诊断报告所基于的标本的详细信息。" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.result">
+      <path value="DiagnosticReport.result" />
+      <short value="报告明细" />
+      <definition value="引用 观察资源描述 对该报告的观测项目的返回值进行描述" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.imagingStudy">
+      <path value="DiagnosticReport.imagingStudy" />
+      <max value="0" />
+    </element>
+    <element id="DiagnosticReport.media">
+      <path value="DiagnosticReport.media" />
+      <max value="0" />
+    </element>
+    <element id="DiagnosticReport.conclusion">
+      <path value="DiagnosticReport.conclusion" />
+      <short value="结果的临床结论(解释)" />
+      <definition value="简明扼要的临床总结报告（解释/印象）。文字描述" />
+    </element>
+    <element id="DiagnosticReport.conclusionCode">
+      <path value="DiagnosticReport.conclusionCode" />
+      <short value="结果的临床结论(解释)编码" />
+      <definition value="代表诊断报告的摘要结论（解释/印象）的一个或多个代码。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="DiagnosticReport.presentedForm">
+      <path value="DiagnosticReport.presentedForm" />
+      <short value="备注" />
+      <definition value="诊断服务发出的整个结果的富文本表示形式。允许使用多种格式，可以使用附件形式描述，如PDF,HTML。" />
+      <type>
+        <code value="Attachment" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Attachment" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

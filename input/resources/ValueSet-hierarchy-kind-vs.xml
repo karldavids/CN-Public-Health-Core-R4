@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ValueSet xmlns="http://hl7.org/fhir" xmlns:ns2="http://www.w3.org/1999/xhtml">
+    <id value="hierarchy-kind-vs"/>
+    <meta>
+        <lastUpdated value="2020-07-01T10:47:44.360+08:00"/>
+    </meta>
+    <url value="http://ValueSet.hl7fhir.cn/hierarchy-kind-vs"/>
+    <version value="V1"/>
+    <name value="hierarchy-kind"/>
+    <title value="组织机构层级种类"/>
+    <status value="draft"/>
+    <publisher value="hl7fhir.cn"/>
+    <description value="组织机构层级种类"/>
+    <expansion>
+        <timestamp value="2020-07-06T16:35:17.218+08:00"/>
+        <total value="4"/>
+        <offset value="0"/>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/hierarchy-kind"/>
+            <code value="1"/>
+            <display value="医院集团"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/hierarchy-kind"/>
+            <code value="2"/>
+            <display value="医院"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/hierarchy-kind"/>
+            <code value="3"/>
+            <display value="院区"/>
+        </contains>
+        <contains>
+            <system value="http://CodeSystem.hl7fhir.cn/hierarchy-kind"/>
+            <code value="4"/>
+            <display value="科室"/>
+        </contains>
+    </expansion>
+</ValueSet>

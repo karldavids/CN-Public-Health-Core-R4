@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="CodeableConcept" />
+  <meta>
+    <versionId value="2" />
+    <lastUpdated value="2020-03-16T15:16:22.934+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+  <name value="CodeableConcept" />
+  <title value="可编码概念" />
+  <status value="draft" />
+  <date value="2020-03-16T15:16:13.8885423Z" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="orim" />
+    <uri value="http://hl7.org/orim" />
+    <name value="Ontological RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="CodeableConcept" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/CodeableConcept" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="CodeableConcept">
+      <path value="CodeableConcept" />
+      <short value="概念——指向术语或通过文本来表示" />
+      <definition value="一种概念，它可以通过对术语或本体的正式引用来定义，也可以通过文本来表示。" />
+      <comment value="这是表示术语的常用模型，但并不适用于所有的术语。在某些情况下，会直接使用编码，并使用自己的结构来管理描述文本、编码、翻译、元素之间的关系、前协调（预置映射规则）和后协调（映射后置处理）。" />
+    </element>
+    <element id="CodeableConcept.coding">
+      <path value="CodeableConcept.coding" />
+      <label value="编码概念" />
+      <short value="由术语系统定义的编码" />
+      <definition value="一个引用自术语系统定义的编码。" />
+      <comment value="编码可以使用枚举值或编码列表非常随意地定义。也可以非常正式的定义，如SNOMED CT。请参阅HL7 v3核心原则。 此类型并未定义编码的顺序，并不得用于推断含义。通常，最多只有一个Coding的UserSelected属性被标记为true。" />
+      <requirements value="允许在代码系统中使用备用编码，并支持转换为其他代码系统。" />
+      <type>
+        <code value="Coding" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Coding" />
+      </type>
+    </element>
+    <element id="CodeableConcept.text">
+      <path value="CodeableConcept.text" />
+      <label value="概念描述" />
+      <short value="自然语言表示的概念" />
+      <definition value="自然语言表示的概念，它是由输入数据的用户看到、选择、说出，并代表着用户意图。" />
+      <comment value="通常此元素的文本与此资源中某一个coding元素的display属性值相同" />
+      <requirements value="术语中的代码并不总能精确的表达其所有细微差别的含义，或者有时根本没有合适的代码。在这些情况下，文本可用于表达编码的全部含义。" />
+    </element>
+  </differential>
+</StructureDefinition>

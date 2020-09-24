@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="hospital-bed" />
+  <url value="http://StructureDefinition.hl7fhir.cn/hospital-bed" />
+  <name value="HospitalBed" />
+  <title value="病床" />
+  <status value="draft" />
+  <description value="描述医院病床信息" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Location" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Location" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Location">
+      <path value="Location" />
+      <short value="病床" />
+      <definition value="描述医院病床信息" />
+    </element>
+    <element id="Location.identifier">
+      <path value="Location.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Location.identifier:hospitalBedIdentifier">
+      <path value="Location.identifier" />
+      <sliceName value="hospitalBedIdentifier" />
+      <short value="病床编码" />
+      <definition value="病床编码" />
+      <max value="1" />
+    </element>
+    <element id="Location.identifier:pinYinCode">
+      <path value="Location.identifier" />
+      <sliceName value="pinYinCode" />
+      <short value="拼音码" />
+      <definition value="病床名称的拼音的首字母编码" />
+      <max value="1" />
+    </element>
+    <element id="Location.identifier:otherIdentifier">
+      <path value="Location.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其他业务编码" />
+      <definition value="病床的其他业务编码" />
+    </element>
+    <element id="Location.status">
+      <path value="Location.status" />
+      <short value="状态" />
+      <definition value="可描述该病床的状态，在病床状态发生变化的时候，作为标识符使用。&#xD;&#xA;正常使用 | 暂停使用 | 作废的" />
+    </element>
+    <element id="Location.status.extension">
+      <path value="Location.status.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Location.status.extension:status">
+      <path value="Location.status.extension" />
+      <sliceName value="status" />
+      <short value="病床状态" />
+      <definition value="可描述该病床的状态，在病床状态发生变化的时候，作为标识符使用。&#xD;&#xA;正常使用 | 暂停使用 | 作废的" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/resource-status" />
+      </type>
+      <binding>
+        <strength value="required" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/location-status-vs" />
+      </binding>
+    </element>
+    <element id="Location.operationalStatus">
+      <path value="Location.operationalStatus" />
+      <short value="操作状态" />
+      <definition value="业务状况包括与床(但也可以适用于房间/单位/椅子/等)最相关的业务价值。例如隔离装置/透析椅)。这通常包括诸如污染、清洁和其他活动(如维护)等概念。" />
+      <type>
+        <code value="Coding" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Coding" />
+      </type>
+      <binding>
+        <strength value="preferred" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/operation-status-vs" />
+      </binding>
+    </element>
+    <element id="Location.name">
+      <path value="Location.name" />
+      <short value="医院病床名称" />
+      <definition value="医院病床名称" />
+    </element>
+    <element id="Location.alias">
+      <path value="Location.alias" />
+      <short value="病床的别名" />
+      <definition value="病床的别名列表" />
+    </element>
+    <element id="Location.description">
+      <path value="Location.description" />
+      <short value="病床详细信息" />
+      <definition value="有关病床的其他详细信息，可以作为进一步的信息显示，注意FHIR字符串的大小不能超过1MB" />
+      <comment value="注意FHIR字符串的大小不能超过1MB" />
+    </element>
+    <element id="Location.mode">
+      <path value="Location.mode" />
+      <max value="0" />
+    </element>
+    <element id="Location.type">
+      <path value="Location.type" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="coding.system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+    <element id="Location.type:LocationRoleType">
+      <path value="Location.type" />
+      <sliceName value="LocationRoleType" />
+      <short value="位置类型" />
+      <definition value="指示在该位置类型。 此处固定为 病床" />
+      <max value="1" />
+      <binding>
+        <strength value="extensible" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/location-role-type-vs" />
+      </binding>
+    </element>
+    <element id="Location.type:otherType">
+      <path value="Location.type" />
+      <sliceName value="otherType" />
+      <short value="其他分类" />
+      <definition value="按其它分类维度对位置的分类" />
+    </element>
+    <element id="Location.telecom">
+      <path value="Location.telecom" />
+      <max value="0" />
+    </element>
+    <element id="Location.address">
+      <path value="Location.address" />
+      <short value="病床地址" />
+      <definition value="病床的详细地址" />
+      <type>
+        <code value="Address" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Address" />
+      </type>
+    </element>
+    <element id="Location.physicalType">
+      <path value="Location.physicalType" />
+      <short value="物理形式" />
+      <definition value="位置的物理形式，例如建筑物、房间、车辆、道路。&#xD;&#xA;该处描述病床，固定为  床" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="example" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/location-physical-type-vs" />
+      </binding>
+    </element>
+    <element id="Location.position">
+      <path value="Location.position" />
+      <max value="0" />
+    </element>
+    <element id="Location.managingOrganization">
+      <path value="Location.managingOrganization" />
+      <short value="管理该病床的科室/部门" />
+      <definition value="管理该病床的科室/部门" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Location.partOf">
+      <path value="Location.partOf" />
+      <short value="病房" />
+      <definition value="引用一个病房资源" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Location.hoursOfOperation">
+      <path value="Location.hoursOfOperation" />
+      <max value="0" />
+    </element>
+    <element id="Location.availabilityExceptions">
+      <path value="Location.availabilityExceptions" />
+      <short value="可用性异常描述" />
+      <definition value="我们的营业地点与正常营业地点的不同之处的描述，例如公众假期的供应情况。按照开放时间时间的详细说明，简洁地描述所有可能的正常网站可用性例外情况。" />
+    </element>
+    <element id="Location.endpoint">
+      <path value="Location.endpoint" />
+      <max value="0" />
+    </element>
+  </differential>
+</StructureDefinition>

@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Practitioner" />
+  <url value="http://StructureDefinition.hl7fhir.cn/Practitioner" />
+  <name value="Practitioner" />
+  <title value="医护人员" />
+  <status value="draft" />
+  <publisher value="hl7.Fhir.cn/CW" />
+  <description value="直接或间接参与提供医疗健康服务的人员及其从业资格证" />
+  <fhirVersion value="4.0.1" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="w5" />
+    <uri value="http://hl7.org/fhir/fivews" />
+    <name value="FiveWs Pattern Mapping" />
+  </mapping>
+  <kind value="resource" />
+  <abstract value="false" />
+  <type value="Practitioner" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Practitioner" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Practitioner">
+      <path value="Practitioner" />
+      <short value="为提供医疗健康服务担负正式责任的人" />
+      <definition value="直接或间接参与提供医疗健康服务的人员" />
+    </element>
+    <element id="Practitioner.extension">
+      <path value="Practitioner.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Practitioner.extension:BriefIntroduction">
+      <path value="Practitioner.extension" />
+      <sliceName value="BriefIntroduction" />
+      <short value="医务人员简介" />
+      <definition value="医务人员简介" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/BriefIntroduction" />
+      </type>
+    </element>
+    <element id="Practitioner.extension:nationality">
+      <path value="Practitioner.extension" />
+      <sliceName value="nationality" />
+      <definition value="医务人员的国籍" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Nationality" />
+      </type>
+    </element>
+    <element id="Practitioner.extension:ethnicity">
+      <path value="Practitioner.extension" />
+      <sliceName value="ethnicity" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/ChineseEthnicity" />
+      </type>
+    </element>
+    <element id="Practitioner.extension:PoliticalAffiliation">
+      <path value="Practitioner.extension" />
+      <sliceName value="PoliticalAffiliation" />
+      <definition value="政治面貌的编码及加入日期" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/politic-affiliation" />
+      </type>
+    </element>
+    <element id="Practitioner.extension:DateStartWork">
+      <path value="Practitioner.extension" />
+      <sliceName value="DateStartWork" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/date-start-work" />
+      </type>
+    </element>
+    <element id="Practitioner.extension:ISworkForMultiOrg">
+      <path value="Practitioner.extension" />
+      <sliceName value="ISworkForMultiOrg" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/is-work-for-multi-org" />
+      </type>
+    </element>
+    <element id="Practitioner.identifier">
+      <path value="Practitioner.identifier" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="type" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="逻辑业务ID" />
+      <definition value="医护人员的逻辑业务ID" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Practitioner.identifier:identityDocument">
+      <path value="Practitioner.identifier" />
+      <sliceName value="identityDocument" />
+      <short value="身份证件及其号码" />
+      <definition value="用中国法定有效证件来标识具有此角色/岗位的医疗服务人员" />
+    </element>
+    <element id="Practitioner.identifier:identityDocument.type">
+      <path value="Practitioner.identifier.type" />
+      <short value="身份证件类别" />
+      <definition value="标识身份的证件类别，如身份证、户口簿、驾照等" />
+      <binding>
+        <strength value="extensible" />
+        <description value="CV02.01.101，整理自《WS 364-2011_卫生信息数据元值域代码》" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/identity-document-type-vs" />
+      </binding>
+    </element>
+    <element id="Practitioner.identifier:otherIdentifier">
+      <path value="Practitioner.identifier" />
+      <sliceName value="otherIdentifier" />
+      <short value="其它逻辑业务ID" />
+      <definition value="其它标识角色或位置的业务ID" />
+    </element>
+    <element id="Practitioner.active">
+      <path value="Practitioner.active" />
+      <short value="状态" />
+      <definition value="描述该医护人员是否在用" />
+    </element>
+    <element id="Practitioner.name">
+      <path value="Practitioner.name" />
+      <short value="医护人员姓名" />
+      <type>
+        <code value="HumanName" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/ChineseName" />
+      </type>
+    </element>
+    <element id="Practitioner.telecom">
+      <path value="Practitioner.telecom" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="system" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <type>
+        <code value="ContactPoint" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/ContactPoint" />
+      </type>
+    </element>
+    <element id="Practitioner.telecom:TelecomPhone">
+      <path value="Practitioner.telecom" />
+      <sliceName value="TelecomPhone" />
+      <short value="联系电话" />
+      <definition value="联系电话" />
+      <max value="1" />
+      <fixedContactPoint>
+        <system value="phone" />
+      </fixedContactPoint>
+    </element>
+    <element id="Practitioner.telecom:TelecomEmail">
+      <path value="Practitioner.telecom" />
+      <sliceName value="TelecomEmail" />
+      <short value="电子邮箱" />
+      <definition value="电子邮箱" />
+      <fixedContactPoint>
+        <system value="email" />
+      </fixedContactPoint>
+    </element>
+    <element id="Practitioner.address">
+      <path value="Practitioner.address" />
+      <short value="医护人员地址" />
+      <type>
+        <code value="Address" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Address" />
+      </type>
+    </element>
+    <element id="Practitioner.gender">
+      <path value="Practitioner.gender" />
+      <short value="生理性别" />
+      <definition value="GB/T 2261.1" />
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="AdministrativeGender" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="required" />
+        <description value="生理性别" />
+      </binding>
+    </element>
+    <element id="Practitioner.gender.extension">
+      <path value="Practitioner.gender.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Practitioner.gender.extension:gender">
+      <path value="Practitioner.gender.extension" />
+      <sliceName value="gender" />
+      <max value="1" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/sexual-distinction-of-human" />
+      </type>
+    </element>
+    <element id="Practitioner.birthDate">
+      <path value="Practitioner.birthDate" />
+      <short value="出生日期" />
+      <definition value="医护人员的出生日期" />
+    </element>
+    <element id="Practitioner.photo">
+      <path value="Practitioner.photo" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="title" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+      <short value="照片" />
+      <definition value="该医护人员的照片" />
+    </element>
+    <element id="Practitioner.qualification">
+      <path value="Practitioner.qualification" />
+      <short value="与卫生健康相关的证书、执照或职称" />
+      <definition value="官方证书、培训证、执照、职称，用于授权或证明医疗健康服务人员的资格或能力。授权或以其他方式与医生提供护理有关。例如，医师执业证，授权医生在某区域内行医。" />
+    </element>
+    <element id="Practitioner.qualification.identifier">
+      <path value="Practitioner.qualification.identifier" />
+      <short value="医疗服务人员具有此资格的标识符。" />
+      <definition value="此人担任此角色的资格的标识符。" />
+      <type>
+        <code value="Identifier" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+      </type>
+    </element>
+    <element id="Practitioner.qualification.code">
+      <path value="Practitioner.qualification.code" />
+      <short value="资格/证书/职称代码" />
+      <definition value="编码形式的资格/职称证书" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <strength value="extensible" />
+        <description value="包括执照、证书、资格证、职称在内的值域集" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/practitioner-qualification-vs" />
+      </binding>
+    </element>
+    <element id="Practitioner.qualification.period">
+      <path value="Practitioner.qualification.period" />
+      <short value="资格/证书的有效期" />
+      <definition value="资格/证书的有效期" />
+      <requirements value="资格证书通常是规定了有效期限的，并且可以撤销。" />
+      <type>
+        <code value="Period" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Period" />
+      </type>
+    </element>
+    <element id="Practitioner.qualification.issuer">
+      <path value="Practitioner.qualification.issuer" />
+      <type>
+        <code value="Reference" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Reference" />
+      </type>
+    </element>
+    <element id="Practitioner.communication">
+      <path value="Practitioner.communication" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

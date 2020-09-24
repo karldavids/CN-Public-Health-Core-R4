@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Address" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2019-12-11T16:18:37.264+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/Address" />
+  <name value="Address" />
+  <title value="地址" />
+  <status value="draft" />
+  <date value="2019-12-11T16:18:36.7416462Z" />
+  <publisher value="hl7fhir.cn" />
+  <description value="符合中国描述地址习惯，并支持用行政区划编码生成详细地址和用于统计" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <mapping>
+    <identity value="vcard" />
+    <uri value="http://w3.org/vcard" />
+    <name value="vCard Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Address" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Address" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Address">
+      <path value="Address" />
+      <short value="地址" />
+      <definition value="使用中国行政区划表示的地址（非GPS或经纬度地址）。" />
+      <comment value="注：此地址是用来描述行政管理目的地址或邮政编码，不是用来描述绝对地理坐标。" />
+    </element>
+    <element id="Address.extension">
+      <path value="Address.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Address.extension:adminDivision">
+      <path value="Address.extension" />
+      <sliceName value="adminDivision" />
+      <short value="行政区划编码" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/AdministrativeDivision" />
+      </type>
+    </element>
+    <element id="Address.use">
+      <path value="Address.use" />
+      <short value="地址用途" />
+      <definition value="地址用途，如：家庭住址、户口地址、工作地址、曾住地等" />
+      <binding>
+        <strength value="required" />
+        <description value="地址用途类别" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/address-use" />
+      </binding>
+    </element>
+    <element id="Address.type">
+      <path value="Address.type" />
+      <max value="0" />
+    </element>
+    <element id="Address.text">
+      <path value="Address.text" />
+      <short value="详细地址" />
+      <definition value="详细地址的全部文字描述，包括：省+市+县+区+乡镇+街道+补充详细信息的所有文字。可由行政区划编码(Address.extension:adminDivision)对应的名称文字+“补充地址详情“(Address.line)自动生成。" />
+      <comment value="当提供了行政区划编码(Address.extension:adminDivision)或“补充地址详情“(Address.line)时，此元素的值必须包括前两个元素对应的文字信息" />
+    </element>
+    <element id="Address.line">
+      <path value="Address.line" />
+      <short value="补充地址详情" />
+      <definition value="行政区划编码能明确的地址信息之外的文字补充信息，如街道编号、小区楼栋、单元门牌等。" />
+      <comment value="当提供了行政区划编码(Address.extension:adminDivision)后再填写此元素的值才有意义" />
+    </element>
+    <element id="Address.city">
+      <path value="Address.city" />
+      <max value="0" />
+    </element>
+    <element id="Address.district">
+      <path value="Address.district" />
+      <max value="0" />
+    </element>
+    <element id="Address.state">
+      <path value="Address.state" />
+      <max value="0" />
+    </element>
+    <element id="Address.postalCode">
+      <path value="Address.postalCode" />
+      <short value="邮编" />
+      <definition value="中国邮政区划编码" />
+    </element>
+    <element id="Address.country">
+      <path value="Address.country" />
+      <max value="0" />
+    </element>
+    <element id="Address.period">
+      <path value="Address.period" />
+      <definition value="在哪个时段使用此地址。由开始和结束时间以及可选时间定义的时间段范围。" />
+      <type>
+        <code value="Period" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Period" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>
