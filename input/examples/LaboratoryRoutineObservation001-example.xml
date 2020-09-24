@@ -56,7 +56,7 @@
   <!-- 0..1 医疗事件 -->
   <encounter>
     <!-- 0..1  Reference(Encounter）关联医疗事件信息 -->
-    <reference value="Encounter/Encounter001-example"/>
+    <reference value="Encounter/EncounterHospitalized001-example"/>
   </encounter>
 
   <!-- 0..* 检验明细 -->
