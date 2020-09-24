@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Observation xmlns="http://hl7.org/fhir">
+  <!--0..1 检验结果ID-->
+  <id value="LaboratoryRoutineObservation003-example"/>
+  <meta>
+    <profile value="http://StructureDefinition.hl7fhir.cn/laboratory-routine-observation"/>
+  </meta>
+
+
+  <!-- 1..1  观测结果状态  -->
+  <status>
+    <extension url="http://StructureDefinition.hl7fhir.cn/resource-status">
+      <valueCoding>
+        <!-- 0..1 观测结果状态 CodeSystem url  地址(registered | preliminary | final | amended + )-->
+        <system value="http://hl7.org/fhir/observation-status"/>
+        <!-- 0..1 观测结果状态代码-->
+        <code value="final"/>
+        <!-- 0..1 观测结果状态说明 -->
+        <display value="final"/>
+      </valueCoding>
+    </extension>
+  </status>
+
+
+  <!-- 0..* 检验分类 -->
+  <category>
+    <coding>
+      <!-- 0..1 检验分类 CodeSystem url  地址-->
+      <system value="http://CodeSystem.hl7fhir.cn/laboratory-type"/>
+      <!-- 0..1 检验分类代码-->
+      <code value="01"/>
+      <!-- 0..1 检验分类说明 -->
+      <display value="生化检验"/>
+    </coding>
+  </category>
+
+  <!-- 1..1 检验项目（包）代码 -->
+  <code>
+    <coding>
+      <!-- 0..1 检验项目（包）代码 CodeSystem url  地址-->
+      <system value="http://CodeSystem.hl7fhir.cn/procedure-code"/>
+      <!-- 0..1 检验项目（包）代码-->
+      <code value="A0001"/>
+      <!-- 0..1 检验项目（包）说明 -->
+      <display value="血常规"/>
+    </coding>
+  </code>
+
+  <!-- 0..1 患者信息 -->
+  <subject>
+    <!-- 0..1  Reference(Patient）关联患者信息 -->
+    <reference value="Patient/Patient001-example"/>
+  </subject>
+
+
+  <!-- 0..1 医疗事件 -->
+  <encounter>
+    <!-- 0..1  Reference(Encounter）关联医疗事件信息 -->
+    <reference value="Encounter/Encounter001-example"/>
+  </encounter>
+
+  <!-- 0..* 检验明细 -->
+  <component>
+    <!-- 1..1 检验项目明细 -->
+    <code>
+      <coding>
+        <!-- 0..1 项目明细 CodeSystem url  地址-->
+        <system value="http://CodeSystem.hl7fhir.cn/laboratoryrequest-orderdetail"/>
+        <!-- 0..1 项目明细代码-->
+        <code value="A0001001"/>
+        <!-- 0..1 项目明细说明 -->
+        <display value="血小版数"/>
+      </coding>
+    </code>
+    <!-- 0..1 观测结果值 （数字类型检验结果）-->
+    <valueQuantity>
+      <!-- 0..1  观测结果值-->
+      <value value="1.5"/>
+      <!-- 0..1 单位 -->
+      <unit value="mg/L"/>
+    </valueQuantity>
+
+    <!-- 0..* 测试结果解释（高\正常\低） -->
+    <interpretation>
+      <coding>
+        <!-- 0..1 测试结果解释 CodeSystem url  地址-->
+        <system value="http://CodeSystem.hl7fhir.cn/laboratory-observation-interpretation"/>
+        <!-- 0..1 测试结果解释代码-->
+        <code value="01"/>
+        <!-- 0..1 测试结果解释说明 -->
+        <display value="正常"/>
+      </coding>
+    </interpretation>
+
+    <!-- 0..* 标准值范围 -->
+    <referenceRange>
+      <!--  0..1 低范围 -->
+      <low>
+        <!-- 0..1  低范围值-->
+        <value value="0.5"/>
+        <!-- 0..1 单位 -->
+        <unit value="mg/L"/>
+      </low>
+      <!-- ?? 0..1 高范围 -->
+      <high>
+        <!-- 0..1  高范围值-->
+        <value value="2.8"/>
+        <!-- 0..1 单位 -->
+        <unit value="mg/L"/>
+      </high>
+
+      <!-- 0..1 参考范围的意义（正常、绝经后、中期、幼儿） -->
+      <type>
+        <coding>
+          <!-- 0..1 参考范围的意义 CodeSystem url  地址-->
+          <system value="http://CodeSystem.hl7fhir.cn/laboratory-referencerange-meaning"/>
+          <!-- 0..1 参考范围的意义代码-->
+          <code value="normal"/>
+          <!-- 0..1参考范围的意义说明 -->
+          <display value="Normal Range"/>
+        </coding>
+      </type>
+      <!-- 0..1 范围文字描述 -->
+      <text value="该指标正常"/>
+    </referenceRange>
+  </component>
+</Observation>
