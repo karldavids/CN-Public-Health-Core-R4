@@ -101,7 +101,35 @@
 			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
 		</resource>
 		
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Observation/LaboratoryRoutineObservation001-example"/>
+			</reference>
+			<name value="红细胞观测结果示例"/>
+			<description value="演示如何定义和引用红细胞观测结果的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
+		</resource>
 		
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Observation/LaboratoryRoutineObservation002-example"/>
+			</reference>
+			<name value="白细胞观测结果示例"/>
+			<description value="演示如何定义和引用白细胞观测结果的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Observation/LaboratoryRoutineObservation003-example"/>
+			</reference>
+			<name value="血小板观测结果示例"/>
+			<description value="演示如何定义和引用白细胞观测结果的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
+		</resource>
 		
 		
 
