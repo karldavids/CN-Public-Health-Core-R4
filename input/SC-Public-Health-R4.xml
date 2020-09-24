@@ -80,6 +80,46 @@
 </reference>
 </resource> -->
 
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="ServiceRequest/LaboratoryRequest-example"/>
+			</reference>
+			<name value="实验室检验申请示例"/>
+			<description value="演示如何定义和引用实验室检验申请的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-request"/>
+		</resource>
+
+
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="DiagnosticReport/LaboratoryReport-example"/>
+			</reference>
+			<name value="实验室检验报告示例"/>
+			<description value="演示如何定义和引用实验室检验报告的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-report"/>
+		</resource>
+		
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Task/LaboratoryReportRelease-example"/>
+			</reference>
+			<name value="发布实验室检验报告示例"/>
+			<description value="演示如何定义和引用发布实验室检验报告的简单示例"/>
+			<exampleCanonical value="http://hl7.org/fhir/StructureDefinition/Task"/>
+		</resource>
+
+		<resource>
+			<reference>
+				<!-- 资源示例 -->
+				<reference value="Specimen/LaboratorySpecimen001-example"/>
+			</reference>
+			<name value="实验室检验标本示例"/>
+			<description value="演示如何定义和引用实验室检验标本的简单示例"/>
+			<exampleCanonical value="http://StructureDefinition.hl7fhir.cn/laboratory-specimen"/>
+		</resource>
 		
 		
 
