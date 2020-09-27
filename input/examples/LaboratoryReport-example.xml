@@ -94,10 +94,6 @@
     <reference value="Specimen/LaboratorySpecimen001-example"/>
   </specimen>
 
-
-
-  
-
   <!-- 0..1 检验结论文字描述 -->
   <conclusion value="患者血常规检查无异常。"/>
 </DiagnosticReport>
