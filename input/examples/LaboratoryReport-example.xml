@@ -94,24 +94,6 @@
     <reference value="Specimen/LaboratorySpecimen001-example"/>
   </specimen>
 
- 
-  
-    <!-- 0..* 检验结果-->
-        <result>
-          <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-          <reference value="Observation/LaboratoryRoutineObservation001-example"/>
-        </result>
-        <result>
-          <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-          <reference value="Observation/LaboratoryRoutineObservation002-example"/>
-        </result>
-        <result>
-          <!-- 0..1  Reference(Observation）关联观测结果信息 -->
-          <reference value="Observation/LaboratoryRoutineObservation003-example"/>
-        </result>
-
-  
-
   <!-- 0..1 检验结论文字描述 -->
   <conclusion value="患者血常规检查无异常。"/>
 </DiagnosticReport>
