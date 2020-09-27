@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ValueSet xmlns="http://hl7.org/fhir"> 
-	<id value="specimen-collection-method-vs"/>
+	<id value="specimen-status-vs"/>
  <url value="http://ValueSet.hl7fhir.cn/specimen-status-vs"/>
  <name value="specimen-status-vs"/><!-- ?? 0..1 Name for this value set (computer friendly) -->
  <title value="标本状态"/><!-- 0..1 Name for this value set (human friendly) -->
