@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Annotation" />
+  <meta>
+    <versionId value="1" />
+    <lastUpdated value="2020-05-11T06:32:26.7917378+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/Annotation" />
+  <name value="Annotation" />
+  <title value="备注信息" />
+  <status value="draft" />
+  <description value="需要备注的额外信息，包括作者与创建时间。" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Annotation" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Annotation" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Annotation">
+      <path value="Annotation" />
+      <short value="备注信息" />
+      <definition value="需要备注的额外信息，包括作者与创建时间。" />
+    </element>
+    <element id="Annotation.author[x]">
+      <path value="Annotation.author[x]" />
+      <short value="注释者" />
+      <definition value="负责注释的个人" />
+    </element>
+    <element id="Annotation.time">
+      <path value="Annotation.time" />
+      <short value="备注时间" />
+      <definition value="指示何时做出此特定注释。" />
+    </element>
+    <element id="Annotation.text">
+      <path value="Annotation.text" />
+      <short value="注释—文本内容(如markdown)" />
+      <definition value="markdown格式的注释文本。" />
+    </element>
+  </differential>
+</StructureDefinition>

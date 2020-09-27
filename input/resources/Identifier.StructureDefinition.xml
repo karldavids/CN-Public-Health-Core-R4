@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Identifier" />
+  <meta>
+    <versionId value="4" />
+    <lastUpdated value="2020-03-30T15:04:02.242+00:00" />
+  </meta>
+  <url value="http://StructureDefinition.hl7fhir.cn/Identifier" />
+  <name value="Identifier" />
+  <title value="标识符" />
+  <status value="draft" />
+  <date value="2020-03-30T15:03:36.6310405Z" />
+  <description value="标识符，唯一且明确地标识某个域中的实体。常作为业务标识符（业务ID)使用，在不同业务域中的唯一标识ID" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="servd" />
+    <uri value="http://www.omg.org/spec/ServD/1.0/" />
+    <name value="ServD" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Identifier" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Identifier" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Identifier">
+      <path value="Identifier" />
+      <short value="业务标识符" />
+      <definition value="标识符，唯一且明确地标识某个域中的实体。常用作业务标识符，在不同业务域中的唯一标识ID。在很多场景下可作为交叉索引使用。" />
+      <comment value="业务ID不是资源服务器上的逻辑ID（非标识主键）" />
+    </element>
+    <element id="Identifier.use">
+      <path value="Identifier.use" />
+      <label value="用途" />
+      <short value="用途" />
+      <definition value="使用此标识符的目的，如：通用、正式、临时、备用、曾用等（usual | official | temp | secondary | old ）" />
+      <comment value="除非明确提指定为临时的，应用程序会默认一个标识符是永久的。" />
+      <requirements value="通过使用此元素，可以允许根据不同的使用场景选择的适当的标识符。" />
+      <isModifierReason value="如果此元素的值为&quot;临时的&quot;，意味着应用程序不应将临时id误认为永久id。" />
+    </element>
+    <element id="Identifier.type">
+      <path value="Identifier.type" />
+      <label value="标识类别" />
+      <short value="标识符类别" />
+      <definition value="用于区别标识符类别的编码，可用来指定特定目的的标识符。" />
+      <comment value="此元素一般用于当标识符不能为system提供值时，使用编码来区分标识的含义。 但请注意，此元素在实践中可变性很大、不易控制。所以它仅用作标识符的通用类别，并且不能当作与Identifier.system绑定的1对1的编码来使用。 &#xD;&#xA;另一种常见的用法是对已知标识符(指定了Identifier.system的值)的进一步分类：一些标识符可能分为多个类别。" />
+      <requirements value="允许用户在不知道标识符的命名系统时（Identifier.system的值）使用标识符。" />
+      <type>
+        <code value="CodeableConcept" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/CodeableConcept" />
+      </type>
+      <binding>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName">
+          <valueString value="IdentifierType" />
+        </extension>
+        <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding">
+          <valueBoolean value="true" />
+        </extension>
+        <strength value="extensible" />
+        <description value="待完善，目前暂用身份证件类别，CV02.01.101，整理自《WS 364-2011_卫生信息数据元值域代码》" />
+        <valueSet value="http://ValueSet.hl7fhir.cn/identity-document-type-vs" />
+      </binding>
+    </element>
+    <element id="Identifier.system">
+      <path value="Identifier.system" />
+      <label value="命名系统" />
+      <short value="标识符的命名系统" />
+      <definition value="指定Identifier.value所属的命名空间域，此域是由一个URI表示的许多值的集合，在此集合中的每一个值（value）都是唯一的，绝不会重复。" />
+      <comment value="Identifier.system 的值是区分大小写的" />
+      <requirements value="由于有许多属于不同域的标识符集合，我们需要知道某个值（Identifier.value）意义具体是在哪个标识符集合中定义的，就必须由Identifier.system 来确定标识符集合的URI。" />
+    </element>
+    <element id="Identifier.value">
+      <path value="Identifier.value" />
+      <label value="标识值" />
+      <short value="独一无二的值" />
+      <definition value="标识符中通常的具体值，在Identifier.system指定域中是唯一的。" />
+      <comment value="如果Identifier.value的值是完整的全球唯一URI（如：urn:oid: 和urn:uuid:），那么Identifier.system的值必须是”urn:ietf:rfc:3986“。Identifier.value的主要用途是对不同命名系统中的标识符进行映射。因此，为了方便对比，可能会对其值进行标准化处理（例如，删除不重要的空白、破折号等）。&#xD;&#xA;如果想显示可读强的文字说明，可以使用Identifier.extention.renderedValue扩展元素。&#xD;&#xA;Identifier.value是严格区分大小写，除非指定的Identifier.system明确说明在其命名空间域内的值不区分大小写。" />
+    </element>
+    <element id="Identifier.value.extension">
+      <path value="Identifier.value.extension" />
+      <slicing>
+        <discriminator>
+          <type value="value" />
+          <path value="url" />
+        </discriminator>
+        <rules value="open" />
+      </slicing>
+    </element>
+    <element id="Identifier.value.extension:display">
+      <path value="Identifier.value.extension" />
+      <sliceName value="display" />
+      <definition value="Identifier.value数据类型的值提供另一种显示方式，以便满足易读性、保密性等要求。例如，敏感标识符（如银行卡号）部分被星号遮盖。" />
+      <type>
+        <code value="Extension" />
+        <profile value="http://hl7.org/fhir/StructureDefinition/rendered-value" />
+      </type>
+    </element>
+    <element id="Identifier.period">
+      <path value="Identifier.period" />
+      <label value="有效时段" />
+      <type>
+        <code value="Period" />
+        <profile value="http://StructureDefinition.hl7fhir.cn/Period" />
+      </type>
+    </element>
+    <element id="Identifier.assigner">
+      <path value="Identifier.assigner" />
+      <label value="发布机构" />
+      <short value="发布机构" />
+      <definition value="管理或发布此标识符的机构" />
+      <type>
+        <code value="Reference" />
+        <targetProfile value="http://StructureDefinition.hl7fhir.cn/Organization" />
+      </type>
+    </element>
+  </differential>
+</StructureDefinition>

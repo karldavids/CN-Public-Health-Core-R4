@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<StructureDefinition xmlns="http://hl7.org/fhir">
+  <id value="Attachment" />
+  <url value="http://StructureDefinition.hl7fhir.cn/Attachment" />
+  <name value="Attachment" />
+  <title value="附件信息" />
+  <status value="draft" />
+  <description value="用于引用以其他格式定义的数据内容" />
+  <fhirVersion value="4.0.0" />
+  <mapping>
+    <identity value="v2" />
+    <uri value="http://hl7.org/v2" />
+    <name value="HL7 v2 Mapping" />
+  </mapping>
+  <mapping>
+    <identity value="rim" />
+    <uri value="http://hl7.org/v3" />
+    <name value="RIM Mapping" />
+  </mapping>
+  <kind value="complex-type" />
+  <abstract value="false" />
+  <type value="Attachment" />
+  <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Attachment" />
+  <derivation value="constraint" />
+  <differential>
+    <element id="Attachment">
+      <path value="Attachment" />
+      <short value="附件信息" />
+      <definition value="用于引用以其他格式定义的数据内容。" />
+    </element>
+    <element id="Attachment.contentType">
+      <path value="Attachment.contentType" />
+      <short value="内容的Mime类型，带有字符集等。" />
+      <definition value="标识附件中的数据类型，并允许选择一种方法来解释或呈现数据。在适当的地方包括mime类型参数，如charset。" />
+    </element>
+    <element id="Attachment.language">
+      <path value="Attachment.language" />
+      <short value="人类语言(BCP-47)" />
+      <definition value="人类语言的内容。根据BCP 47，该值可以是任何有效值。" />
+    </element>
+    <element id="Attachment.data">
+      <path value="Attachment.data" />
+      <short value="base64ed  数据" />
+      <definition value="附件的实际数据—编码为base64的字节序列。" />
+    </element>
+    <element id="Attachment.url">
+      <path value="Attachment.url" />
+      <short value="数据的url" />
+      <definition value="可以访问数据的地址" />
+    </element>
+    <element id="Attachment.size">
+      <path value="Attachment.size" />
+      <short value="内容字节数(如果提供url)" />
+      <definition value="组成此附件的数据字节数(在base64编码之前)。" />
+    </element>
+    <element id="Attachment.hash">
+      <path value="Attachment.hash" />
+      <short value="数据的哈希(sha-1, base64ed)" />
+      <definition value="使用SHA-1计算数据的哈希值。使用base64表示。" />
+    </element>
+    <element id="Attachment.title">
+      <extension url="http://hl7.org/fhir/StructureDefinition/elementdefinition-translatable">
+        <valueBoolean value="true" />
+      </extension>
+      <path value="Attachment.title" />
+      <short value="数据标题" />
+      <definition value="描述该附件的标题信息" />
+    </element>
+    <element id="Attachment.creation">
+      <path value="Attachment.creation" />
+      <short value="首次创建日期" />
+      <definition value="附件首次创建的日期。" />
+    </element>
+  </differential>
+</StructureDefinition>

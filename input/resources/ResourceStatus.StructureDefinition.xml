@@ -49,6 +49,34 @@
     <type value="element" />
     <expression value="Slot.status" />
   </context>
+  <context>
+    <type value="element" />
+    <expression value="Encounter.statusHistory.status" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="DocumentReference.status" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="DocumentReference.docStatus" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Encounter.location.status" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Observation.status" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="Specimen.status" />
+  </context>
+  <context>
+    <type value="element" />
+    <expression value="CareTeam.status" />
+  </context>
   <type value="Extension" />
   <baseDefinition value="http://hl7.org/fhir/StructureDefinition/Extension" />
   <derivation value="constraint" />
@@ -72,7 +100,6 @@
       <binding>
         <strength value="example" />
         <description value="资源的各种状态" />
-        <valueSet value="http://ValueSet.hl7fhir.cn/condition-clinical-vs" />
       </binding>
     </element>
   </differential>
