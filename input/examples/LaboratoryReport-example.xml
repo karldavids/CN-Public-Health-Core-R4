@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <DiagnosticReport xmlns="http://hl7.org/fhir">
-
   <!--0..1 实验室报告ID-->
   <id value="LaboratoryReport-example"/>
   <meta>
